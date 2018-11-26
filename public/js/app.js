@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,7 +73,7 @@
 if (false) {
   module.exports = require('./cjs/react.production.min.js');
 } else {
-  module.exports = __webpack_require__(65);
+  module.exports = __webpack_require__(66);
 }
 
 
@@ -152,7 +152,7 @@ module.exports = warning;
 
 
 var bind = __webpack_require__(25);
-var isBuffer = __webpack_require__(46);
+var isBuffer = __webpack_require__(47);
 
 /*global toString:true*/
 
@@ -480,7 +480,7 @@ if (true) {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(79)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(80)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
@@ -686,7 +686,7 @@ var createPath = function createPath(location) {
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(45);
+module.exports = __webpack_require__(46);
 
 /***/ }),
 /* 8 */
@@ -862,6 +862,64 @@ module.exports = emptyFunction;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(79);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(82);
+/* unused harmony reexport HashRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(35);
+/* unused harmony reexport Link */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(84);
+/* unused harmony reexport MemoryRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(87);
+/* unused harmony reexport NavLink */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(90);
+/* unused harmony reexport Prompt */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(92);
+/* unused harmony reexport Redirect */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(36);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(18);
+/* unused harmony reexport Router */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(98);
+/* unused harmony reexport StaticRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(100);
+/* unused harmony reexport Switch */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(102);
+/* unused harmony reexport matchPath */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(103);
+/* unused harmony reexport withRouter */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createLocation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return locationsAreEqual; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(32);
@@ -934,14 +992,14 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(2);
-var normalizeHeaderName = __webpack_require__(49);
+var normalizeHeaderName = __webpack_require__(50);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1035,10 +1093,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(48)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1135,7 +1193,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1198,64 +1256,6 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(78);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(81);
-/* unused harmony reexport HashRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(35);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(83);
-/* unused harmony reexport MemoryRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(86);
-/* unused harmony reexport NavLink */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(89);
-/* unused harmony reexport Prompt */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(91);
-/* unused harmony reexport Redirect */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(36);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(18);
-/* unused harmony reexport Router */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(97);
-/* unused harmony reexport StaticRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(99);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(101);
-/* unused harmony reexport matchPath */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(102);
-/* unused harmony reexport withRouter */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /***/ }),
@@ -1568,7 +1568,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -14678,12 +14678,12 @@ module.exports = function bind(fn, thisArg) {
 
 
 var utils = __webpack_require__(2);
-var settle = __webpack_require__(50);
-var buildURL = __webpack_require__(52);
-var parseHeaders = __webpack_require__(53);
-var isURLSameOrigin = __webpack_require__(54);
+var settle = __webpack_require__(51);
+var buildURL = __webpack_require__(53);
+var parseHeaders = __webpack_require__(54);
+var isURLSameOrigin = __webpack_require__(55);
 var createError = __webpack_require__(27);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(55);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(56);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -14780,7 +14780,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(56);
+      var cookies = __webpack_require__(57);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -14864,7 +14864,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(51);
+var enhanceError = __webpack_require__(52);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -15483,14 +15483,307 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 
 /***/ }),
 /* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(11);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var StrategyModal = function (_Component) {
+	_inherits(StrategyModal, _Component);
+
+	function StrategyModal() {
+		_classCallCheck(this, StrategyModal);
+
+		var _this = _possibleConstructorReturn(this, (StrategyModal.__proto__ || Object.getPrototypeOf(StrategyModal)).call(this));
+
+		_this.state = {
+			regularStrategies: [],
+			savedStrategies: [],
+			chosenSavedStrategies: [],
+			chosenRegularStrategies: [],
+			path: ""
+
+		};
+
+		_this.saveStrategies = _this.saveStrategies.bind(_this);
+		_this.closeButton = _this.closeButton.bind(_this);
+
+		return _this;
+	}
+
+	_createClass(StrategyModal, [{
+		key: 'saveStrategies',
+		value: function saveStrategies() {
+			var _this2 = this;
+
+			var instance = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
+				baseURL: ''
+
+			});
+
+			console.log(this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies));
+
+			instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies) }).then(function (response) {
+				_this2.setState({
+					chosenSavedStrategies: [],
+					chosenRegularStrategies: []
+
+				});
+				_this2.props.closeModal();
+			});
+		}
+	}, {
+		key: 'closeButton',
+		value: function closeButton() {
+			this.setState({
+				chosenSavedStrategies: [],
+				chosenRegularStrategies: []
+
+			});
+			this.props.closeModal();
+		}
+	}, {
+		key: 'pathWriter',
+		value: function pathWriter() {
+
+			//for some fkin reason, this makes the path work, do not change
+			if (window.location.pathname.includes("description")) {
+				this.setState({
+					path: ""
+				});
+			} else {
+				this.setState({
+					path: ""
+				});
+			}
+		}
+	}, {
+		key: 'getStrategies',
+		value: function getStrategies() {
+			var _this3 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + '/api/strategies/' + this.props.subject + "/" + this.props.step).then(function (response) {
+
+				var strategies = [];
+				var i = void 0;
+				var temp = void 0;
+
+				for (i = 0; i < response.data['strategies'].length; i++) {
+					temp = response.data['strategies'][i];
+					temp['checked'] = false;
+					strategies.push(temp);
+				}
+				_this3.setState({
+					regularStrategies: strategies
+				});
+			});
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + '/api/strategies/saved/' + this.props.subject).then(function (response) {
+				var strategies = [];
+				var i = void 0;
+				var temp = void 0;
+				for (i = 0; i < response.data['strategies'].length; i++) {
+					temp = response.data['strategies'][i];
+					temp['checked'] = false;
+					strategies.push(temp);
+				}
+
+				_this3.setState({
+					savedStrategies: strategies
+				});
+			});
+		}
+	}, {
+		key: 'addSavedStrategy',
+		value: function addSavedStrategy(strategy) {
+
+			var temp = this.state.chosenSavedStrategies;
+			if (temp.includes(strategy)) {
+				var i = void 0;
+				for (i = 0; i < temp.length; i++) {
+					if (temp[i] == strategy) {
+						temp.splice(i, 1);
+					}
+				}
+			} else {
+				temp.push(strategy);
+			}
+
+			this.setState({
+				chosenSavedStrategies: temp
+			});
+		}
+	}, {
+		key: 'addRegularStrategy',
+		value: function addRegularStrategy(strategy) {
+
+			var temp = this.state.chosenRegularStrategies;
+			if (temp.includes(strategy)) {
+				var i = void 0;
+				for (i = 0; i < temp.length; i++) {
+					if (temp[i] == strategy) {
+						temp.splice(i, 1);
+					}
+				}
+			} else {
+				temp.push(strategy);
+			}
+
+			this.setState({
+				chosenRegularStrategies: temp
+			});
+		}
+	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.getStrategies();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this4 = this;
+
+			var _state = this.state,
+			    regularStrategies = _state.regularStrategies,
+			    savedStrategies = _state.savedStrategies;
+
+
+			var regularStratItems = Object.keys(regularStrategies).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'checkbox', onChange: function onChange() {
+								_this4.addRegularStrategy(regularStrategies[index].title);
+							} }),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: "/prototype/strategies/description/" + regularStrategies[index].title },
+							regularStrategies[index].title
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+			var savedStratItems = Object.keys(savedStrategies).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'checkbox', onChange: function onChange() {
+								_this4.addSavedStrategy(savedStrategies[index].id);
+							} }),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: "/strategies/" + savedStrategies[index].title },
+							savedStrategies[index].title
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+
+			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+				'div',
+				null,
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'darken' }),
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					{ style: { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400 } },
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'modal-page', 'aria-disabled': 'false' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'div',
+							null,
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								{ 'class': 'sv-html-portlet sv-portlet sv-skip-spacer' },
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'button',
+									{ style: { position: "fixed", top: 10, right: 50 }, onClick: this.closeButton },
+									'X'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'h2',
+									null,
+									'V\xE4lj Strategier'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('hr', null),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Strategier'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'align-horizontal' },
+									regularStratItems
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Bokm\xE4rkta Strategier'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'align-horizontal' },
+									savedStratItems
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								{ 'class': 'sv-html-portlet sv-portlet' },
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'button',
+									{ tabindex: '1', 'class': 'btn btn-large btn-default', onClick: this.saveStrategies },
+									'Spara'
+								)
+							)
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'stopFloats' })
+					)
+				)
+			);
+		}
+	}]);
+
+	return StrategyModal;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (StrategyModal);
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(40);
+__webpack_require__(41);
 module.exports = __webpack_require__(109);
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -15499,7 +15792,7 @@ module.exports = __webpack_require__(109);
  * building robust, powerful web applications using React + Laravel.
  */
 
-__webpack_require__(41);
+__webpack_require__(42);
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -15507,14 +15800,14 @@ __webpack_require__(41);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-__webpack_require__(64);
+__webpack_require__(65);
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(42);
+window._ = __webpack_require__(43);
 window.Popper = __webpack_require__(23).default;
 
 /**
@@ -15526,7 +15819,7 @@ window.Popper = __webpack_require__(23).default;
 try {
   window.$ = window.jQuery = __webpack_require__(24);
 
-  __webpack_require__(44);
+  __webpack_require__(45);
 } catch (e) {}
 
 /**
@@ -15571,7 +15864,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -32681,10 +32974,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22), __webpack_require__(43)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22), __webpack_require__(44)(module)))
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -32712,7 +33005,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -36645,7 +36938,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36653,8 +36946,8 @@ module.exports = function(module) {
 
 var utils = __webpack_require__(2);
 var bind = __webpack_require__(25);
-var Axios = __webpack_require__(47);
-var defaults = __webpack_require__(12);
+var Axios = __webpack_require__(48);
+var defaults = __webpack_require__(13);
 
 /**
  * Create an instance of Axios
@@ -36688,14 +36981,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(29);
-axios.CancelToken = __webpack_require__(62);
+axios.CancelToken = __webpack_require__(63);
 axios.isCancel = __webpack_require__(28);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(63);
+axios.spread = __webpack_require__(64);
 
 module.exports = axios;
 
@@ -36704,7 +36997,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports) {
 
 /*!
@@ -36731,16 +37024,16 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 var utils = __webpack_require__(2);
-var InterceptorManager = __webpack_require__(57);
-var dispatchRequest = __webpack_require__(58);
+var InterceptorManager = __webpack_require__(58);
+var dispatchRequest = __webpack_require__(59);
 
 /**
  * Create a new instance of Axios
@@ -36817,7 +37110,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -37007,7 +37300,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37026,7 +37319,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37059,7 +37352,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37087,7 +37380,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37160,7 +37453,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37220,7 +37513,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37295,7 +37588,7 @@ module.exports = (
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37338,7 +37631,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37398,7 +37691,7 @@ module.exports = (
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37457,18 +37750,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(2);
-var transformData = __webpack_require__(59);
+var transformData = __webpack_require__(60);
 var isCancel = __webpack_require__(28);
-var defaults = __webpack_require__(12);
-var isAbsoluteURL = __webpack_require__(60);
-var combineURLs = __webpack_require__(61);
+var defaults = __webpack_require__(13);
+var isAbsoluteURL = __webpack_require__(61);
+var combineURLs = __webpack_require__(62);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -37550,7 +37843,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37577,7 +37870,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37598,7 +37891,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37619,7 +37912,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37683,7 +37976,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37717,20 +38010,20 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Header__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NewProject__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ProjectsList__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__SingleProject__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Header__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__LogBook__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DescriptionBlock__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__StrategyModal__ = __webpack_require__(39);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37767,11 +38060,10 @@ var App = function (_Component) {
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Header__["a" /* default */], null),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Switch */],
+            'div',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_5__ProjectsList__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/create', component: __WEBPACK_IMPORTED_MODULE_4__NewProject__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/:id', component: __WEBPACK_IMPORTED_MODULE_6__SingleProject__["a" /* default */] })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Route */], { path: '/prototype/strategies/description/:id', component: __WEBPACK_IMPORTED_MODULE_5__DescriptionBlock__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LogBook__["a" /* default */], null)
           )
         )
       );
@@ -37784,7 +38076,7 @@ var App = function (_Component) {
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null), document.getElementById('app'));
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37805,12 +38097,12 @@ if (true) {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(13);
+var _assign = __webpack_require__(14);
 var invariant = __webpack_require__(8);
 var emptyObject = __webpack_require__(30);
 var warning = __webpack_require__(9);
 var emptyFunction = __webpack_require__(10);
-var checkPropTypes = __webpack_require__(14);
+var checkPropTypes = __webpack_require__(15);
 
 // TODO: this is special because it gets imported during build.
 
@@ -39205,7 +39497,7 @@ module.exports = react;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39245,12 +39537,12 @@ if (false) {
   checkDCE();
   module.exports = require('./cjs/react-dom.production.min.js');
 } else {
-  module.exports = __webpack_require__(67);
+  module.exports = __webpack_require__(68);
 }
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39274,16 +39566,16 @@ if (true) {
 var invariant = __webpack_require__(8);
 var React = __webpack_require__(0);
 var warning = __webpack_require__(9);
-var ExecutionEnvironment = __webpack_require__(68);
-var _assign = __webpack_require__(13);
+var ExecutionEnvironment = __webpack_require__(69);
+var _assign = __webpack_require__(14);
 var emptyFunction = __webpack_require__(10);
-var checkPropTypes = __webpack_require__(14);
-var getActiveElement = __webpack_require__(69);
-var shallowEqual = __webpack_require__(70);
-var containsNode = __webpack_require__(71);
+var checkPropTypes = __webpack_require__(15);
+var getActiveElement = __webpack_require__(70);
+var shallowEqual = __webpack_require__(71);
+var containsNode = __webpack_require__(72);
 var emptyObject = __webpack_require__(30);
-var hyphenateStyleName = __webpack_require__(74);
-var camelizeStyleName = __webpack_require__(76);
+var hyphenateStyleName = __webpack_require__(75);
+var camelizeStyleName = __webpack_require__(77);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -55911,7 +56203,7 @@ module.exports = reactDom;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55950,7 +56242,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55992,7 +56284,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56063,7 +56355,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56078,7 +56370,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(72);
+var isTextNode = __webpack_require__(73);
 
 /*eslint-disable no-bitwise */
 
@@ -56106,7 +56398,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56121,7 +56413,7 @@ module.exports = containsNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(73);
+var isNode = __webpack_require__(74);
 
 /**
  * @param {*} object The object to check.
@@ -56134,7 +56426,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56162,7 +56454,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56177,7 +56469,7 @@ module.exports = isNode;
 
 
 
-var hyphenate = __webpack_require__(75);
+var hyphenate = __webpack_require__(76);
 
 var msPattern = /^ms-/;
 
@@ -56204,7 +56496,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56240,7 +56532,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56255,7 +56547,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(77);
+var camelize = __webpack_require__(78);
 
 var msPattern = /^-ms-/;
 
@@ -56283,7 +56575,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56318,7 +56610,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56328,7 +56620,7 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(18);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -56385,7 +56677,7 @@ BrowserRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56401,10 +56693,10 @@ BrowserRouter.propTypes = {
 var emptyFunction = __webpack_require__(10);
 var invariant = __webpack_require__(8);
 var warning = __webpack_require__(9);
-var assign = __webpack_require__(13);
+var assign = __webpack_require__(14);
 
 var ReactPropTypesSecret = __webpack_require__(31);
-var checkPropTypes = __webpack_require__(14);
+var checkPropTypes = __webpack_require__(15);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -56934,7 +57226,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57247,7 +57539,7 @@ var createBrowserHistory = function createBrowserHistory() {
 exports.default = createBrowserHistory;
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57257,7 +57549,7 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(18);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57313,7 +57605,7 @@ HashRouter.propTypes = {
 /* unused harmony default export */ var _unused_webpack_default_export = (HashRouter);
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57643,18 +57935,18 @@ var createHashHistory = function createHashHistory() {
 exports.default = createHashHistory;
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(85);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57664,7 +57956,7 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(19);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57721,7 +58013,7 @@ MemoryRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (MemoryRouter);
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57897,7 +58189,7 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -57978,10 +58270,10 @@ NavLink.defaultProps = {
 /* unused harmony default export */ var _unused_webpack_default_export = (NavLink);
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(88)
+var isarray = __webpack_require__(89)
 
 /**
  * Expose `pathToRegexp`.
@@ -58410,7 +58702,7 @@ function pathToRegexp (path, keys, options) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -58419,18 +58711,18 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(91);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58521,18 +58813,18 @@ Prompt.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Prompt);
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(93);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58544,7 +58836,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(94);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -58640,17 +58932,17 @@ Redirect.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Redirect);
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(95);
 /* unused harmony reexport createBrowserHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(96);
 /* unused harmony reexport createHashHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(97);
 /* unused harmony reexport createMemoryHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(12);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(6);
@@ -58667,7 +58959,7 @@ Redirect.contextTypes = {
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58675,7 +58967,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
@@ -58971,7 +59263,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createBrowserHistory);
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58979,7 +59271,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
@@ -59292,14 +59584,14 @@ var createHashHistory = function createHashHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createHashHistory);
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(21);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -59460,18 +59752,18 @@ var createMemoryHistory = function createMemoryHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createMemoryHistory);
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(99);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59654,18 +59946,18 @@ StaticRouter.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (StaticRouter);
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(101);
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59759,7 +60051,7 @@ Switch.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Switch);
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59770,18 +60062,18 @@ Switch.propTypes = {
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(104);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59789,7 +60081,7 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(37);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -59826,7 +60118,7 @@ var withRouter = function withRouter(Component) {
 /* harmony default export */ __webpack_exports__["a"] = (withRouter);
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -59904,206 +60196,710 @@ var withRouter = function withRouter(Component) {
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(11);
 
 
 
 var Header = function Header() {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    'nav',
-    { className: 'navbar navbar-expand-md navbar-light navbar-laravel' },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'container' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-        { className: 'navbar-brand', to: '/' },
-        'Tasksman'
-      )
-    )
-  );
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'head',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { httpEquiv: 'Content-Type', content: 'text/html; charset=UTF-8' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'title',
+                null,
+                'Kunskapsporten Obest\xE4md artikel - KS'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'DC.Identifier', scheme: 'URL', content: 'https://ks.kunskapsporten.se' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'DC.Language', scheme: 'RFC1766', content: 'sv' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'DC.Format', scheme: 'IMT', content: 'text/html' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'DC.Type', content: 'text' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'schema.DC', href: 'http://purl.org/DC/elements/1.0/' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', type: 'text/css',
+                href: '/2.28acbbdd12d2c6519a080001303/91.2d0ecb6414dadc4ff241a3a/1539009375570/0/sv-template-asset.css' }),
+            '>',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', type: 'text/css', media: 'all',
+                href: 'https://ksabmartin.github.io/KunskapsskolanUI/css/kunskapsskolanUI.css' }),
+            '>',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript',
+                src: '/2.28acbbdd12d2c6519a080001303/91.2d0ecb6414dadc4ff241a3a/1539009375572/HEAD/0/sv-template-asset.js' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript',
+                src: 'https://ksabmartin.github.io/KunskapsskolanUI/portal-scripts/client/offCanvas.js' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript',
+                src: '/2.28acbbdd12d2c6519a080001303/91.2d0ecb6414dadc4ff241a3a/1539009375572/HEAD/1/sv-template-asset.js' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '//f1-eu.readspeaker.com/script/8039/ReadSpeaker.js?pids=embhl' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { id: 'rsmod_Styles', type: 'text/css', rel: 'stylesheet',
+                href: '//f1-eu.readspeaker.com/script/8039/ReadSpeaker.Styles.css?v=2.5.12.5343' }),
+            '>',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { id: 'req_Core', type: 'text/javascript',
+                src: '//f1-eu.readspeaker.com/script/8039/ReadSpeaker.Core.js?v=2.5.12.5343', async: '' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { id: 'req_pub_Config', type: 'text/javascript',
+                src: '//f1-eu.readspeaker.com/script/8039/ReadSpeaker.pub.Config.js?v=2.5.12.5343', async: '' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript',
+                src: '/2.28acbbdd12d2c6519a080001303/91.2d0ecb6414dadc4ff241a3a/1539009375572/HEAD/2/sv-template-asset.js' })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { 'class': 'pageHeader' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'h1',
+                null,
+                'Engelska'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { 'class': 'buttonsField' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { 'class': 'buttonsContainer' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { 'class': 'align-horizontal' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block1.4.48bfff2a135149efc4480005636.html' },
+                                        'Block 1'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block1/steg1/introduktion.4.1b2ac75b13ce51521ce2547.html' },
+                                            '1'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block1/steg2/introduktion.4.717180d813d4a421d721.html' },
+                                            '2'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block1/steg3/introduktion.4.96110c613f76e06392145.html' },
+                                            '3'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block1/steg4/introduktion.4.96110c613f76e06392179.html' },
+                                            '4'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block1/steg5/introduktion.4.96110c613f76e0639224c.html' },
+                                            '5'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block2.4.48bfff2a135149efc4480006555.html' },
+                                        'Block 2'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block2/steg6/introduktion.4.96110c613f76e06392195.html' },
+                                            '6'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block2/steg7/introduktion.4.628467c91428701550f3d18.html' },
+                                            '7'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block2/steg8/introduktion.4.96110c613f76e063921bb.html' },
+                                            '8'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block2/steg9/introduktion.4.96110c613f76e063921d2.html' },
+                                            '9'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block2/steg10/introduktion.4.96110c613f76e0639220d.html' },
+                                            '10'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block3.4.10fd312e12d506534f780006370.html' },
+                                        'Block 3'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block3/steg11/introduktion.4.10fd312e12d506534f780006382.html' },
+                                            '11'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block3/steg12/introduktion.4.10fd312e12d506534f780006390.html' },
+                                            '12'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block3/steg13/introduktion.4.10fd312e12d506534f780006398.html' },
+                                            '13'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block3/steg14/introduktion.4.10fd312e12d506534f780006406.html' },
+                                            '14'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block3/steg15/introduktion.4.10fd312e12d506534f780006414.html' },
+                                            '15'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': 'activePage' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block4.4.10fd312e12d506534f780006421.html' },
+                                        'Block 4'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block4/steg16/introduktion.4.10fd312e12d506534f780006428.html' },
+                                            '16'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block4/steg17/introduktion.4.10fd312e12d506534f780006436.html' },
+                                            '17'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block4/steg18/introduktion.4.10fd312e12d506534f780006444.html' },
+                                            '18'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button activePage',
+                                                href: '/steg/engelska/block4/steg19/introduktion.4.10fd312e12d506534f780006452.html' },
+                                            '19'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block4/steg20/introduktion.4.10fd312e12d506534f780006460.html' },
+                                            '20'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block5.4.10fd312e12d506534f780006467.html' },
+                                        'Block 5'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block5/steg21/introduktion.4.10fd312e12d506534f780006474.html' },
+                                            '21'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block5/steg22/introduktion.4.10fd312e12d506534f780006482.html' },
+                                            '22'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block5/steg23/introduktion.4.10fd312e12d506534f780006490.html' },
+                                            '23'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block5/steg24/introduktion.4.10fd312e12d506534f780006498.html' },
+                                            '24'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block5/steg25/introduktion.4.10fd312e12d506534f780006506.html' },
+                                            '25'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block6.4.10fd312e12d506534f780006513.html' },
+                                        'Block 6'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block6/steg26/introduktion.4.10fd312e12d506534f780006520.html' },
+                                            '26'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block6/steg27/introduktion.4.10fd312e12d506534f780006528.html' },
+                                            '27'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block6/steg28/introduktion.4.10fd312e12d506534f780006536.html' },
+                                            '28'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block6/steg29/introduktion.4.10fd312e12d506534f780006544.html' },
+                                            '29'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block6/steg30/introduktion.4.10fd312e12d506534f780006552.html' },
+                                            '30'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block7.4.10fd312e12d506534f780006559.html' },
+                                        'Block 7'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block7/steg31/introduktion.4.10fd312e12d506534f780006566.html' },
+                                            '31'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block7/steg32/introduktion.4.10fd312e12d506534f780006574.html' },
+                                            '32'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block7/steg33/introduktion.4.10fd312e12d506534f780006582.html' },
+                                            '33'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block7/steg34/introduktion.4.10fd312e12d506534f780006590.html' },
+                                            '34'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block7/steg35/introduktion.4.10fd312e12d506534f780006598.html' },
+                                            '35'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block8.4.10fd312e12d506534f780006605.html' },
+                                        'Block 8'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block8/steg36/introduktion.4.4b945c3c13d7548c3452355.html' },
+                                            '36'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block8/steg37/introduktion.4.4ec538b21401583196c3858.html' },
+                                            '37'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block8/steg38/introduktion.4.10fd312e12d506534f780006620.html' },
+                                            '38'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block8/steg39/introduktion.4.10fd312e12d506534f780006628.html' },
+                                            '39'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block8/steg40/introduktion.4.10fd312e12d506534f780006644.html' },
+                                            '40'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { 'class': 'horizontalItem top' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { 'class': 'align-vertical' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { 'class': '' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { href: '/steg/engelska/block9.4.10fd312e12d506534f780006657.html' },
+                                        'Block 9'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { 'class': 'btn-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { 'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block9/steg41/introduktion.4.10fd312e12d506534f780006664.html' },
+                                            '41'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block9/steg42/introduktion.4.10fd312e12d506534f780006672.html' },
+                                            '42'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block9/steg43/introduktion.4.10fd312e12d506534f780006680.html' },
+                                            '43'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small step-button',
+                                                href: '/steg/engelska/block9/steg44/introduktion.4.10fd312e12d506534f780006688.html' },
+                                            '44'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            {
+                                                'class': 'btn btn-small projectstep-button',
+                                                href: '/steg/engelska/block9/steg45/introduktion.4.10fd312e12d506534f780006696.html' },
+                                            '45'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null)
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { 'class': 'horizontalMenu' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'ul',
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                { 'class': '' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', null),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    {
+                                        href: '/steg/engelska/block4/steg19/introduktion.4.10fd312e12d506534f780006452.html' },
+                                    'Introduktion'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                { 'class': '' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: '/steg/engelska/block4/steg19/ordbank.4.6d285f9512e4dc415c7800036572.html' },
+                                    'Ordbank'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                { 'class': '' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: '/steg/engelska/block4/steg19/arbetsgang.4.1ffcc11915c778fda0a92075.html' },
+                                    'Arbetsg\xE5ng'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                { 'class': '' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    {
+                                        href: '/steg/engelska/block4/steg19/bedomningsmatrisforsteget.4.1ffcc11915c778fda0a920ab.html' },
+                                    'Bed\xF6mningsmatris f\xF6r steget'
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    );
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Header);
-
-/***/ }),
-/* 106 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var NewProject = function (_Component) {
-  _inherits(NewProject, _Component);
-
-  function NewProject(props) {
-    _classCallCheck(this, NewProject);
-
-    var _this = _possibleConstructorReturn(this, (NewProject.__proto__ || Object.getPrototypeOf(NewProject)).call(this, props));
-
-    _this.state = {
-      name: '',
-      description: '',
-      errors: []
-    };
-
-    _this.handleFieldChange = _this.handleFieldChange.bind(_this);
-    _this.handleCreateNewProject = _this.handleCreateNewProject.bind(_this);
-    _this.hasErrorFor = _this.hasErrorFor.bind(_this);
-    _this.renderErrorFor = _this.renderErrorFor.bind(_this);
-    return _this;
-  }
-
-  _createClass(NewProject, [{
-    key: 'handleFieldChange',
-    value: function handleFieldChange(event) {
-      this.setState(_defineProperty({}, event.target.name, event.target.value));
-    }
-  }, {
-    key: 'handleCreateNewProject',
-    value: function handleCreateNewProject(event) {
-      var _this2 = this;
-
-      event.preventDefault();
-
-      var history = this.props.history;
-
-
-      var project = {
-        name: this.state.name,
-        description: this.state.description
-      };
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/projects', project).then(function (response) {
-        // redirect to the homepage
-        history.push('/');
-      }).catch(function (error) {
-        _this2.setState({
-          errors: error.response.data.errors
-        });
-      });
-    }
-  }, {
-    key: 'hasErrorFor',
-    value: function hasErrorFor(field) {
-      return !!this.state.errors[field];
-    }
-  }, {
-    key: 'renderErrorFor',
-    value: function renderErrorFor(field) {
-      if (this.hasErrorFor(field)) {
-        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'span',
-          { className: 'invalid-feedback' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'strong',
-            null,
-            this.state.errors[field][0]
-          )
-        );
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-6' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'Create new project'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'form',
-                  { onSubmit: this.handleCreateNewProject },
-                  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      'label',
-                      { htmlFor: 'name' },
-                      'Project name'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', {
-                      id: 'name',
-                      type: 'text',
-                      className: 'form-control ' + (this.hasErrorFor('name') ? 'is-invalid' : ''),
-                      name: 'name',
-                      value: this.state.name,
-                      onChange: this.handleFieldChange
-                    }),
-                    this.renderErrorFor('name')
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      'label',
-                      { htmlFor: 'description' },
-                      'Project description'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('textarea', {
-                      id: 'description',
-                      className: 'form-control ' + (this.hasErrorFor('description') ? 'is-invalid' : ''),
-                      name: 'description',
-                      rows: '10',
-                      value: this.state.description,
-                      onChange: this.handleFieldChange
-                    }),
-                    this.renderErrorFor('description')
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'button',
-                    { className: 'btn btn-primary' },
-                    'Create'
-                  )
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return NewProject;
-}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
-
-/* harmony default export */ __webpack_exports__["a"] = (NewProject);
 
 /***/ }),
 /* 107 */
@@ -60114,7 +60910,7 @@ var NewProject = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__StrategyModal__ = __webpack_require__(39);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60127,94 +60923,801 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var ProjectsList = function (_Component) {
-  _inherits(ProjectsList, _Component);
+var LogBook = function (_Component) {
+	_inherits(LogBook, _Component);
 
-  function ProjectsList() {
-    _classCallCheck(this, ProjectsList);
+	function LogBook(props) {
+		_classCallCheck(this, LogBook);
 
-    var _this = _possibleConstructorReturn(this, (ProjectsList.__proto__ || Object.getPrototypeOf(ProjectsList)).call(this));
+		var _this = _possibleConstructorReturn(this, (LogBook.__proto__ || Object.getPrototypeOf(LogBook)).call(this, props));
 
-    _this.state = {
-      projects: []
-    };
-    return _this;
-  }
+		_this.state = {
+			strategies: [],
+			showModal: false,
+			step: 19,
+			currentSubject: "",
+			path: ""
 
-  _createClass(ProjectsList, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
+		};
 
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
-        _this2.setState({
-          projects: response.data
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var projects = this.state.projects;
+		_this.showModal = _this.showModal.bind(_this);
+		_this.closeModal = _this.closeModal.bind(_this);
+		_this.pathWriter = _this.pathWriter.bind(_this);
+
+		return _this;
+	}
+
+	_createClass(LogBook, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.pathWriter();
+			this.getCurrentStrategies();
+		}
+	}, {
+		key: 'getCurrentStrategies',
+		value: function getCurrentStrategies() {
+			var _this2 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/1').then(function (response) {
+
+				_this2.setState({
+					strategies: response.data['strategies']
+				});
+			});
+		}
+	}, {
+		key: 'showModal',
+		value: function showModal(subject) {
+
+			this.setState({
+				showModal: true,
+				currentSubject: subject
+			});
+		}
+	}, {
+		key: 'closeModal',
+		value: function closeModal() {
+			this.getCurrentStrategies();
+			this.setState({
+				showModal: false
+			});
+		}
+	}, {
+		key: 'pathWriter',
+		value: function pathWriter() {
+
+			//for some fkin reason, this makes the path work, do not change
+			if (window.location.pathname.includes("description")) {
+				this.setState({
+					path: "/prototype/strategies/description/"
+				});
+			} else {
+				this.setState({
+					path: "/prototype/strategies/description/"
+				});
+			}
+		}
+	}, {
+		key: 'hasErrorFor',
+		value: function hasErrorFor(field) {
+			return !!this.state.errors[field];
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this3 = this;
+
+			var _state = this.state,
+			    strategies = _state.strategies,
+			    path = _state.path;
 
 
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'All projects'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                  { className: 'btn btn-primary btn-sm mb-3', to: '/create' },
-                  'Create new project'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  projects.map(function (project) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                      {
-                        className: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center',
-                        to: '/' + project.id,
-                        key: project.id
-                      },
-                      project.name,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'span',
-                        { className: 'badge badge-primary badge-pill' },
-                        project.tasks_count
-                      )
-                    );
-                  })
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+			var strategyItems = Object.keys(strategies).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: path + strategies[index].title },
+							strategies[index].title
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
 
-  return ProjectsList;
+			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+				'div',
+				null,
+				this.state.showModal ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__StrategyModal__["a" /* default */], { closeModal: this.closeModal, subject: this.state.currentSubject, step: this.state.step }) : null,
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					{ style: { position: 'absolute', right: 100, top: 200, maxWidth: 500 } },
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'learningGoalTasks' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'div',
+							{ 'class': 'taskContainer' },
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								null,
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'ked-weekplanner' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										null,
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': 'ked_boxed weekPlanner currentWeek' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'weekSelect' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'div',
+													{ 'class': 'horizontalItem' },
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'p',
+														null,
+														'Vecka 46'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'div',
+													{ 'class': 'horizontalItem' },
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'btn-group' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'button',
+															{ 'class': 'btn' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-angle-left', 'aria-hidden': 'true' })
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'button',
+															{ 'class': 'btn' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-angle-right', 'aria-hidden': 'true' })
+														)
+													)
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'h4',
+												null,
+												'Loggbok'
+											),
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('hr', null),
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'wp-course-eng openClose open' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'div',
+													{ 'class': 'openHeader' },
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'h5',
+														null,
+														'Engelska'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'div',
+													{ 'class': 'openContent' },
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'19'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'align-horizontal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	{ 'class': 'learningGoalText horizontalItem top' },
+																	'Strategier'
+																),
+																strategyItems
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal', onClick: function onClick() {
+																		_this3.showModal("engelska");
+																	} },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' L\xE4gg till strategi'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'19'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'Skriva en l\xE4slogg'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'a',
+																	{ 'class': 'trash', href: '#',
+																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
+																		'class': 'fa fa-trash' })
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTasks' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'taskContainer' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/skrivaenlaslogg/obestamdartikel.4.4476f2bf13313820a7580005391.html' },
+																				'Obest\xE4md artikel'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																),
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/skrivaenlaslogg/attlasaochskriva.4.4476f2bf13313820a7580004223.html' },
+																				'Att l\xE4sa och skriva'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' Eget arbetsm\xE5l'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+													),
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'19'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'\xC5terber\xE4tta det du har l\xE4st och delta i samtal om litteratur med kompisar'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'a',
+																	{ 'class': 'trash', href: '#',
+																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
+																		'class': 'fa fa-trash' })
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTasks' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'taskContainer' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/aterberattadetduharlastochdeltaisamtalomlitteraturmedkompisar/datidregelbundnaochoregelbundnaverb.4.6d285f9512e4dc415c780005799.html' },
+																				'D\xE5tid - regelbundna och oregelbundna verb'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' Eget arbetsm\xE5l'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+													)
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'wp-course-mat openClose open' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'div',
+													{ 'class': 'openHeader' },
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'h5',
+														null,
+														'Matematik'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'div',
+													{ 'class': 'openContent' },
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'18'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'L\xE4sa av och tolka enkla tabeller och diagram samt sortera data i tabeller'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'a',
+																	{ 'class': 'trash', href: '#',
+																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
+																		'class': 'fa fa-trash' })
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTasks' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'taskContainer' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/lasaavochtolkaenklatabellerochdiagramsamtsorteradataitabeller/tabeller.4.6c943aa81553d0da4ecb08e8.html' },
+																				'Tabeller'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' Eget arbetsm\xE5l'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+													),
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'18'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'Rita ett koordinatsystem, gradera koordinataxlarna och placera in punkter med hj\xE4lp av dess koordinater'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'a',
+																	{ 'class': 'trash', href: '#',
+																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
+																		'class': 'fa fa-trash' })
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTasks' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'taskContainer' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/ritaettkoordinatsystemgraderakoordinataxlarnaochplacerainpunktermedhjalpavdesskoordinater/koordinatsystem.4.5ef46051556de311029a0f3.html' },
+																				'Koordinatsystem'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' Eget arbetsm\xE5l'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+													),
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'18'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'St\xE4lla upp en v\xE4rdetabell f\xF6r en funktion samt rita en graf ur tabellen'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'a',
+																	{ 'class': 'trash', href: '#',
+																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
+																		'class': 'fa fa-trash' })
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTasks' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'taskContainer' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/stallauppenvardetabellforenfunktionsamtritaengrafurtabellen/funktionsladorochvardetabeller.4.7fd424c91540ee0e8bd9c460.html' },
+																				'Funktionsl\xE5dor och v\xE4rdetabeller'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' Eget arbetsm\xE5l'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+													),
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'17'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'Ber\xE4kna omkrets hos vissa geometriska objekt'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'a',
+																	{ 'class': 'trash', href: '#',
+																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
+																		'class': 'fa fa-trash' })
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTasks' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'taskContainer' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	null,
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'align-horizontal' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																				'a',
+																				{
+																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg17/uppgifter/beraknaomkretshosvissageometriskaobjekt/omkretsavmanghorningar.4.5ef46051556de3110296f35.html' },
+																				'Omkrets av m\xE5ngh\xF6rningar'
+																			)
+																		),
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'div',
+																			{ 'class': 'horizontalItem top taskEdit' },
+																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																		)
+																	)
+																)
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'btn addOwnGoal' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+																' Eget arbetsm\xE5l'
+															)
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+													),
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'stepIndicator' },
+															'17'
+														),
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'align-horizontal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalText horizontalItem top' },
+																'Ber\xE4kna area hos vissa geometriska objekt'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'horizontalItem' },
+																'\xA0',
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#' }),
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	{ 'class': 'align-horizontal' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'horizontalItem top' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
+																	),
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'horizontalItem top' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																			'a',
+																			{
+																				href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg17/uppgifter/beraknaareahosvissageometriskaobjekt/parallellogrammer1.4.5ef46051556de3110296dd2.html' },
+																			'Parallellogrammer 1'
+																		)
+																	),
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'horizontalItem top taskEdit' },
+																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
+																	)
+																)
+															)
+														)
+													),
+													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+														'div',
+														{ 'class': 'learningGoalTools' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'btn addOwnGoal' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
+															' Eget arbetsm\xE5l'
+														)
+													)
+												)
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('hr', null)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return LogBook;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (ProjectsList);
+/* harmony default export */ __webpack_exports__["a"] = (LogBook);
 
 /***/ }),
 /* 108 */
@@ -60225,6 +61728,7 @@ var ProjectsList = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(11);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60236,232 +61740,64 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var SingleProject = function (_Component) {
-  _inherits(SingleProject, _Component);
 
-  function SingleProject(props) {
-    _classCallCheck(this, SingleProject);
+var DescriptionBlock = function (_Component) {
+	_inherits(DescriptionBlock, _Component);
 
-    var _this = _possibleConstructorReturn(this, (SingleProject.__proto__ || Object.getPrototypeOf(SingleProject)).call(this, props));
+	function DescriptionBlock() {
+		_classCallCheck(this, DescriptionBlock);
 
-    _this.state = {
-      project: {},
-      tasks: [],
-      title: '',
-      errors: []
-    };
+		var _this = _possibleConstructorReturn(this, (DescriptionBlock.__proto__ || Object.getPrototypeOf(DescriptionBlock)).call(this));
 
-    _this.handleFieldChange = _this.handleFieldChange.bind(_this);
-    _this.handleAddNewTask = _this.handleAddNewTask.bind(_this);
-    _this.hasErrorFor = _this.hasErrorFor.bind(_this);
-    _this.renderErrorFor = _this.renderErrorFor.bind(_this);
-    _this.handleMarkProjectAsCompleted = _this.handleMarkProjectAsCompleted.bind(_this);
-    return _this;
-  }
+		_this.state = {
+			text: ""
 
-  _createClass(SingleProject, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
+		};
+		return _this;
+	}
 
-      var projectId = this.props.match.params.id;
+	_createClass(DescriptionBlock, [{
+		key: 'getText',
+		value: function getText() {
+			var _this2 = this;
 
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects/' + projectId).then(function (response) {
-        _this2.setState({
-          project: response.data,
-          tasks: response.data.tasks
-        });
-      });
-    }
-  }, {
-    key: 'handleFieldChange',
-    value: function handleFieldChange(event) {
-      this.setState({
-        title: event.target.value
-      });
-    }
-  }, {
-    key: 'handleAddNewTask',
-    value: function handleAddNewTask(event) {
-      var _this3 = this;
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/description/' + this.props.match.params.id).then(function (response) {
+				console.log(response);
+				_this2.setState({
+					title: response.data['text'][0]['title'],
+					text: response.data['text'][0]['description']
+				});
+			});
+		}
+	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
 
-      event.preventDefault();
-
-      var task = {
-        title: this.state.title,
-        project_id: this.state.project.id
-      };
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/tasks', task).then(function (response) {
-        // clear form input
-        _this3.setState({
-          title: ''
-        });
-
-        // add new task to list of tasks
-        _this3.setState(function (prevState) {
-          return {
-            tasks: prevState.tasks.concat(response.data)
-          };
-        });
-      }).catch(function (error) {
-        _this3.setState({
-          errors: error.response.data.errors
-        });
-      });
-    }
-  }, {
-    key: 'hasErrorFor',
-    value: function hasErrorFor(field) {
-      return !!this.state.errors[field];
-    }
-  }, {
-    key: 'renderErrorFor',
-    value: function renderErrorFor(field) {
-      if (this.hasErrorFor(field)) {
-        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'span',
-          { className: 'invalid-feedback' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'strong',
-            null,
-            this.state.errors[field][0]
-          )
-        );
-      }
-    }
-  }, {
-    key: 'handleMarkProjectAsCompleted',
-    value: function handleMarkProjectAsCompleted() {
-      var history = this.props.history;
+			this.getText();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var text = this.state.text;
 
 
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put('/api/projects/' + this.state.project.id).then(function (response) {
-        return history.push('/');
-      });
-    }
-  }, {
-    key: 'handleMarkTaskAsCompleted',
-    value: function handleMarkTaskAsCompleted(taskId) {
-      var _this4 = this;
+			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+				'div',
+				{ style: { width: "40%" } },
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'h1',
+					null,
+					this.state.title
+				),
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('td', { dangerouslySetInnerHTML: { __html: text } })
+			);
+		}
+	}]);
 
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put('/api/tasks/' + taskId).then(function (response) {
-        _this4.setState(function (prevState) {
-          return {
-            tasks: prevState.tasks.filter(function (task) {
-              return task.id !== taskId;
-            })
-          };
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this5 = this;
-
-      var _state = this.state,
-          project = _state.project,
-          tasks = _state.tasks;
-
-
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                project.name
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'p',
-                  null,
-                  project.description
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'button',
-                  {
-                    className: 'btn btn-primary btn-sm',
-                    onClick: this.handleMarkProjectAsCompleted
-                  },
-                  'Mark as completed'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('hr', null),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'form',
-                  { onSubmit: this.handleAddNewTask },
-                  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    'div',
-                    { className: 'input-group' },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', {
-                      type: 'text',
-                      name: 'title',
-                      className: 'form-control ' + (this.hasErrorFor('title') ? 'is-invalid' : ''),
-                      placeholder: 'Task title',
-                      value: this.state.title,
-                      onChange: this.handleFieldChange
-                    }),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      'div',
-                      { className: 'input-group-append' },
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'button',
-                        { className: 'btn btn-primary' },
-                        ' Add '
-                      ),
-                      ' '
-                    ),
-                    this.renderErrorFor('title'),
-                    ' '
-                  ),
-                  ' '
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group mt-3' },
-                  tasks.map(function (task) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      'li',
-                      {
-                        className: 'list-group-item d-flex justify-content-between align-items-center',
-                        key: task.id
-                      },
-                      task.title,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'button',
-                        {
-                          className: 'btn btn-primary btn-sm',
-                          onClick: _this5.handleMarkTaskAsCompleted.bind(_this5, task.id)
-                        },
-                        'Mark as completed'
-                      )
-                    );
-                  })
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return SingleProject;
+	return DescriptionBlock;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (SingleProject);
+/* harmony default export */ __webpack_exports__["a"] = (DescriptionBlock);
 
 /***/ }),
 /* 109 */

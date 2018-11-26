@@ -11,4 +11,6 @@
 |
 */
 
-Route::view('/{path?}', 'app');
+Route::view('/prototype', 'app');
+Route::view('/prototype/strategies/description/{id}', 'app');
+

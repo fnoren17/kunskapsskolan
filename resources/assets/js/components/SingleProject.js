@@ -26,7 +26,7 @@ class SingleProject extends Component {
 
     axios.get(`/api/projects/${projectId}`).then(response => {
       this.setState({
-        project: response.data,
+        project: response.datf,
         tasks: response.data.tasks
       })
     })
