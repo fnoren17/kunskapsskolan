@@ -71,4 +71,22 @@ class StrategyController extends Controller
 
 	}
 
+	function getBookmarkedStrategies(Request $request, $user_id){
+		$result = DB::select("SELECT title FROM ks_strategies JOIN ks_user_bookmarks ON ks_strategies.id = ks_user_bookmarks.strategy_id WHERE user_id = ?", [$user_id]);
+		return json_encode(array('strategies'=>$result));
+	}
+
+	function storeBookmarkedStrategy(Request $request, $title, $user_id){
+		$user =1;
+
+
+		DB::insert("INSERT INTO ks_user_bookmarks (user_id, strategy_id) VALUES
+		(?, (SELECT id FROM ks_strategies WHERE title = ?));", [$user, $title]);
+		return json_encode('success');
+	}
+
+	function getUserHistoricalStrategies(Request $request, $user_id){
+		$result = DB::select("SELECT DISTINCT(title) FROM ks_ratings JOIN ks_strategies ON ks_ratings.strategy_id = ks_strategies.id WHERE user_id = ?", [$user_id]);
+		return json_encode(array('strategies'=>$result));
+	}
 }
