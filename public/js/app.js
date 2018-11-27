@@ -60964,7 +60964,7 @@ var LogBook = function (_Component) {
 		value: function getCurrentStrategies() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/1').then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/engelska').then(function (response) {
 
 				_this2.setState({
 					strategies: response.data['strategies']
