@@ -24,19 +24,7 @@ class StrategyController extends Controller{
 	// The algorithm for suggesting new strategies
 	function regularStrategies(Request $request, $subject, $step){
 
-		//$strats = array(array('title' => "Att ge kamratrespons", "id" => 1),array("title" => "Belöningar", "id" => 2));
-
-		$result = DB::select("SELECT 
-							     DISTINCT(title)
-							  FROM (
-							     SELECT 
-							        *
-							     FROM
-							        ks_strategies_tags
-							     WHERE
-							        tag IN (
-									SELECT 
-										tag
+		$strats = DB::select("SELECT DISTINCT(title) FROM (SELECT * FROM ks_strategies_tags WHERE tag IN (SELECT tag
 									FROM
 										ks_subjects_tags
 									WHERE
@@ -49,13 +37,10 @@ class StrategyController extends Controller{
 											block = ? AND subject = ?
 										)
 									)
-								GROUP BY strategy_id
 								) AS distinct_ids
 							    JOIN(
-							    SELECT
-							       *
-								FROM
-								   ks_strategies
+							    SELECT *
+								FROM ks_strategies
 								) AS distinct_strategies
 							ORDER BY title ASC
 							LIMIT 0, 5", [$step,$subject]);
