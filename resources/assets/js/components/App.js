@@ -12,7 +12,10 @@ class App extends Component {
 
     render () {
     return (
-      <BrowserRouter>
+        <div>
+
+
+        <BrowserRouter>
 
 
         <div>
@@ -20,12 +23,15 @@ class App extends Component {
         <div>
             <Route path="/prototype/strategies/description/:id" component={DescriptionBlock}/>
 
+
+
             <LogBook/>
         </div>
         </div>
 
 
       </BrowserRouter>
+        </div>
     )
   }
 }
