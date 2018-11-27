@@ -39,7 +39,7 @@ const Header = () => (
 
         </head>
         <div class="pageHeader">
-            <h1>Engelska</h1>
+            <h1>Prototyp</h1>
 
             <div class="buttonsField">
 

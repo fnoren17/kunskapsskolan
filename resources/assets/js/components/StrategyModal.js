@@ -27,7 +27,6 @@ class StrategyModal extends Component {
 
 		});
 
-		console.log(this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies));
 
 		instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, {'strategies':this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies)}).then(response=>{
 			this.setState({

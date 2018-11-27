@@ -15536,8 +15536,6 @@ var StrategyModal = function (_Component) {
 
 			});
 
-			console.log(this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies));
-
 			instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies) }).then(function (response) {
 				_this2.setState({
 					chosenSavedStrategies: [],
@@ -38053,17 +38051,21 @@ var App = function (_Component) {
     key: 'render',
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
+        'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
+          __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Header__["a" /* default */], null),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Route */], { path: '/prototype/strategies/description/:id', component: __WEBPACK_IMPORTED_MODULE_5__DescriptionBlock__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LogBook__["a" /* default */], null)
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Header__["a" /* default */], null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Route */], { path: '/prototype/strategies/description/:id', component: __WEBPACK_IMPORTED_MODULE_5__DescriptionBlock__["a" /* default */] }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LogBook__["a" /* default */], null)
+            )
           )
         )
       );
@@ -60255,7 +60257,7 @@ var Header = function Header() {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h1',
                 null,
-                'Engelska'
+                'Prototyp'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -60911,6 +60913,7 @@ var Header = function Header() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__StrategyModal__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__EvaluationModal__ = __webpack_require__(114);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60918,6 +60921,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -60934,6 +60938,7 @@ var LogBook = function (_Component) {
 		_this.state = {
 			strategies: [],
 			showModal: false,
+			showEval: false,
 			step: 19,
 			currentSubject: "",
 			path: ""
@@ -60942,6 +60947,7 @@ var LogBook = function (_Component) {
 
 		_this.showModal = _this.showModal.bind(_this);
 		_this.closeModal = _this.closeModal.bind(_this);
+		_this.closeEval = _this.closeEval.bind(_this);
 		_this.pathWriter = _this.pathWriter.bind(_this);
 
 		return _this;
@@ -60980,6 +60986,21 @@ var LogBook = function (_Component) {
 			this.getCurrentStrategies();
 			this.setState({
 				showModal: false
+			});
+		}
+	}, {
+		key: 'showEval',
+		value: function showEval() {
+			this.setState({
+				showEval: true
+			});
+		}
+	}, {
+		key: 'closeEval',
+		value: function closeEval() {
+			this.getCurrentStrategies();
+			this.setState({
+				showEval: false
 			});
 		}
 	}, {
@@ -61034,9 +61055,10 @@ var LogBook = function (_Component) {
 				'div',
 				null,
 				this.state.showModal ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__StrategyModal__["a" /* default */], { closeModal: this.closeModal, subject: this.state.currentSubject, step: this.state.step }) : null,
+				this.state.showEval ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__EvaluationModal__["a" /* default */], { closeEval: this.closeEval, step: this.state.step }) : null,
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'div',
-					{ style: { position: 'absolute', right: 100, top: 200, maxWidth: 500 } },
+					{ style: { position: 'absolute', right: 100, top: 200, maxWidth: 375 } },
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 						'div',
 						{ 'class': 'learningGoalTasks' },
@@ -61700,6 +61722,18 @@ var LogBook = function (_Component) {
 														)
 													)
 												)
+											),
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn addOwnGoal', onClick: function onClick() {
+														_this3.showEval();
+													} },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'i',
+													null,
+													'+ '
+												),
+												'Utv\xE4rdera Strategier'
 											)
 										),
 										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -61804,6 +61838,219 @@ var DescriptionBlock = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(11);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var EvaluationModal = function (_Component) {
+	_inherits(EvaluationModal, _Component);
+
+	function EvaluationModal() {
+		_classCallCheck(this, EvaluationModal);
+
+		var _this = _possibleConstructorReturn(this, (EvaluationModal.__proto__ || Object.getPrototypeOf(EvaluationModal)).call(this));
+
+		_this.state = {
+			strategies: []
+		};
+
+		_this.saveStrategies = _this.saveStrategies.bind(_this);
+		_this.closeButton = _this.closeButton.bind(_this);
+		_this.setRating = _this.setRating.bind(_this);
+
+		return _this;
+	}
+
+	_createClass(EvaluationModal, [{
+		key: 'saveStrategies',
+		value: function saveStrategies() {
+			var _this2 = this;
+
+			var instance = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
+				baseURL: ''
+
+			});
+
+			instance.post('/api/strategies/evaluate', { 'strategies': this.state.strategies }).then(function (response) {
+				_this2.setState({
+					strategies: []
+				});
+				_this2.props.closeEval();
+			});
+		}
+	}, {
+		key: 'closeButton',
+		value: function closeButton() {
+			this.props.closeEval();
+		}
+	}, {
+		key: 'setRating',
+		value: function setRating(index, rating) {
+			var ratedStrategies = this.state.strategies;
+			strategies[index]['rating'] = rating;
+
+			this.setState({
+				strategies: ratedStrategies
+			});
+		}
+	}, {
+		key: 'getStrategies',
+		value: function getStrategies() {
+			var _this3 = this;
+
+			var instance = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
+				baseURL: ''
+
+			});
+
+			instance.get('/api/strategies/all').then(function (response) {
+
+				var $allStrategies = response.data['strategies'];
+				var i = 0;
+				for (i = 0; i < $allStrategies.length; i++) {
+					$allStrategies['rating'] = null;
+				}
+
+				_this3.setState({
+					strategies: $allStrategies
+				});
+			});
+		}
+	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.getStrategies();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this4 = this;
+
+			var strategies = this.state.strategies;
+
+
+			var stratItems = Object.keys(strategies).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: "/prototype/strategies/description/" + strategies[index].title },
+							strategies[index].title
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: _this4.setRating(index, '-1'), style: strategies[index][rating] == '-1' ? { backgroundColor: 'green' } : {} },
+							'\uD83D\uDC4E'
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: _this4.setRating(index, '1'), style: strategies[index][rating] == '1' ? { backgroundColor: 'green' } : {} },
+							'\uD83D\uDC4D'
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: _this4.setRating(index, '0'), style: strategies[index][rating] == '0' ? { backgroundColor: 'green' } : {} },
+							'Har inte anv\xE4nt'
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+
+			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+				'div',
+				null,
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'darken' }),
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					{ style: { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400 } },
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'modal-page', 'aria-disabled': 'false' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'div',
+							null,
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								{ 'class': 'sv-html-portlet sv-portlet sv-skip-spacer' },
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'button',
+									{ style: { position: "fixed", top: 10, right: 50 }, onClick: this.closeButton },
+									'X'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'h2',
+									null,
+									'V\xE4lj Strategier'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('hr', null),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Strategier'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'align-horizontal' },
+									stratItems
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Bokm\xE4rkta Strategier'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'align-horizontal' })
+							),
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								{ 'class': 'sv-html-portlet sv-portlet' },
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'button',
+									{ tabindex: '1', 'class': 'btn btn-large btn-default', onClick: this.saveStrategies },
+									'Spara'
+								)
+							)
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'stopFloats' })
+					)
+				)
+			);
+		}
+	}]);
+
+	return EvaluationModal;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (EvaluationModal);
 
 /***/ })
 /******/ ]);

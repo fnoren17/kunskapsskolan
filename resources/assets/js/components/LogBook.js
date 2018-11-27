@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import StrategyModal from './StrategyModal'
+import EvaluationModal from './EvaluationModal'
 
 
 class LogBook extends Component {
@@ -9,6 +10,7 @@ class LogBook extends Component {
 		this.state = {
 			strategies:[],
 			showModal: false,
+			showEval: false,
 			step: 19,
 			currentSubject: "",
 			path: ""
@@ -18,6 +20,7 @@ class LogBook extends Component {
 
 		this.showModal = this.showModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
+		this.closeEval = this.closeEval.bind(this);
 		this.pathWriter = this.pathWriter.bind(this)
 
 	}
@@ -50,6 +53,22 @@ class LogBook extends Component {
 			showModal:false
 		})
 	}
+
+	showEval(){
+		this.setState({
+			showEval: true,
+		})
+	}
+
+	closeEval() {
+		this.getCurrentStrategies();
+		this.setState({
+			showEval:false
+		})
+
+	}
+
+
 
 	pathWriter(){
 
@@ -91,9 +110,10 @@ class LogBook extends Component {
 
 			<div>
 				{this.state.showModal ? <StrategyModal closeModal={this.closeModal} subject={this.state.currentSubject} step={this.state.step}/> : null}
+				{this.state.showEval ? <EvaluationModal closeEval={this.closeEval} step={this.state.step}/> : null}
 
 
-				<div style={{position: 'absolute', right: 100, top: 200, maxWidth: 500}}>
+				<div style={{position: 'absolute', right: 100, top: 200, maxWidth: 375}}>
 
 			<div class="learningGoalTasks">
 				<div class="taskContainer">
@@ -362,6 +382,8 @@ class LogBook extends Component {
 										</div>
 
 									</div>
+									<div class="btn addOwnGoal" onClick={() => {this.showEval()}}><i>+ </i>Utvärdera Strategier
+									</div>
 
 								</div>
 
@@ -370,6 +392,7 @@ class LogBook extends Component {
 					</div>
 
 					<hr/>
+
 
 				</div>
 			</div>
