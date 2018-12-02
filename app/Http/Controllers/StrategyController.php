@@ -78,9 +78,6 @@ class StrategyController extends Controller{
 
 
 
-
-
-
 	}
 
 	function getBookmarkedStrategies(Request $request, $user_id){
