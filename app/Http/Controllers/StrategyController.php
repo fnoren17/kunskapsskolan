@@ -10,16 +10,28 @@ class StrategyController extends Controller{
 	// Get strategies currently in logbook
 	function currentStrategies(Request $request, $subject) {
 
-			$user = 1;
-			//$subject = "Engelska";
+		$user = 1;
+		//$subject = "Engelska";
 
-			$result = DB::select("SELECT id, title, block FROM (
-			SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
-			) AS strats JOIN ks_subjects ON strats.subject_id = ks_subjects.id
-			WHERE subject = ? ", [$user, $subject]);
+		$result = DB::select("SELECT id, title, block FROM (
+		SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
+		) AS strats JOIN ks_subjects ON strats.subject_id = ks_subjects.id
+		WHERE subject = ? ", [$user, $subject]);
 
-			return json_encode(array('strategies'=>$result));
-		}
+		return json_encode(array('strategies'=>$result));
+	}
+
+	function allStrategies(Request $request) {
+		$user = 1;
+
+		$result = DB::select("SELECT id, title, block, FROM (
+		SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
+		) AS strats JOIN ks_subjects ON strats.subject_id = ks_subjects.id", [$user]);
+
+		return json_encode(array('strategies'=>$result));
+
+
+	}
 
 	// The algorithm for suggesting new strategies
 	function regularStrategies(Request $request, $subject, $step){
@@ -48,15 +60,30 @@ class StrategyController extends Controller{
 		return json_encode(array('strategies'=>$strats));
 	}
 
-	/*
-	function bookmarkedStrategies(Request $request, $subject){
-		$strats = array(array('title' => $subject."1 Step", "id" => 3),array("title" => $subject."2 Step", "id" => 4));
-		return json_encode(array('strategies'=>$strats));
+
+	function evaluateStrategies(Request $request) {
+		$data = $request->json()->all();
+		$strategies = $data['strategies'];
+
+		foreach($strategies as $strategy) {
+			$rating = $strategy['rating'];
+			$strategy_id = $strategy['id'];
+
+
+			#spara ner strategier i ks_ratings
+			#ta bort strategierna ur aktuella strategier
+		}
+
+
+
+
+
+
 	}
-	*/
 
 	function getBookmarkedStrategies(Request $request, $user_id){
 		$result = DB::select("SELECT title FROM ks_strategies JOIN ks_user_bookmarks ON ks_strategies.id = ks_user_bookmarks.strategy_id WHERE user_id = ?", [$user_id]);
+
 		return json_encode(array('strategies'=>$result));
 	}
 
