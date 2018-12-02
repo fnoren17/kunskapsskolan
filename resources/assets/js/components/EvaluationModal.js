@@ -23,6 +23,12 @@ class EvaluationModal extends Component {
 
 		});
 
+		let i = 0;
+		for(i=0; i<this.state.strategies.length; i++){
+			if(this.state.strategies[i]['rating'] = null){
+				return
+			}
+		}
 
 		instance.post('/api/strategies/evaluate', {'strategies': this.state.strategies}).then(response=>{
 			this.setState({
@@ -38,9 +44,14 @@ class EvaluationModal extends Component {
 	}
 
 	setRating(index,rating) {
+		console.log(index, rating);
 		let ratedStrategies = this.state.strategies;
-		strategies[index]['rating'] = rating;
 
+		if(ratedStrategies[index]['rating'] == rating){
+			ratedStrategies[index]['rating'] = null;
+		} else {
+			ratedStrategies[index]['rating'] = rating;
+		}
 		this.setState({
 			strategies: ratedStrategies
 		});
@@ -61,22 +72,24 @@ class EvaluationModal extends Component {
 			let $allStrategies = response.data['strategies'];
 			let i = 0;
 			for(i=0; i<$allStrategies.length; i++){
-				$allStrategies['rating'] = null;
-
+				$allStrategies[i]['rating'] = null;
 			}
+
 
 			this.setState({
 				strategies: $allStrategies
 			});
+			console.log(this.state.strategies)
+
 
 		})
 
 
 	}
 
-
 	componentDidMount () {
 		this.getStrategies();
+
 	}
 
 	render () {
@@ -92,9 +105,9 @@ class EvaluationModal extends Component {
 					</a>
 
 					<br/>
-					<button onClick={this.setRating(index, '-1')} style={strategies[index][rating] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
-					<button onClick={this.setRating(index, '1')} style={strategies[index][rating] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
-					<button onClick={this.setRating(index, '0')} style={strategies[index][rating] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
+					<button onClick={() => {this.setRating(index, '-1')}} style={strategies[index]['rating'] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1')}} style={strategies[index]['rating'] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0')}} style={strategies[index]['rating'] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
 					</div><br/>
 			</div>
 		)
@@ -108,15 +121,11 @@ class EvaluationModal extends Component {
 							<div class="sv-html-portlet sv-portlet sv-skip-spacer">
 								<button style ={{position:"fixed",top:10,right:50}} onClick={this.closeButton}>X</button>
 
-								<h2>Välj Strategier</h2>
+								<h2>Utvärdera Strategier</h2>
 								<hr/>
 								<label class="kclabel" >Strategier</label>
 								<div class="align-horizontal">
 									{stratItems}
-
-								</div>
-								<label class="kclabel">Bokmärkta Strategier</label>
-								<div class="align-horizontal">
 								</div>
 							</div>
 							<div class="sv-html-portlet sv-portlet"><button tabindex="1" class="btn btn-large btn-default" onClick={this.saveStrategies}>Spara</button></div>

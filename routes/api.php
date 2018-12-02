@@ -12,11 +12,13 @@
 |
 */
 
-
+Route::get('strategies/all', 'StrategyController@allStrategies');
 Route::get('strategies/current/{subject}', 'StrategyController@currentStrategies');
 Route::get('strategies/saved/{subject}', 'StrategyController@getBookmarkedStrategies');
 Route::get('strategies/{subject}/{step}', 'StrategyController@regularStrategies');
-Route::post('strategies/{subject}/{step}', 'StrategyController@saveStrategies');
 Route::get('description/{id}', 'StrategyController@strategyDescription');
+
+Route::post('strategies/{subject}/{step}', 'StrategyController@saveStrategies');
+Route::post('strategies/evaluate', 'StrategyController@evaluateStrategies');
 
 
