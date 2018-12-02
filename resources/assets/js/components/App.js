@@ -15,17 +15,14 @@ class App extends Component {
         <div>
 
 
-        <BrowserRouter>
+        <BrowserRouter style={{width:"40%"}}>
 
 
         <div>
-          <Header />
         <div>
-            <Route path="/prototype/strategies/description/:id" component={DescriptionBlock}/>
-
-
-
             <LogBook/>
+
+            <Route path="/prototype/strategies/description/:id" component={DescriptionBlock}/>
         </div>
         </div>
 

@@ -113,7 +113,7 @@ class LogBook extends Component {
 				{this.state.showEval ? <EvaluationModal closeEval={this.closeEval} step={this.state.step}/> : null}
 
 
-				<div style={{position: 'absolute', right: 100, top: 200, maxWidth: 375}}>
+				<div style={{position: 'absolute', right: 100 ,maxWidth: 375}}>
 
 			<div class="learningGoalTasks">
 				<div class="taskContainer">

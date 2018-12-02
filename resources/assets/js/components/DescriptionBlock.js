@@ -38,7 +38,7 @@ class DescriptionBlock extends Component {
 
 
 		return (
-			<div style={{width:"40%"}}>
+			<div>
 				<h1>{this.state.title}</h1>
 				<td dangerouslySetInnerHTML={{__html: text}} />
 
