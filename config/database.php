@@ -45,7 +45,7 @@ return [
             'port' => '3306',
             'database' => 'ks',
             'username' => 'root',
-            'password' => 'friidrott95',
+            'password' => 'kiddel2018',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

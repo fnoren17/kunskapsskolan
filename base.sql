@@ -1,4 +1,4 @@
-use kunskapsskolan;
+use ks;
 
 DROP TABLE IF EXISTS ks_user_bookmarks;
 DROP TABLE IF EXISTS ks_user_subjects;
