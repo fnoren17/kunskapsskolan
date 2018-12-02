@@ -26,7 +26,8 @@ class StrategyController extends Controller{
 
 
 
-		$result = DB::select("SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
+		$result = DB::select("SELECT id, title, block FROM (
+		SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
 		) AS strats JOIN ks_subjects ON strats.subject_id = ks_subjects.id", [$user]);
 
 		return json_encode(array('strategies'=>$result));
