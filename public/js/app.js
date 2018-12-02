@@ -61097,12 +61097,12 @@ var LogBook = function (_Component) {
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 															'button',
 															{ 'class': 'btn' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-angle-left', 'aria-hidden': 'true' })
+															"<"
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 															'button',
 															{ 'class': 'btn' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-angle-right', 'aria-hidden': 'true' })
+															">"
 														)
 													)
 												)
@@ -61154,8 +61154,7 @@ var LogBook = function (_Component) {
 																{ 'class': 'btn addOwnGoal', onClick: function onClick() {
 																		_this3.showModal("engelska");
 																	} },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-																' L\xE4gg till strategi'
+																'\u2795 L\xE4gg till strategi'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61175,13 +61174,8 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'horizontalItem' },
 																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'a',
-																	{ 'class': 'trash', href: '#',
-																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
-																		'class': 'fa fa-trash' })
-																)
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
+																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61254,8 +61248,7 @@ var LogBook = function (_Component) {
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
 																{ 'class': 'btn addOwnGoal' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-																' Eget arbetsm\xE5l'
+																'\u2795 Eget arbetsm\xE5l'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -61280,13 +61273,8 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'horizontalItem' },
 																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'a',
-																	{ 'class': 'trash', href: '#',
-																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
-																		'class': 'fa fa-trash' })
-																)
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
+																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61331,8 +61319,7 @@ var LogBook = function (_Component) {
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
 																{ 'class': 'btn addOwnGoal' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-																' Eget arbetsm\xE5l'
+																'\u2795 Eget arbetsm\xE5l'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -61374,13 +61361,8 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'horizontalItem' },
 																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'a',
-																	{ 'class': 'trash', href: '#',
-																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
-																		'class': 'fa fa-trash' })
-																)
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
+																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61425,7 +61407,6 @@ var LogBook = function (_Component) {
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
 																{ 'class': 'btn addOwnGoal' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
 																' Eget arbetsm\xE5l'
 															)
 														),
@@ -61451,13 +61432,8 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'horizontalItem' },
 																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'a',
-																	{ 'class': 'trash', href: '#',
-																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
-																		'class': 'fa fa-trash' })
-																)
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
+																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61502,8 +61478,7 @@ var LogBook = function (_Component) {
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
 																{ 'class': 'btn addOwnGoal' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-																' Eget arbetsm\xE5l'
+																'\u2795 Eget arbetsm\xE5l'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -61528,13 +61503,8 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'horizontalItem' },
 																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'a',
-																	{ 'class': 'trash', href: '#',
-																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
-																		'class': 'fa fa-trash' })
-																)
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
+																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61579,8 +61549,7 @@ var LogBook = function (_Component) {
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
 																{ 'class': 'btn addOwnGoal' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-																' Eget arbetsm\xE5l'
+																'\u2795  Eget arbetsm\xE5l'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -61605,13 +61574,8 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'horizontalItem' },
 																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'a',
-																	{ 'class': 'trash', href: '#',
-																		title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', {
-																		'class': 'fa fa-trash' })
-																)
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
+																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -61656,69 +61620,10 @@ var LogBook = function (_Component) {
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
 																{ 'class': 'btn addOwnGoal' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-																' Eget arbetsm\xE5l'
+																'\u2795 Eget arbetsm\xE5l'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
-													),
-													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-														'div',
-														{ 'class': 'learningGoalContainer' },
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'stepIndicator' },
-															'17'
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'align-horizontal' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'learningGoalText horizontalItem top' },
-																'Ber\xE4kna area hos vissa geometriska objekt'
-															),
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'horizontalItem' },
-																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#' }),
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'div',
-																	{ 'class': 'align-horizontal' },
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																		'div',
-																		{ 'class': 'horizontalItem top' },
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
-																	),
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																		'div',
-																		{ 'class': 'horizontalItem top' },
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'a',
-																			{
-																				href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg17/uppgifter/beraknaareahosvissageometriskaobjekt/parallellogrammer1.4.5ef46051556de3110296dd2.html' },
-																			'Parallellogrammer 1'
-																		)
-																	),
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																		'div',
-																		{ 'class': 'horizontalItem top taskEdit' },
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
-																	)
-																)
-															)
-														)
-													),
-													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-														'div',
-														{ 'class': 'learningGoalTools' },
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'btn addOwnGoal' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { 'class': 'fa fa-plus', 'aria-hidden': 'true' }),
-															' Eget arbetsm\xE5l'
-														)
 													)
 												)
 											),
@@ -61727,12 +61632,7 @@ var LogBook = function (_Component) {
 												{ 'class': 'btn addOwnGoal', onClick: function onClick() {
 														_this3.showEval();
 													} },
-												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-													'i',
-													null,
-													'+ '
-												),
-												'Utv\xE4rdera Strategier'
+												'\u2795 Utv\xE4rdera Strategier'
 											)
 										),
 										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
