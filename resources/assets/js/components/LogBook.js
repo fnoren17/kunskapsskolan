@@ -129,13 +129,11 @@ class LogBook extends Component {
 										<div class="horizontalItem">
 											<div class="btn-group">
 												<button class="btn">
-													<i class="fa fa-angle-left" aria-hidden="true">
+													{"<"}
 
-													</i></button>
+													</button>
 												<button class="btn">
-													<i class="fa fa-angle-right" aria-hidden="true">
-
-													</i>
+													{">"}
 												</button>
 											</div>
 										</div>
@@ -161,15 +159,16 @@ class LogBook extends Component {
 														{strategyItems}
 
 													</div>
-													<div class="btn addOwnGoal" onClick={() => {this.showModal("engelska")}}><i class="fa fa-plus" aria-hidden="true"></i> Lägg till strategi
+													<div class="btn addOwnGoal" onClick={() => {this.showModal("engelska")}}>➕ Lägg till strategi
 													</div>
 												</div>
 												<div class="stepIndicator">19</div>
 												<div class="align-horizontal">
 													<div class="learningGoalText horizontalItem top">Skriva en läslogg</div>
 													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"><i
-														class="fa fa-trash"></i></a></div>
+																						 title="Ta bort lärandemålet och dess uppgifter">
+
+													</a></div>
 												</div>
 												<div class="learningGoalTasks">
 													<div class="taskContainer">
@@ -198,7 +197,7 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<div class="learningGoalTools">
-													<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
+													<div class="btn addOwnGoal">➕ Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
@@ -209,8 +208,9 @@ class LogBook extends Component {
 														samtal om litteratur med kompisar
 													</div>
 													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"><i
-														class="fa fa-trash"></i></a></div>
+																						 title="Ta bort lärandemålet och dess uppgifter">
+
+													</a></div>
 												</div>
 												<div class="learningGoalTasks">
 													<div class="taskContainer">
@@ -228,7 +228,7 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<div class="learningGoalTools">
-													<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
+													<div class="btn addOwnGoal">➕ Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
@@ -244,8 +244,7 @@ class LogBook extends Component {
 														diagram samt sortera data i tabeller
 													</div>
 													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"><i
-														class="fa fa-trash"></i></a></div>
+																						 title="Ta bort lärandemålet och dess uppgifter"></a></div>
 												</div>
 												<div class="learningGoalTasks">
 													<div class="taskContainer">
@@ -263,7 +262,7 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<div class="learningGoalTools">
-													<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
+													<div class="btn addOwnGoal"> Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
@@ -274,8 +273,7 @@ class LogBook extends Component {
 														koordinataxlarna och placera in punkter med hjälp av dess koordinater
 													</div>
 													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"><i
-														class="fa fa-trash"></i></a></div>
+																						 title="Ta bort lärandemålet och dess uppgifter"></a></div>
 												</div>
 												<div class="learningGoalTasks">
 													<div class="taskContainer">
@@ -293,7 +291,7 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<div class="learningGoalTools">
-													<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
+													<div class="btn addOwnGoal">➕ Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
@@ -304,8 +302,7 @@ class LogBook extends Component {
 														samt rita en graf ur tabellen
 													</div>
 													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"><i
-														class="fa fa-trash"></i></a></div>
+																						 title="Ta bort lärandemålet och dess uppgifter"></a></div>
 												</div>
 												<div class="learningGoalTasks">
 													<div class="taskContainer">
@@ -323,7 +320,7 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<div class="learningGoalTools">
-													<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
+													<div class="btn addOwnGoal">➕  Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
@@ -334,8 +331,7 @@ class LogBook extends Component {
 														objekt
 													</div>
 													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"><i
-														class="fa fa-trash"></i></a></div>
+																						 title="Ta bort lärandemålet och dess uppgifter"></a></div>
 												</div>
 												<div class="learningGoalTasks">
 													<div class="taskContainer">
@@ -353,36 +349,14 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<div class="learningGoalTools">
-													<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
+													<div class="btn addOwnGoal">➕ Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
-											<div class="learningGoalContainer">
-												<div class="stepIndicator">17</div>
-												<div class="align-horizontal">
-													<div class="learningGoalText horizontalItem top">Beräkna area hos vissa geometriska objekt
-													</div>
-													<div class="horizontalItem">&nbsp;<a class="trash" href="#"></a>
-														<div class="align-horizontal">
-															<div class="horizontalItem top">
-																<div class="checkBox"></div>
-															</div>
-															<div class="horizontalItem top"><a
-																href="https://ks.kunskapsporten.se/steg/matematik/block4/steg17/uppgifter/beraknaareahosvissageometriskaobjekt/parallellogrammer1.4.5ef46051556de3110296dd2.html">Parallellogrammer
-																1</a></div>
-															<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="learningGoalTools">
-												<div class="btn addOwnGoal"><i class="fa fa-plus" aria-hidden="true"></i> Eget arbetsmål
-												</div>
-											</div>
-										</div>
+									</div>
 
 									</div>
-									<div class="btn addOwnGoal" onClick={() => {this.showEval()}}><i>+ </i>Utvärdera Strategier
+									<div class="btn addOwnGoal" onClick={() => {this.showEval()}}>➕ Utvärdera Strategier
 									</div>
 
 								</div>
