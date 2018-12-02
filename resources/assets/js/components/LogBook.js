@@ -33,7 +33,7 @@ class LogBook extends Component {
 
 	getCurrentStrategies() {
 		axios.get('/api/strategies/current/engelska').then(response => {
-			
+
 			this.setState({
 				strategies: response.data['strategies']
 			})
