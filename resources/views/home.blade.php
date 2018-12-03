@@ -303,6 +303,7 @@
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                <a href="#">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
                             <img src="img/robban.jpg" alt="">
@@ -314,8 +315,10 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                <a href="mailto:frcarls@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
                             <img src="img/carls.jpg" alt="">
@@ -327,8 +330,10 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                <a href="#">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-thumb">
                             <img src="img/benny.jpg" alt="">
@@ -340,9 +345,11 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
+            <a href="mailto:ricjohan@kth.se">
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.4s">
                         <div class="team-thumb">
@@ -355,8 +362,10 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                <a href="mailto:erlunds@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/lurre.jpg" alt="">
@@ -368,8 +377,10 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                    <a href="mailto:madosh@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/farre.jpg" alt="">
@@ -381,9 +392,12 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
+            
             <div class="row d-flex justify-content-center">
+            <a href="mailto:felixnor@kth.se">
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
@@ -396,8 +410,11 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
+                
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                <a href="mailto:rumman@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/phille.jpg" alt="">
@@ -409,8 +426,10 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
+                    <a href="mailto:eriktors@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/torsten.jpg" alt="">
@@ -422,6 +441,7 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
 
