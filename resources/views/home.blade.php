@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-lg-5 col-md-12 col-xs-12">
                     <div class="intro-img">
-                        <img class= "img-container"src="img/header.png" alt="">
+                        <img class= "img-container"src="img/head.png" alt="">
                     </div>
                 </div>
             </div>
@@ -306,12 +306,6 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
                             <img src="img/robban.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
@@ -325,17 +319,11 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
                             <img src="img/carls.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Fredrik Carls</h4>
-                                <p>UX Consultant</p>
+                                <p>Backend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -344,17 +332,11 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-thumb">
                             <img src="img/benny.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Benny Feng</h4>
-                                <p>Web Developer</p>
+                                <p>Frontend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -365,17 +347,11 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.4s">
                         <div class="team-thumb">
                             <img src="img/rickard.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Rickard Johansson</h4>
-                                <p>UI/UX Designer</p>
+                                <p>Backend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -384,12 +360,6 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/lurre.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
@@ -403,12 +373,6 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/farre.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
@@ -424,17 +388,11 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/norre.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Felix Norén</h4>
-                                <p>Digital Marketer</p>
+                                <p>Frontend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -443,12 +401,6 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/phille.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
@@ -462,17 +414,11 @@
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/torsten.jpg" alt="">
-                            <ul class="social-list">
-                                <li class="facebook"><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="lni-google-plus"></i></a></li>
-                                <li class="linkedin"><a href="#"><i class="lni-linkedin-fill"></i></a></li>
-                            </ul>
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Erik Thorstensson</h4>
-                                <p>Digital Marketer</p>
+                                <p>Project Leader</p>
                             </div>
                         </div>
                     </div>
