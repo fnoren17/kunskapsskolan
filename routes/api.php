@@ -19,6 +19,6 @@ Route::get('strategies/{subject}/{step}', 'StrategyController@regularStrategies'
 Route::get('description/{id}', 'StrategyController@strategyDescription');
 
 Route::post('strategies/{subject}/{step}', 'StrategyController@saveStrategies');
-Route::post('strategies/evaluate', 'StrategyController@evaluateStrategies');
+Route::post('strategies/evaluate', 'StrategyC	ontroller@evaluateStrategies');
 
 

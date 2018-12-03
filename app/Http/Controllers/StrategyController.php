@@ -91,7 +91,7 @@ class StrategyController extends Controller{
 			        SUM(rating) AS score, strategy_id
 			    FROM
 			        ks_ratings
-			    WHEREspara ner strategier i ks_ratings
+			    WHERE
 			        subject_id IN (SELECT
 			                id
 			            FROM
