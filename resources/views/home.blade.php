@@ -30,7 +30,7 @@
     <body>
 
     <!-- Header Section Start -->
-    <header id="home" class="hero-area-2 overlay">
+    <header id="home" class="hero-area-2">
 
         <div class="container">
             <div class="row space-100">
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-xs-12">
                     <div class="show-box">
-                        <img src="img/features/app.png" alt="">
+                        <img src="img/data3.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-xs-12">
@@ -177,55 +177,122 @@
             </div>
         </div>
     </section>
-    <div id="features-two" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-                        <img class="img-fluid" src="img/features/img1.png" alt="">
+    <section id="progress">
+        <div id="features-two" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+                            <img class="img-fluid" src="img/focus.png" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="text-wrapper wow fadeInRight" data-wow-delay="0.6s">
-                        <div>
-                            <h3>Focus Groups</h3>
-                            <p>We performed focus group interviews at Kunskapsskolan Nacka where the students could comment and discuss their thoughts with each other and with us under a relaxed setting.</p>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="text-wrapper wow fadeInRight" data-wow-delay="0.6s">
+                            <div>
+                                <h3>Focus Groups</h3>
+                                <p>We performed focus group interviews at Kunskapsskolan Nacka where the students could comment and discuss their thoughts with each other and with us under a relaxed setting.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="text-wrapper wow fadeInRight" data-wow-delay="0.9s">
-                        <div>
-                            <h3>Intuituve</h3>
-                            <p>A simple design solution was a key point taken away from the focus group interviews. It was clear that objects and functionalities would need to be rearranged and simplified for more clarity.</p>
+                <div class="row mt">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="text-wrapper wow fadeInRight" data-wow-delay="0.9s">
+                            <div>
+                                <h3>Intuituve</h3>
+                                <p>A simple design solution was a key point taken away from the focus group interviews. It was clear that objects and functionalities would need to be rearranged and simplified for more clarity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="img-thumb wow fadeInLeft" data-wow-delay="1.2s">
+                            <img class="img-fluid" src="img/intuitive.png" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="img-thumb wow fadeInLeft" data-wow-delay="1.2s">
-                        <img class="img-fluid" src="img/features/img2.png" alt="">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+                            <img class="img-fluid" src="img/thinking.jpg" alt="">
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-                        <img class="img-fluid" src="img/features/img1.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="text-wrapper wow fadeInRight" data-wow-delay="0.6s">
-                        <div>
-                            <h3>Our App Is Amazing!</h3>
-                            <p>As one of the main problems of the current design is that no feedback or evaluation of strategies are sent in by students we needed to see what students had to say about this <b>before</b> a prototype was created.</p>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="text-wrapper wow fadeInRight" data-wow-delay="0.6s">
+                            <div>
+                                <h3>Evaluable</h3>
+                                <p>As one of the main problems of the current design is that no feedback or evaluation of strategies are sent in by students we needed to see what students had to say about this <b>before</b> a prototype was created.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section id="progress" class="screens-shot section">
+        <div id="features-two" class="section">
+            <div class="container">
+            <div class="section-header">
+                <p class="btn btn-subtitle">Machine Learning</p>
+            </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+                            <img class="img-fluid" src="img/segm.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="text-wrapper wow fadeInRight" data-wow-delay="0.6s">
+                            <div>
+                                <h3>Collecting data for decision making</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="progress" class="section">
+        <div id="features-two" class="section">
+            <div class="container">
+            <div class="section-header">
+                <p class="btn btn-subtitle">To Summarize</p>
+                <h2>Three Pillars</h2>
+                <p>By asking what the students felt we improve experience for the end users. By listening to what central management needs, we collect data for future decision-making.</p>
+            </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                        <h3>Motivate Students</h3>
+                        <p>Our solution motivates students to pick a strategy because they are recommended by peers and teachers.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                        <h3>Targeted Strategies</h3>
+                        <p>The strategy suggestions are based on teacher input and feedback from students for each specific subject at each specific step</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                        <h3>Collect Insights</h3>
+                        <p>Analyzing different user behavior and characteristics such as, what school, what grade and so on could tell us if a certain strategy is prefered in one school over another and other relationships etc. This information is crucial to any business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="design-process" class="screens-shot section">
+        <div class="container">
+            <div class="section-header">
+                <p class="btn btn-subtitle">Model Selection</p>
+                <h3>Recommendation System</h3>
+                
+            </div>
+            
+            <div class="row">
+                
+                <p class="problem">
+                We created a tag-based recommendation system as foundation to suggest strategies for different users. Based on previous feedback from teachers and peers the smart algorithm suggests a selection of strategies for a specific subject and step to the students. With the goal of improving usage of the strategy selection field while also increasing the quality of Loggboken in general by turning it into a potentially powerful data collection tool.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Team section Start -->
     <section id="team" class="section">
@@ -234,8 +301,8 @@
                 <p class="btn btn-subtitle wow fadeInDown" data-wow-delay="0.2s">Team</p>
                 <h2 class="section-title">Our Team</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
                             <img src="img/robban.jpg" alt="">
@@ -254,7 +321,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
                             <img src="img/carls.jpg" alt="">
@@ -273,7 +340,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-thumb">
                             <img src="img/benny.jpg" alt="">
@@ -293,8 +360,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.4s">
                         <div class="team-thumb">
                             <img src="img/rickard.jpg" alt="">
@@ -313,7 +380,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/lurre.jpg" alt="">
@@ -332,7 +399,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/farre.jpg" alt="">
@@ -352,8 +419,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/norre.jpg" alt="">
@@ -372,7 +439,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/phille.jpg" alt="">
@@ -391,7 +458,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
                             <img src="img/torsten.jpg" alt="">
