@@ -704,7 +704,11 @@ color: #00e3c1;
   overflow: hidden;
   position: relative;
 }
-
+#home{
+  background-image: -moz-linear-gradient( #002928 0%, #00485a);
+  background-image: -webkit-linear-gradient( #002928 0%, #00485a);
+  background-image: -ms-linear-gradient( #002928 0%, #00485a);
+}
 .hero-area-2 .overlay {
   position: absolute;
   width: 100%;
