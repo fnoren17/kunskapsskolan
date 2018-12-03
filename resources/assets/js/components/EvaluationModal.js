@@ -18,19 +18,25 @@ class EvaluationModal extends Component {
 
 	saveStrategies() {
 
-		const instance = axios.create({
-			baseURL: '',
 
-		});
 
 		let i = 0;
+		console.log('looky here');
+		console.log(this.state.strategies);
+
+
 		for(i=0; i<this.state.strategies.length; i++){
-			if(this.state.strategies[i]['rating'] = null){
+			if(this.state.strategies[i]['rating'] == null){
 				return
 			}
 		}
+		console.log(this.state.strategies);
 
-		instance.post('/api/strategies/evaluate', {'strategies': this.state.strategies}).then(response=>{
+		let instance = axios.create({
+			baseURL: '',
+
+		});
+		instance.post('api/evaluate', {'strategies': this.state.strategies}).then(response=>{
 			this.setState({
 				strategies: []
 			});
@@ -44,14 +50,16 @@ class EvaluationModal extends Component {
 	}
 
 	setRating(index,rating) {
-		console.log(index, rating);
 		let ratedStrategies = this.state.strategies;
 
+		console.log(ratedStrategies);
 		if(ratedStrategies[index]['rating'] == rating){
 			ratedStrategies[index]['rating'] = null;
 		} else {
 			ratedStrategies[index]['rating'] = rating;
 		}
+
+		console.log(ratedStrategies);
 		this.setState({
 			strategies: ratedStrategies
 		});
@@ -79,7 +87,6 @@ class EvaluationModal extends Component {
 			this.setState({
 				strategies: $allStrategies
 			});
-			console.log(this.state.strategies)
 
 
 		})
