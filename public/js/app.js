@@ -61938,7 +61938,7 @@ var DescriptionBlock = function (_Component) {
 
 			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				'div',
-				null,
+				{ style: { maxWidth: "40%" } },
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'h1',
 					null,

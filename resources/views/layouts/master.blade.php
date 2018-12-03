@@ -4,20 +4,33 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     @yield('head')
 </head>
 
-<nav class="navbar navbar-default" >
-    <div class="container-fluid" style="background-color: #f3f3f3">
-
-        <ul class="navbar navbar-left">
-            <li class="navitem"><a href="/">Home</a></li>
-            <li class="navitem"><a href="/prototype">Prototype</a></li>
-            <li class="navitem"><a href="/analysis">Decision Support Tool</a></li>
-        </ul>
+<div class="overlay"></div>
+<nav class="navbar navbar-expand-md bg-inverse fixed-top menu-bg">
+    <div class="container">
+        <a href="index.html" class="navbar-brand">Smartlog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/prototype">Prototype</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Decision support Tool</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
+
 @yield('pageheader')
 @yield('body')
 
