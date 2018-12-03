@@ -38,7 +38,7 @@ class EvaluationModal extends Component {
 			}
 		}
 
-		axios.defaults.baseURL = 'http://localhost:8000/api/';
+		axios.defaults.baseURL = '/api/';
 
 
 		axios.post('evaluate', {'strategies': strategies}).then(response=>{

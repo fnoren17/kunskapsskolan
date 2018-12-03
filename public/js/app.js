@@ -61701,7 +61701,7 @@ var EvaluationModal = function (_Component) {
 				}
 			}
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = 'http://localhost:8000/api/';
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api/';
 
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('evaluate', { 'strategies': strategies }).then(function (response) {
 				_this2.setState({
