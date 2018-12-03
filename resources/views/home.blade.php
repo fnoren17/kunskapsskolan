@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/nivo-lightbox.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/main.css">
 
 
 
@@ -29,7 +30,7 @@
     <body>
 
     <!-- Header Section Start -->
-    <header id="home" class="hero-area-2">
+    <header id="home" class="hero-area-2 overlay">
 
         <div class="container">
             <div class="row space-100">
