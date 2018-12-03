@@ -33,7 +33,7 @@ Domain Path:      /languages/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto");
 @font-face {
   font-family: 'Nebulous'; 
-  src: url("nebulous.ttf"); 
+  src: url("nebulous.ttf");  
 }
 /* ==========================================================================
    GENERAL
