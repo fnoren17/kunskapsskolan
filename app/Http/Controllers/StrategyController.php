@@ -16,8 +16,8 @@ class StrategyController extends Controller{
 
 	function allStrategies(Request $request) {
 		$user = 1;
-		$result = DB::select("SELECT id, title, block, subject FROM (
-		SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
+		$result = DB::select("SELECT id, title, block, subject, strat_id FROM (
+		SELECT ks_strategies.id as strat_id, title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
 		) AS strats JOIN ks_subjects ON strats.subject_id = ks_subjects.id", [$user]);
 		return json_encode(array('strategies'=>$result));
 	}
@@ -115,10 +115,10 @@ class StrategyController extends Controller{
 			$rating = $strategy['rating'];
 			$subject = $strategy['subject'];
 			$step = $strategy['block'];
-			$strategy_id = $strategy['id'];
+			$strategy_id = $strategy['strat_id'];
 			$result =	DB::insert("INSERT INTO ks_ratings (rating, user_id, strategy_id, subject_id) VALUES
 				(?, ?, ?, (SELECT id FROM ks_subjects WHERE subject = ? AND block = ?));", [$rating, $user, $strategy_id, $subject, $step]);
-			$result =	DB::delete("DELETE FROM ks_user_strategies WHERE user_id = ? AND strategy_id = ? AND subject_id = (SELECT id FROM ks_subjects WHERE subject = ? AND block = ?)));", [$user, $strategy_id, $subject, $step]);
+			$result =	DB::delete("DELETE FROM ks_user_strategies WHERE user_id = ? AND strategy_id = ? AND subject_id = (SELECT id FROM ks_subjects WHERE subject = ? AND block = ?);", [$user, $strategy_id, $subject, $step]);
 			#spara ner strategier i ks_ratings
 			#ta bort strategierna ur aktuella strategier
 		}

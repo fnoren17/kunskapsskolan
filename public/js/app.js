@@ -61698,19 +61698,22 @@ var EvaluationModal = function (_Component) {
 		value: function saveStrategies() {
 			var _this2 = this;
 
+			var i = 0;
+			console.log('looky here');
+			console.log(this.state.strategies);
+
+			for (i = 0; i < this.state.strategies.length; i++) {
+				if (this.state.strategies[i]['rating'] == null) {
+					return;
+				}
+			}
+			console.log(this.state.strategies);
+
 			var instance = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 				baseURL: ''
 
 			});
-
-			var i = 0;
-			for (i = 0; i < this.state.strategies.length; i++) {
-				if (this.state.strategies[i]['rating'] = null) {
-					return;
-				}
-			}
-
-			instance.post('/api/strategies/evaluate', { 'strategies': this.state.strategies }).then(function (response) {
+			instance.post('api/evaluate', { 'strategies': this.state.strategies }).then(function (response) {
 				_this2.setState({
 					strategies: []
 				});
@@ -61725,14 +61728,16 @@ var EvaluationModal = function (_Component) {
 	}, {
 		key: 'setRating',
 		value: function setRating(index, rating) {
-			console.log(index, rating);
 			var ratedStrategies = this.state.strategies;
 
+			console.log(ratedStrategies);
 			if (ratedStrategies[index]['rating'] == rating) {
 				ratedStrategies[index]['rating'] = null;
 			} else {
 				ratedStrategies[index]['rating'] = rating;
 			}
+
+			console.log(ratedStrategies);
 			this.setState({
 				strategies: ratedStrategies
 			});
@@ -61758,7 +61763,6 @@ var EvaluationModal = function (_Component) {
 				_this3.setState({
 					strategies: $allStrategies
 				});
-				console.log(_this3.state.strategies);
 			});
 		}
 	}, {
