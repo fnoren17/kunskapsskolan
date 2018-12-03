@@ -33,7 +33,7 @@
     <header id="home" class="hero-area-2">
 
         <div class="container">
-            <div class="row space-100">
+            <div class="row space-100"> 
                 <div class="col-lg-7 col-md-12 col-xs-12">
                     <div class="contents">
                         <h2 class="head-title">Smartlog</h2>
