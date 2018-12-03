@@ -11,7 +11,7 @@
 <div class="overlay"></div>
 <nav class="navbar navbar-expand-md bg-inverse fixed-top menu-bg">
     <div class="container">
-        <a href="index.html" class="navbar-brand">Smartlog</a>
+        <a href="/" class="navbar-brand">Smartlog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni-menu"></i>
         </button>
