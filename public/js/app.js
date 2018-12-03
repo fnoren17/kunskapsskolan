@@ -60935,7 +60935,8 @@ var LogBook = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (LogBook.__proto__ || Object.getPrototypeOf(LogBook)).call(this, props));
 
 		_this.state = {
-			strategies: [],
+			strategiesMath: [],
+			strategiesEng: [],
 			showModal: false,
 			showEval: false,
 			step: 19,
@@ -60966,7 +60967,14 @@ var LogBook = function (_Component) {
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/engelska').then(function (response) {
 
 				_this2.setState({
-					strategies: response.data['strategies']
+					strategiesEng: response.data['strategies']
+				});
+			});
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/matematik').then(function (response) {
+
+				_this2.setState({
+					strategiesMath: response.data['strategies']
 				});
 			});
 		}
@@ -61028,11 +61036,12 @@ var LogBook = function (_Component) {
 			var _this3 = this;
 
 			var _state = this.state,
-			    strategies = _state.strategies,
+			    strategiesEng = _state.strategiesEng,
+			    strategiesMath = _state.strategiesMath,
 			    path = _state.path;
 
 
-			var strategyItems = Object.keys(strategies).map(function (index, i) {
+			var strategyItemsEnglish = Object.keys(strategiesEng).map(function (index, i) {
 				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'div',
 					null,
@@ -61042,8 +61051,26 @@ var LogBook = function (_Component) {
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'a',
 							{
-								href: path + strategies[index].title },
-							strategies[index].title
+								href: path + strategiesEng[index].title },
+							strategiesEng[index].title
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+
+			var strategyItemsMath = Object.keys(strategiesMath).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: path + strategiesMath[index].title },
+							strategiesMath[index].title
 						)
 					),
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -61147,7 +61174,7 @@ var LogBook = function (_Component) {
 																	{ 'class': 'learningGoalText horizontalItem top' },
 																	'Strategier'
 																),
-																strategyItems
+																strategyItemsEnglish
 															),
 															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																'div',
@@ -61344,6 +61371,36 @@ var LogBook = function (_Component) {
 													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 														'div',
 														{ 'class': 'learningGoalContainer' },
+														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+															'div',
+															{ 'class': 'learningGoalTools' },
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'stepIndicator' },
+																'18'
+															),
+															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																'div',
+																{ 'class': 'learningGoalTools' },
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	{ 'class': 'align-horizontal' },
+																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																		'div',
+																		{ 'class': 'learningGoalText horizontalItem top' },
+																		'Strategier'
+																	),
+																	strategyItemsMath
+																),
+																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+																	'div',
+																	{ 'class': 'btn addOwnGoal', onClick: function onClick() {
+																			_this3.showModal("matematik");
+																		} },
+																	'\u2795 L\xE4gg till strategi'
+																)
+															)
+														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 															'div',
 															{ 'class': 'stepIndicator' },
@@ -61553,77 +61610,6 @@ var LogBook = function (_Component) {
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
-													),
-													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-														'div',
-														{ 'class': 'learningGoalContainer' },
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'stepIndicator' },
-															'17'
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'align-horizontal' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'learningGoalText horizontalItem top' },
-																'Ber\xE4kna omkrets hos vissa geometriska objekt'
-															),
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'horizontalItem' },
-																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
-																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
-															)
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'learningGoalTasks' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'taskContainer' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'div',
-																	null,
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																		'div',
-																		{ 'class': 'align-horizontal' },
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'div',
-																			{ 'class': 'horizontalItem top' },
-																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
-																		),
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'div',
-																			{ 'class': 'horizontalItem top' },
-																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																				'a',
-																				{
-																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg17/uppgifter/beraknaomkretshosvissageometriskaobjekt/omkretsavmanghorningar.4.5ef46051556de3110296f35.html' },
-																				'Omkrets av m\xE5ngh\xF6rningar'
-																			)
-																		),
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'div',
-																			{ 'class': 'horizontalItem top taskEdit' },
-																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
-																		)
-																	)
-																)
-															)
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'learningGoalTools' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'btn addOwnGoal' },
-																'\u2795 Eget arbetsm\xE5l'
-															)
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
 													)
 												)
 											),
@@ -61683,7 +61669,8 @@ var EvaluationModal = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (EvaluationModal.__proto__ || Object.getPrototypeOf(EvaluationModal)).call(this));
 
 		_this.state = {
-			strategies: []
+			strategiesEng: [],
+			strategiesMath: []
 		};
 
 		_this.saveStrategies = _this.saveStrategies.bind(_this);
@@ -61699,23 +61686,27 @@ var EvaluationModal = function (_Component) {
 			var _this2 = this;
 
 			var i = 0;
-			console.log('looky here');
-			console.log(this.state.strategies);
 
-			for (i = 0; i < this.state.strategies.length; i++) {
-				if (this.state.strategies[i]['rating'] == null) {
+			var strategies = this.state.strategiesMath;
+
+			for (i = 0; i < this.state.strategiesEng.length; i++) {
+				strategies.push(this.state.strategiesEng[i]);
+			}
+			console.log(strategies);
+
+			for (i = 0; i < strategies.length; i++) {
+
+				if (strategies[i]['rating'] == null) {
 					return;
 				}
 			}
-			console.log(this.state.strategies);
 
-			var instance = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-				baseURL: ''
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = 'http://localhost:8000/api/';
 
-			});
-			instance.post('api/evaluate', { 'strategies': this.state.strategies }).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('evaluate', { 'strategies': strategies }).then(function (response) {
 				_this2.setState({
-					strategies: []
+					strategiesEng: [],
+					strategiesMath: []
 				});
 				_this2.props.closeEval();
 			});
@@ -61727,20 +61718,37 @@ var EvaluationModal = function (_Component) {
 		}
 	}, {
 		key: 'setRating',
-		value: function setRating(index, rating) {
-			var ratedStrategies = this.state.strategies;
+		value: function setRating(index, rating, subject) {
 
-			console.log(ratedStrategies);
-			if (ratedStrategies[index]['rating'] == rating) {
-				ratedStrategies[index]['rating'] = null;
-			} else {
-				ratedStrategies[index]['rating'] = rating;
+			if (subject == 'eng') {
+
+				var ratedStrategies = this.state.strategiesEng;
+				if (ratedStrategies[index]['rating'] == rating) {
+					ratedStrategies[index]['rating'] = null;
+				} else {
+					ratedStrategies[index]['rating'] = rating;
+				}
+
+				console.log(ratedStrategies);
+				this.setState({
+					strategiesEng: ratedStrategies
+				});
 			}
 
-			console.log(ratedStrategies);
-			this.setState({
-				strategies: ratedStrategies
-			});
+			if (subject == 'math') {
+
+				var _ratedStrategies = this.state.strategiesMath;
+				if (_ratedStrategies[index]['rating'] == rating) {
+					_ratedStrategies[index]['rating'] = null;
+				} else {
+					_ratedStrategies[index]['rating'] = rating;
+				}
+
+				console.log(_ratedStrategies);
+				this.setState({
+					strategiesMath: _ratedStrategies
+				});
+			}
 		}
 	}, {
 		key: 'getStrategies',
@@ -61754,14 +61762,25 @@ var EvaluationModal = function (_Component) {
 
 			instance.get('/api/strategies/all').then(function (response) {
 
-				var $allStrategies = response.data['strategies'];
+				var allStrategies = response.data['strategies'];
 				var i = 0;
-				for (i = 0; i < $allStrategies.length; i++) {
-					$allStrategies[i]['rating'] = null;
+
+				var eng = [];
+				var math = [];
+
+				for (i = 0; i < allStrategies.length; i++) {
+					allStrategies[i]['rating'] = null;
+					if (allStrategies[i]['subject'] == 'Matematik') {
+						math.push(allStrategies[i]);
+					}
+					if (allStrategies[i]['subject'] == 'Engelska') {
+						eng.push(allStrategies[i]);
+					}
 				}
 
 				_this3.setState({
-					strategies: $allStrategies
+					strategiesEng: eng,
+					strategiesMath: math
 				});
 			});
 		}
@@ -61775,10 +61794,12 @@ var EvaluationModal = function (_Component) {
 		value: function render() {
 			var _this4 = this;
 
-			var strategies = this.state.strategies;
+			var _state = this.state,
+			    strategiesEng = _state.strategiesEng,
+			    strategiesMath = _state.strategiesMath;
 
 
-			var stratItems = Object.keys(strategies).map(function (index, i) {
+			var stratItemsEng = Object.keys(strategiesEng).map(function (index, i) {
 				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'div',
 					null,
@@ -61788,29 +61809,68 @@ var EvaluationModal = function (_Component) {
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'a',
 							{
-								href: "/prototype/strategies/description/" + strategies[index].title },
-							strategies[index].title
+								href: "/prototype/strategies/description/" + strategiesEng[index].title },
+							strategiesEng[index].title
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
-									_this4.setRating(index, '-1');
-								}, style: strategies[index]['rating'] == '-1' ? { backgroundColor: 'green' } : {} },
+									_this4.setRating(index, '-1', 'eng');
+								}, style: strategiesEng[index]['rating'] == '-1' ? { backgroundColor: 'green' } : {} },
 							'\uD83D\uDC4E'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
-									_this4.setRating(index, '1');
-								}, style: strategies[index]['rating'] == '1' ? { backgroundColor: 'green' } : {} },
+									_this4.setRating(index, '1', 'eng');
+								}, style: strategiesEng[index]['rating'] == '1' ? { backgroundColor: 'green' } : {} },
 							'\uD83D\uDC4D'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
-									_this4.setRating(index, '0');
-								}, style: strategies[index]['rating'] == '0' ? { backgroundColor: 'green' } : {} },
+									_this4.setRating(index, '0', 'eng');
+								}, style: strategiesEng[index]['rating'] == '0' ? { backgroundColor: 'green' } : {} },
+							'Har inte anv\xE4nt'
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+			var stratItemsMath = Object.keys(strategiesMath).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: "/prototype/strategies/description/" + strategiesMath[index].title },
+							strategiesMath[index].title
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: function onClick() {
+									_this4.setRating(index, '-1', 'math');
+								}, style: strategiesMath[index]['rating'] == '-1' ? { backgroundColor: 'green' } : {} },
+							'\uD83D\uDC4E'
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: function onClick() {
+									_this4.setRating(index, '1', 'math');
+								}, style: strategiesMath[index]['rating'] == '1' ? { backgroundColor: 'green' } : {} },
+							'\uD83D\uDC4D'
+						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: function onClick() {
+									_this4.setRating(index, '0', 'math');
+								}, style: strategiesMath[index]['rating'] == '0' ? { backgroundColor: 'green' } : {} },
 							'Har inte anv\xE4nt'
 						)
 					),
@@ -61848,12 +61908,22 @@ var EvaluationModal = function (_Component) {
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
 									{ 'class': 'kclabel' },
-									'Strategier'
+									'Engelska'
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'div',
 									{ 'class': 'align-horizontal' },
-									stratItems
+									stratItemsEng
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Matematik'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'align-horizontal' },
+									stratItemsMath
 								)
 							),
 							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(

@@ -7,7 +7,8 @@ class EvaluationModal extends Component {
 		super()
 
 		this.state = {
-			strategies: []
+			strategiesEng: [],
+			strategiesMath: []
 		}
 
 		this.saveStrategies = this.saveStrategies.bind(this);
@@ -21,24 +22,29 @@ class EvaluationModal extends Component {
 
 
 		let i = 0;
-		console.log('looky here');
-		console.log(this.state.strategies);
+
+		let strategies = this.state.strategiesMath;
+
+		for(i=0; i<this.state.strategiesEng.length; i++) {
+			strategies.push(this.state.strategiesEng[i]);
+		}
+		console.log(strategies);
 
 
-		for(i=0; i<this.state.strategies.length; i++){
-			if(this.state.strategies[i]['rating'] == null){
+		for(i=0; i<strategies.length; i++){
+
+			if(strategies[i]['rating'] == null){
 				return
 			}
 		}
-		console.log(this.state.strategies);
 
-		let instance = axios.create({
-			baseURL: '',
+		axios.defaults.baseURL = 'http://localhost:8000/api/';
 
-		});
-		instance.post('api/evaluate', {'strategies': this.state.strategies}).then(response=>{
+
+		axios.post('evaluate', {'strategies': strategies}).then(response=>{
 			this.setState({
-				strategies: []
+				strategiesEng: [],
+				strategiesMath: []
 			});
 			this.props.closeEval();
 		});
@@ -49,20 +55,37 @@ class EvaluationModal extends Component {
 		this.props.closeEval();
 	}
 
-	setRating(index,rating) {
-		let ratedStrategies = this.state.strategies;
+	setRating(index,rating, subject) {
 
-		console.log(ratedStrategies);
-		if(ratedStrategies[index]['rating'] == rating){
-			ratedStrategies[index]['rating'] = null;
-		} else {
-			ratedStrategies[index]['rating'] = rating;
+		if(subject == 'eng'){
+
+			let ratedStrategies = this.state.strategiesEng;
+			if(ratedStrategies[index]['rating'] == rating){
+				ratedStrategies[index]['rating'] = null;
+			} else {
+				ratedStrategies[index]['rating'] = rating;
+			}
+
+			console.log(ratedStrategies);
+			this.setState({
+				strategiesEng: ratedStrategies
+			});
 		}
 
-		console.log(ratedStrategies);
-		this.setState({
-			strategies: ratedStrategies
-		});
+		if(subject == 'math'){
+
+			let ratedStrategies = this.state.strategiesMath;
+			if(ratedStrategies[index]['rating'] == rating){
+				ratedStrategies[index]['rating'] = null;
+			} else {
+				ratedStrategies[index]['rating'] = rating;
+			}
+
+			console.log(ratedStrategies);
+			this.setState({
+				strategiesMath: ratedStrategies
+			});
+		}
 
 
 	}
@@ -77,15 +100,27 @@ class EvaluationModal extends Component {
 
 		instance.get('/api/strategies/all').then(response=>{
 
-			let $allStrategies = response.data['strategies'];
+			let allStrategies = response.data['strategies'];
 			let i = 0;
-			for(i=0; i<$allStrategies.length; i++){
-				$allStrategies[i]['rating'] = null;
+
+			let eng =[];
+			let math =[];
+
+
+			for(i=0; i<allStrategies.length; i++){
+				allStrategies[i]['rating'] = null;
+				if(allStrategies[i]['subject'] == 'Matematik') {
+					math.push(allStrategies[i])
+				}
+				if(allStrategies[i]['subject'] == 'Engelska') {
+					eng.push(allStrategies[i])
+				}
 			}
 
 
 			this.setState({
-				strategies: $allStrategies
+				strategiesEng: eng,
+				strategiesMath: math
 			});
 
 
@@ -101,21 +136,36 @@ class EvaluationModal extends Component {
 
 	render () {
 
-		const {strategies} = this.state;
+		const {strategiesEng, strategiesMath} = this.state;
 
-		const stratItems = Object.keys(strategies).map((index, i) =>
+		const stratItemsEng = Object.keys(strategiesEng).map((index, i) =>
 			<div>
 				<div class="horizontalItem top">
 					<a
-						href={"/prototype/strategies/description/" + strategies[index].title}>
-						{strategies[index].title}
+						href={"/prototype/strategies/description/" + strategiesEng[index].title}>
+						{strategiesEng[index].title}
 					</a>
 
 					<br/>
-					<button onClick={() => {this.setRating(index, '-1')}} style={strategies[index]['rating'] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
-					<button onClick={() => {this.setRating(index, '1')}} style={strategies[index]['rating'] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
-					<button onClick={() => {this.setRating(index, '0')}} style={strategies[index]['rating'] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
+					<button onClick={() => {this.setRating(index, '-1', 'eng')}} style={strategiesEng[index]['rating'] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1', 'eng')}} style={strategiesEng[index]['rating'] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0', 'eng')}} style={strategiesEng[index]['rating'] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
 					</div><br/>
+			</div>
+		)
+		const stratItemsMath = Object.keys(strategiesMath).map((index, i) =>
+			<div>
+				<div class="horizontalItem top">
+					<a
+						href={"/prototype/strategies/description/" + strategiesMath[index].title}>
+						{strategiesMath[index].title}
+					</a>
+
+					<br/>
+					<button onClick={() => {this.setRating(index, '-1', 'math')}} style={strategiesMath[index]['rating'] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1', 'math')}} style={strategiesMath[index]['rating'] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0', 'math')}} style={strategiesMath[index]['rating'] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
+				</div><br/>
 			</div>
 		)
 
@@ -130,9 +180,13 @@ class EvaluationModal extends Component {
 
 								<h2>Utvärdera Strategier</h2>
 								<hr/>
-								<label class="kclabel" >Strategier</label>
+								<label class="kclabel" >Engelska</label>
 								<div class="align-horizontal">
-									{stratItems}
+									{stratItemsEng}
+								</div>
+								<label class="kclabel" >Matematik</label>
+								<div class="align-horizontal">
+									{stratItemsMath}
 								</div>
 							</div>
 							<div class="sv-html-portlet sv-portlet"><button tabindex="1" class="btn btn-large btn-default" onClick={this.saveStrategies}>Spara</button></div>

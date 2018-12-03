@@ -8,7 +8,8 @@ class LogBook extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			strategies:[],
+			strategiesMath:[],
+			strategiesEng:[],
 			showModal: false,
 			showEval: false,
 			step: 19,
@@ -35,7 +36,15 @@ class LogBook extends Component {
 		axios.get('/api/strategies/current/engelska').then(response => {
 
 			this.setState({
-				strategies: response.data['strategies']
+				strategiesEng: response.data['strategies']
+			})
+		})
+
+
+		axios.get('/api/strategies/current/matematik').then(response => {
+
+			this.setState({
+				strategiesMath: response.data['strategies']
 			})
 		})
 	}
@@ -95,16 +104,25 @@ class LogBook extends Component {
 
 
 	render () {
-		const {strategies, path} = this.state;
+		const {strategiesEng,strategiesMath, path} = this.state;
 
-		const strategyItems = Object.keys(strategies).map((index, i) =>
+		const strategyItemsEnglish = Object.keys(strategiesEng).map((index, i) =>
 		<div>
 			<div class="horizontalItem top"><a
-				href={path + strategies[index].title}>
-				{strategies[index].title}
+				href={path + strategiesEng[index].title}>
+				{strategiesEng[index].title}
 			</a></div><br/>
 		</div>
 			)
+
+		const strategyItemsMath = Object.keys(strategiesMath).map((index, i) =>
+			<div>
+				<div class="horizontalItem top"><a
+					href={path + strategiesMath[index].title}>
+					{strategiesMath[index].title}
+				</a></div><br/>
+			</div>
+		)
 
 		return (
 
@@ -156,7 +174,7 @@ class LogBook extends Component {
 													<div class="align-horizontal">
 														<div class="learningGoalText horizontalItem top">Strategier</div>
 
-														{strategyItems}
+														{strategyItemsEnglish}
 
 													</div>
 													<div class="btn addOwnGoal" onClick={() => {this.showModal("engelska")}}>➕ Lägg till strategi
@@ -238,6 +256,28 @@ class LogBook extends Component {
 										<div class="openHeader"><h5>Matematik</h5></div>
 										<div class="openContent">
 											<div class="learningGoalContainer">
+
+												<div class="learningGoalTools">
+													<div class="stepIndicator">18</div>
+													<div class="learningGoalTools">
+
+													{/*
+
+													 STRATEGIKNAPP
+
+													 */}
+
+													<div class="align-horizontal">
+														<div class="learningGoalText horizontalItem top">Strategier</div>
+
+														{strategyItemsMath}
+
+													</div>
+													<div class="btn addOwnGoal" onClick={() => {this.showModal("matematik")}}>➕ Lägg till strategi
+													</div>
+													</div>
+												</div>
+
 												<div class="stepIndicator">18</div>
 												<div class="align-horizontal">
 													<div class="learningGoalText horizontalItem top">Läsa av och tolka enkla tabeller och
@@ -324,35 +364,7 @@ class LogBook extends Component {
 													</div>
 												</div>
 												<br/></div>
-											<div class="learningGoalContainer">
-												<div class="stepIndicator">17</div>
-												<div class="align-horizontal">
-													<div class="learningGoalText horizontalItem top">Beräkna omkrets hos vissa geometriska
-														objekt
-													</div>
-													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"></a></div>
-												</div>
-												<div class="learningGoalTasks">
-													<div class="taskContainer">
-														<div>
-															<div class="align-horizontal">
-																<div class="horizontalItem top">
-																	<div class="checkBox"></div>
-																</div>
-																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/matematik/block4/steg17/uppgifter/beraknaomkretshosvissageometriskaobjekt/omkretsavmanghorningar.4.5ef46051556de3110296f35.html">Omkrets
-																	av månghörningar</a></div>
-																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="learningGoalTools">
-													<div class="btn addOwnGoal">➕ Eget arbetsmål
-													</div>
-												</div>
-												<br/></div>
+
 									</div>
 
 									</div>

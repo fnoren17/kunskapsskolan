@@ -126,7 +126,9 @@ class StrategyController extends Controller{
 		return json_encode($result);
 	}
 
-	function getBookmarkedStrategies(Request $request, $user_id){
+	function getBookmarkedStrategies(Request $request, $subject){
+		$user_id = 1;
+
 		$result = DB::select("SELECT title FROM ks_strategies JOIN ks_user_bookmarks ON ks_strategies.id = ks_user_bookmarks.strategy_id WHERE user_id = ?", [$user_id]);
 		return json_encode(array('strategies'=>$result));
 	}
