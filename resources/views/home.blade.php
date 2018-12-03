@@ -461,7 +461,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="download-thumb wow fadeInLeft" data-wow-delay="0.2s">
-                        <img class="img-fluid" src="img/mac.png" alt="">
+                        <img class="img-fluid" src="img/prototype.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12">
@@ -471,7 +471,7 @@
                                 <h4>Try the prototype</h4>
                                 <p>Some cheesy words about what we think the prototype will be</p>
                             </div>
-                            <a href="https://felixnoren.com/prototype" target="_blank" class="btn btn-common btn-effect">Try the prototype<br></a>
+                            <a href="/prototype" class="btn btn-common btn-effect">Try the prototype<br></a>
                         </div>
                     </div>
                 </div>
