@@ -24,7 +24,7 @@
                     <a class="nav-link" href="/prototype">Prototype</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Decision support Tool</a>
+                    <a class="nav-link" href="/">Decision Support Tool</a>
                 </li>
             </ul>
         </div>
