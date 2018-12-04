@@ -341,7 +341,7 @@
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Benny Feng</h4>
-                                <p>Frontend Developer</p>
+                                <p>Resident Torvalds</p>
                             </div>
                         </div>
                     </div>
