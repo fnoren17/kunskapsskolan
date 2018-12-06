@@ -62012,7 +62012,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: 'https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/skrivaenlaslogg/obestamdartikel.4.4476f2bf13313820a7580005391.html' },
+																					href: '/prototype' },
 																				'Obest\xE4md artikel'
 																			)
 																		),
@@ -62040,7 +62040,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: 'https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/skrivaenlaslogg/attlasaochskriva.4.4476f2bf13313820a7580004223.html' },
+																					href: '/prototype' },
 																				'Att l\xE4sa och skriva'
 																			)
 																		),
@@ -62111,7 +62111,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: 'https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/aterberattadetduharlastochdeltaisamtalomlitteraturmedkompisar/datidregelbundnaochoregelbundnaverb.4.6d285f9512e4dc415c780005799.html' },
+																					href: '/prototype' },
 																				'D\xE5tid - regelbundna och oregelbundna verb'
 																			)
 																		),
@@ -62228,8 +62228,8 @@ var LogBook = function (_Component) {
 																			{ 'class': 'horizontalItem top' },
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
-																				{
-																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/lasaavochtolkaenklatabellerochdiagramsamtsorteradataitabeller/tabeller.4.6c943aa81553d0da4ecb08e8.html' },
+																				{ href: '/prototype'
+																				},
 																				'Tabeller'
 																			)
 																		),
@@ -62300,7 +62300,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/ritaettkoordinatsystemgraderakoordinataxlarnaochplacerainpunktermedhjalpavdesskoordinater/koordinatsystem.4.5ef46051556de311029a0f3.html' },
+																					href: '/prototype' },
 																				'Koordinatsystem'
 																			)
 																		),
@@ -62320,77 +62320,6 @@ var LogBook = function (_Component) {
 																'div',
 																{ 'class': 'btn addOwnGoal' },
 																'\u2795 Eget arbetsm\xE5l'
-															)
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
-													),
-													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-														'div',
-														{ 'class': 'learningGoalContainer' },
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'stepIndicator' },
-															this.state.step
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'align-horizontal' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'learningGoalText horizontalItem top' },
-																'St\xE4lla upp en v\xE4rdetabell f\xF6r en funktion samt rita en graf ur tabellen'
-															),
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'horizontalItem' },
-																'\xA0',
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'trash', href: '#',
-																	title: 'Ta bort l\xE4randem\xE5let och dess uppgifter' })
-															)
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'learningGoalTasks' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'taskContainer' },
-																__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																	'div',
-																	null,
-																	__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																		'div',
-																		{ 'class': 'align-horizontal' },
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'div',
-																			{ 'class': 'horizontalItem top' },
-																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'checkBox' })
-																		),
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'div',
-																			{ 'class': 'horizontalItem top' },
-																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																				'a',
-																				{
-																					href: 'https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/stallauppenvardetabellforenfunktionsamtritaengrafurtabellen/funktionsladorochvardetabeller.4.7fd424c91540ee0e8bd9c460.html' },
-																				'Funktionsl\xE5dor och v\xE4rdetabeller'
-																			)
-																		),
-																		__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																			'div',
-																			{ 'class': 'horizontalItem top taskEdit' },
-																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { 'class': 'editItem' })
-																		)
-																	)
-																)
-															)
-														),
-														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-															'div',
-															{ 'class': 'learningGoalTools' },
-															__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-																'div',
-																{ 'class': 'btn addOwnGoal' },
-																'\u2795  Eget arbetsm\xE5l'
 															)
 														),
 														__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)

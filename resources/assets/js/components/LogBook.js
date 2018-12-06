@@ -399,7 +399,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/skrivaenlaslogg/obestamdartikel.4.4476f2bf13313820a7580005391.html">Obestämd
+																	href="/prototype">Obestämd
 																	artikel</a></div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -410,7 +410,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/skrivaenlaslogg/attlasaochskriva.4.4476f2bf13313820a7580004223.html">Att
+																	href="/prototype">Att
 																	läsa och skriva</a></div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -441,7 +441,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/engelska/block4/steg19/uppgifter/aterberattadetduharlastochdeltaisamtalomlitteraturmedkompisar/datidregelbundnaochoregelbundnaverb.4.6d285f9512e4dc415c780005799.html">Dåtid
+																	href="/prototype">Dåtid
 																	- regelbundna och oregelbundna verb</a></div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -496,8 +496,8 @@ class LogBook extends Component {
 																<div class="horizontalItem top">
 																	<div class="checkBox"></div>
 																</div>
-																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/lasaavochtolkaenklatabellerochdiagramsamtsorteradataitabeller/tabeller.4.6c943aa81553d0da4ecb08e8.html">Tabeller</a>
+																<div class="horizontalItem top"><a href="/prototype"
+																	>Tabeller</a>
 																</div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -526,7 +526,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/ritaettkoordinatsystemgraderakoordinataxlarnaochplacerainpunktermedhjalpavdesskoordinater/koordinatsystem.4.5ef46051556de311029a0f3.html">Koordinatsystem</a>
+																	href="/prototype" >Koordinatsystem</a>
 																</div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -535,35 +535,6 @@ class LogBook extends Component {
 												</div>
 												<div class="learningGoalTools">
 													<div class="btn addOwnGoal">➕ Eget arbetsmål
-													</div>
-												</div>
-												<br/></div>
-											<div class="learningGoalContainer">
-												<div class="stepIndicator">{this.state.step}</div>
-												<div class="align-horizontal">
-													<div class="learningGoalText horizontalItem top">Ställa upp en värdetabell för en funktion
-														samt rita en graf ur tabellen
-													</div>
-													<div class="horizontalItem">&nbsp;<a class="trash" href="#"
-																						 title="Ta bort lärandemålet och dess uppgifter"></a></div>
-												</div>
-												<div class="learningGoalTasks">
-													<div class="taskContainer">
-														<div>
-															<div class="align-horizontal">
-																<div class="horizontalItem top">
-																	<div class="checkBox"></div>
-																</div>
-																<div class="horizontalItem top"><a
-																	href="https://ks.kunskapsporten.se/steg/matematik/block4/steg18/uppgifter/stallauppenvardetabellforenfunktionsamtritaengrafurtabellen/funktionsladorochvardetabeller.4.7fd424c91540ee0e8bd9c460.html">Funktionslådor
-																	och värdetabeller</a></div>
-																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="learningGoalTools">
-													<div class="btn addOwnGoal">➕  Eget arbetsmål
 													</div>
 												</div>
 												<br/></div>
