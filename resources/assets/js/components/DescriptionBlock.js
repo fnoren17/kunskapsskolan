@@ -17,7 +17,7 @@ class DescriptionBlock extends Component {
 
 
 
-		axios.get('/api/description/' + this.props.match.params.id).then(response =>{
+		axios.get('/description/' + this.props.match.params.id).then(response =>{
 			console.log(response);
 			this.setState({
 				title: response.data['text'][0]['title'],
