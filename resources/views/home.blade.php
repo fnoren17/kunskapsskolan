@@ -1,7 +1,7 @@
 @extends("layouts/master")
 
 @section("pageheader")
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+   
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
