@@ -10,15 +10,14 @@ class EvaluationModal extends Component {
 			strategiesEng: [],
 			strategiesMath: [],
 			bookmarked:[],
+			hasStrats:null
 
 		}
 
 		this.saveStrategies = this.saveStrategies.bind(this);
 		this.closeButton = this.closeButton.bind(this);
 		this.setRating = this.setRating.bind(this)
-
 	}
-
 	saveStrategies() {
 		let i = 0;
 
@@ -129,11 +128,16 @@ class EvaluationModal extends Component {
 					eng.push(allStrategies[i])
 				}
 			}
+			let stratExists = true;
+			if (eng.length<1 && math.length<1){
+				stratExists = false
+			}
 
 
 			this.setState({
 				strategiesEng: eng,
-				strategiesMath: math
+				strategiesMath: math,
+				hasStrats:stratExists
 			});
 
 
@@ -195,11 +199,12 @@ class EvaluationModal extends Component {
 
 								<h2>Utvärdera Strategier</h2>
 								<hr/>
-								<label class="kclabel" >Engelska</label>
+								{this.state.hasStrats ? null:<p>Det finns inga strategier att utvärdera</p> }
+								{strategiesEng.length>0 ? <label class="kclabel" >Engelska</label>:null}
 								<div class="align-horizontal">
 									{stratItemsEng}
 								</div>
-								<label class="kclabel" >Matematik</label>
+								{stratItemsMath.length>0 ? <label class="kclabel" >Matematik</label>:null}
 								<div class="align-horizontal">
 									{stratItemsMath}
 								</div>

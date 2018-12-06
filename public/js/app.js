@@ -62402,14 +62402,14 @@ var EvaluationModal = function (_Component) {
 		_this.state = {
 			strategiesEng: [],
 			strategiesMath: [],
-			bookmarked: []
+			bookmarked: [],
+			hasStrats: null
 
 		};
 
 		_this.saveStrategies = _this.saveStrategies.bind(_this);
 		_this.closeButton = _this.closeButton.bind(_this);
 		_this.setRating = _this.setRating.bind(_this);
-
 		return _this;
 	}
 
@@ -62528,10 +62528,15 @@ var EvaluationModal = function (_Component) {
 						eng.push(allStrategies[i]);
 					}
 				}
+				var stratExists = true;
+				if (eng.length < 1 && math.length < 1) {
+					stratExists = false;
+				}
 
 				_this3.setState({
 					strategiesEng: eng,
-					strategiesMath: math
+					strategiesMath: math,
+					hasStrats: stratExists
 				});
 			});
 		}
@@ -62670,21 +62675,26 @@ var EvaluationModal = function (_Component) {
 									'Utv\xE4rdera Strategier'
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('hr', null),
-								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								this.state.hasStrats ? null : __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'p',
+									null,
+									'Det finns inga strategier att utv\xE4rdera'
+								),
+								strategiesEng.length > 0 ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
 									{ 'class': 'kclabel' },
 									'Engelska'
-								),
+								) : null,
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'div',
 									{ 'class': 'align-horizontal' },
 									stratItemsEng
 								),
-								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								stratItemsMath.length > 0 ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
 									{ 'class': 'kclabel' },
 									'Matematik'
-								),
+								) : null,
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'div',
 									{ 'class': 'align-horizontal' },
