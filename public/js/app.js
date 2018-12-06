@@ -61040,8 +61040,7 @@ var LogBook = function (_Component) {
 			showEval: false,
 			step: 19,
 			currentSubject: "",
-			path: "",
-			tmp: "activePage"
+			path: ""
 		};
 
 		_this.showModal = _this.showModal.bind(_this);
@@ -61054,38 +61053,42 @@ var LogBook = function (_Component) {
 	_createClass(LogBook, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			this.getCurrentStrategies();
+			this.getCurrentStrategies(this.state.step);
 		}
 	}, {
 		key: 'setStep',
 		value: function setStep(newStep) {
 			this.setState({
 				step: newStep
-
 			});
-			this.getCurrentStrategies();
+			this.getCurrentStrategies(newStep);
 		}
 	}, {
 		key: 'getCurrentStrategies',
-		value: function getCurrentStrategies() {
+		value: function getCurrentStrategies(step) {
 			var _this2 = this;
+
+			this.setState({
+				strategiesEng: [],
+				strategiesMath: []
+			});
 
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api';
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/strategies/current/engelska/' + this.state.step).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/strategies/current/engelska/' + step).then(function (response) {
 
 				_this2.setState({
 					strategiesEng: response.data['strategies']
 				});
 			});
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/strategies/current/matematik/' + this.state.step).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/strategies/current/matematik/' + step).then(function (response) {
 
 				_this2.setState({
 					strategiesMath: response.data['strategies']
 				});
-				_this2.forceUpdate();
 			});
+			this.setState({});
 		}
 	}, {
 		key: 'showModal',
@@ -61099,7 +61102,7 @@ var LogBook = function (_Component) {
 	}, {
 		key: 'closeModal',
 		value: function closeModal() {
-			this.getCurrentStrategies();
+			this.getCurrentStrategies(this.state.step);
 			this.setState({
 				showModal: false
 			});
@@ -61114,7 +61117,7 @@ var LogBook = function (_Component) {
 	}, {
 		key: 'closeEval',
 		value: function closeEval() {
-			this.getCurrentStrategies();
+			this.getCurrentStrategies(this.state.step);
 			this.setState({
 				showEval: false
 			});
@@ -61896,7 +61899,8 @@ var LogBook = function (_Component) {
 													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 														'p',
 														null,
-														'Vecka 46'
+														'Steg ',
+														this.state.step
 													)
 												),
 												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(

@@ -14,8 +14,7 @@ class LogBook extends Component {
 			showEval: false,
 			step: 19,
 			currentSubject: "",
-			path: "",
-			tmp: "activePage"
+			path: ""
 		}
 
 
@@ -26,24 +25,28 @@ class LogBook extends Component {
 	}
 
 	componentDidMount () {
-		this.getCurrentStrategies()
+		this.getCurrentStrategies(this.state.step)
 
 	}
 
 	setStep(newStep){
 		this.setState({
 			step: newStep
-
 		})
-		this.getCurrentStrategies();
+		this.getCurrentStrategies(newStep);
 
 
 	}
-	getCurrentStrategies() {
+	getCurrentStrategies(step) {
+
+		this.setState({
+			strategiesEng: [],
+			strategiesMath:[]
+		})
 
 		axios.defaults.baseURL = '/api';
 
-		axios.get('/strategies/current/engelska/' + this.state.step).then(response => {
+		axios.get('/strategies/current/engelska/' + step).then(response => {
 
 			this.setState({
 				strategiesEng: response.data['strategies']
@@ -51,14 +54,15 @@ class LogBook extends Component {
 		})
 
 
-		axios.get('/strategies/current/matematik/' + this.state.step).then(response => {
+		axios.get('/strategies/current/matematik/' + step).then(response => {
 
 			this.setState({
 				strategiesMath: response.data['strategies']
 			});
-			this.forceUpdate()
 
-		})
+		});
+		this.setState({});
+
 	}
 	showModal(subject) {
 
@@ -69,7 +73,7 @@ class LogBook extends Component {
 	}
 
 	closeModal() {
-		this.getCurrentStrategies();
+		this.getCurrentStrategies(this.state.step);
 		this.setState({
 			showModal:false
 		})
@@ -82,17 +86,11 @@ class LogBook extends Component {
 	}
 
 	closeEval() {
-		this.getCurrentStrategies();
+		this.getCurrentStrategies(this.state.step);
 		this.setState({
 			showEval:false
 		});
 	}
-
-
-
-
-
-
 
 	hasErrorFor (field) {
 		return !!this.state.errors[field]
@@ -343,7 +341,7 @@ class LogBook extends Component {
 								<div class="ked_boxed weekPlanner currentWeek">
 									<div class="weekSelect">
 										<div class="horizontalItem">
-											<p>Vecka 46</p>
+											<p>Steg {this.state.step}</p>
 										</div>
 										<div class="horizontalItem">
 											<div class="btn-group">
