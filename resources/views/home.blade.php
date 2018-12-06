@@ -306,12 +306,11 @@
                 <a href="#">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
-                            <img src="img/robban.jpg" alt="">
+                            <img src="img/team/robban.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Robert Bojs</h4>
-                                <p>UX Consultant</p>
                             </div>
                         </div>
                     </div>
@@ -321,12 +320,11 @@
                 <a href="mailto:frcarls@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-thumb">
-                            <img src="img/carls.jpg" alt="">
+                            <img src="img/team/carls.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Fredrik Carls</h4>
-                                <p>Backend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -336,12 +334,11 @@
                 <a href="#">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-thumb">
-                            <img src="img/benny.jpg" alt="">
+                            <img src="img/team/benny.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Benny Feng</h4>
-                                <p>Resident Torvalds</p>
                             </div>
                         </div>
                     </div>
@@ -353,12 +350,11 @@
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.4s">
                         <div class="team-thumb">
-                            <img src="img/rickard.jpg" alt="">
+                            <img src="img/team/rickard.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Rickard Johansson</h4>
-                                <p>Backend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -368,12 +364,11 @@
                 <a href="mailto:erlunds@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
-                            <img src="img/lurre.jpg" alt="">
+                            <img src="img/team/lurre.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Erik Lundsten</h4>
-                                <p>Digital Marketer</p>
                             </div>
                         </div>
                     </div>
@@ -383,12 +378,11 @@
                     <a href="mailto:madosh@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
-                            <img src="img/farre.jpg" alt="">
+                            <img src="img/team/farre.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Farzana Madoosh</h4>
-                                <p>Digital Marketer</p>
                             </div>
                         </div>
                     </div>
@@ -401,12 +395,11 @@
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
-                            <img src="img/norre.jpg" alt="">
+                            <img src="img/team/norre.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Felix Norén</h4>
-                                <p>Frontend Developer</p>
                             </div>
                         </div>
                     </div>
@@ -417,12 +410,11 @@
                 <a href="mailto:rumman@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
-                            <img src="img/phille.jpg" alt="">
+                            <img src="img/team/phille.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Philip Rumman</h4>
-                                <p>Digital Marketer</p>
                             </div>
                         </div>
                     </div>
@@ -432,12 +424,11 @@
                     <a href="mailto:eriktors@kth.se">
                     <div class="single-team wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-thumb">
-                            <img src="img/torsten.jpg" alt="">
+                            <img src="img/team/torsten.jpg" alt="">
                         </div>
                         <div class="team-details">
                             <div class="team-inner">
                                 <h4 class="team-title">Erik Thorstensson</h4>
-                                <p>Project Leader</p>
                             </div>
                         </div>
                     </div>
@@ -454,30 +445,6 @@
 
 
 
-
-    <!-- download Section Start -->
-    <section id="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="download-thumb wow fadeInLeft" data-wow-delay="0.2s">
-                        <img class="img-fluid" src="img/prototype.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="download-wrapper wow fadeInRight" data-wow-delay="0.2s">
-                        <div>
-                            <div class="download-text">
-                                <h4>Try the prototype</h4>
-                                <p>Some cheesy words about what we think the prototype will be</p>
-                            </div>
-                            <a href="/prototype" class="btn btn-common btn-effect">Try the prototype<br></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- download Section Start -->
 
 
@@ -485,6 +452,18 @@
     <footer>
         <!-- Footer Area Start -->
         <section class="footer-Content">
+        
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="site-info float-left">
+                                <p style="color:white;">This project was done during the course DH2655 Cooperative IT Design/DH2465 Computer Science, Bussiness and Management at KTH during autumn term 2018. Thanks to Björn Thuresson and Henrik Blomgren for supervision.</p>
+                            </div>
+ 
+                        </div>
+                    </div>
+                </div>
+           
             <!-- Copyright Start  -->
             <div class="copyright">
                 <div class="container">
