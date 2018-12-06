@@ -22,18 +22,19 @@ class LogBook extends Component {
 		this.showModal = this.showModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
 		this.closeEval = this.closeEval.bind(this);
-		this.pathWriter = this.pathWriter.bind(this)
 
 	}
 
 	componentDidMount () {
-		this.pathWriter();
 		this.getCurrentStrategies()
 
 	}
 
 	getCurrentStrategies() {
-		axios.get('/api/strategies/current/engelska/19').then(response => {
+
+		axios.defaults.baseURL = '/api';
+
+		axios.get('/strategies/current/engelska/19').then(response => {
 
 			this.setState({
 				strategiesEng: response.data['strategies']
@@ -41,11 +42,13 @@ class LogBook extends Component {
 		})
 
 
-		axios.get('/api/strategies/current/matematik/19').then(response => {
+		axios.get('/strategies/current/matematik/19').then(response => {
 
 			this.setState({
 				strategiesMath: response.data['strategies']
-			})
+			});
+			this.forceUpdate()
+
 		})
 	}
 	showModal(subject) {
@@ -73,27 +76,14 @@ class LogBook extends Component {
 		this.getCurrentStrategies();
 		this.setState({
 			showEval:false
-		})
-
+		});
 	}
 
 
 
-	pathWriter(){
 
-		//for some fkin reason, this makes the path work, do not change
-		if(window.location.pathname.includes("description")) {
-			this.setState({
-				path:"/prototype/strategies/description/"
-			})
 
-		} else {
-			this.setState({
-				path:"/prototype/strategies/description/"
-			})
-		}
 
-	}
 
 	hasErrorFor (field) {
 		return !!this.state.errors[field]

@@ -24,13 +24,11 @@ class StrategyModal extends Component {
 
 	saveStrategies() {
 
-		const instance = axios.create({
-			baseURL: '',
-
-		});
+		axios.defaults.baseURL = '/api/';
 
 
-		instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, {'strategies':this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies)}).then(response=>{
+
+		axios.post('strategies/' + this.props.subject + "/" + this.props.step, {'strategies':this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies.concat(this.state.chosenHistStrategies))}).then(response=>{
 			this.setState({
 				chosenSavedStrategies:[],
 				chosenRegularStrategies:[],
@@ -73,7 +71,7 @@ class StrategyModal extends Component {
 
 
 	getStrategies() {
-		axios.get(this.state.path + '/api/strategies/' + this.props.subject + "/" + this.props.step).then(response => {
+		axios.get(this.state.path + 'strategies/' + this.props.subject + "/" + this.props.step).then(response => {
 
 			let strategies =[];
 			let i;
@@ -87,10 +85,12 @@ class StrategyModal extends Component {
 			this.setState({
 				regularStrategies: strategies
 			})
+
+
 		});
 
 
-		axios.get(this.state.path + '/api/strategies/saved/' + this.props.subject).then(response =>{
+		axios.get(this.state.path + 'strategies/saved/' + this.props.subject).then(response =>{
 			let strategies =[];
 			let i;
 			let temp;
@@ -104,7 +104,7 @@ class StrategyModal extends Component {
 				savedStrategies: strategies
 			})
 		});
-		axios.get(this.state.path + '/api/strategies/historical/' + this.props.subject).then(response =>{
+		axios.get(this.state.path + 'strategies/historical/' + this.props.subject).then(response =>{
 			let strategies =[];
 			let i;
 			let temp;
@@ -117,6 +117,7 @@ class StrategyModal extends Component {
 			this.setState({
 				histStrategies: strategies
 			})
+
 		});
 	}
 
@@ -138,6 +139,27 @@ class StrategyModal extends Component {
 
 		this.setState({
 			chosenSavedStrategies: temp
+		})
+
+	}
+	addHistStrategy(strategy) {
+
+		let temp = this.state.chosenHistStrategies;
+		if (temp.includes(strategy)){
+			let i;
+			for(i = 0; i<temp.length; i++){
+				if(temp[i] == strategy){
+					temp.splice(i,1)
+				}
+			}
+		}
+		else{
+			temp.push(strategy)
+		}
+
+
+		this.setState({
+			chosenHistStrategies: temp
 		})
 
 	}
@@ -178,14 +200,14 @@ class StrategyModal extends Component {
 					<input type="checkbox" onChange={() => {this.addRegularStrategy(regularStrategies[index].title)}}/>
 					<a
 					href={"/prototype/strategies/description/" + regularStrategies[index].title}>
-						{regularStrategies[index].title}
+						{regularStrategies[index].title}{index == 0 ? '⭐':null}
 				</a></div><br/>
 			</div>
 		)
 		const savedStratItems = Object.keys(savedStrategies).map((index, i) =>
 			<div>
 				<div class="horizontalItem top">
-					<input type="checkbox" onChange={() => {this.addSavedStrategy(savedStrategies[index].id)}}/>
+					<input type="checkbox" onChange={() => {this.addSavedStrategy(savedStrategies[index].title)}}/>
 					<a
 					href={"/strategies/" + savedStrategies[index].title}>
 					{savedStrategies[index].title}
@@ -195,7 +217,7 @@ class StrategyModal extends Component {
 		const histStratItems = Object.keys(histStrategies).map((index, i) =>
 			<div>
 				<div class="horizontalItem top">
-					<input type="checkbox" onChange={() => {this.addSavedStrategy(histStrategies[index].id)}}/>
+					<input type="checkbox" onChange={() => {this.addHistStrategy(histStrategies[index].title)}}/>
 					<a
 						href={"/strategies/" + histStrategies[index].title}>
 						{histStrategies[index].title}
@@ -206,11 +228,11 @@ class StrategyModal extends Component {
 		return (
 			<div>
 				<div class="darken"></div>
-				<div style={{position:"fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400}}>
+				<div style={{position:"fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400, height: "80%"}}>
 					<div class="modal-page" aria-disabled="false">
 						<div>
 							<div class="sv-html-portlet sv-portlet sv-skip-spacer">
-								<button style ={{position:"fixed",top:10,right:50}} onClick={this.closeButton}>X</button>
+								<button style ={{position:"fixed",top:10,right:70}} onClick={this.closeButton}>X</button>
 
 								<h2>Välj Strategier</h2>
 								<hr/>

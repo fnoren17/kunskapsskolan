@@ -28,7 +28,6 @@ class EvaluationModal extends Component {
 		for(i=0; i<this.state.strategiesEng.length; i++) {
 			strategies.push(this.state.strategiesEng[i]);
 		}
-		console.log(strategies);
 
 
 		for(i=0; i<strategies.length; i++){
@@ -66,7 +65,6 @@ class EvaluationModal extends Component {
 				ratedStrategies[index]['rating'] = rating;
 			}
 
-			console.log(ratedStrategies);
 			this.setState({
 				strategiesEng: ratedStrategies
 			});
@@ -81,7 +79,6 @@ class EvaluationModal extends Component {
 				ratedStrategies[index]['rating'] = rating;
 			}
 
-			console.log(ratedStrategies);
 			this.setState({
 				strategiesMath: ratedStrategies
 			});

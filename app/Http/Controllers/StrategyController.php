@@ -168,7 +168,7 @@ class StrategyController extends Controller{
 
 	function getUserHistoricalStrategies(Request $request, $subject){
 
-		$result = DB::select("SELECT DISTINCT(title) FROM ks_ratings JOIN ks_strategies ON ks_ratings.strategy_id = ks_strategies.id WHERE user_id = ?", [1]);
+		$result = DB::select("SELECT DISTINCT(title), ks_strategies.id AS strategy_id FROM ks_ratings JOIN ks_strategies ON ks_ratings.strategy_id = ks_strategies.id WHERE user_id = ?", [1]);
 
 		return json_encode(array('strategies'=>$result));
 	}

@@ -15533,12 +15533,9 @@ var StrategyModal = function (_Component) {
 		value: function saveStrategies() {
 			var _this2 = this;
 
-			var instance = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-				baseURL: ''
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api/';
 
-			});
-
-			instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies) }).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies.concat(this.state.chosenHistStrategies)) }).then(function (response) {
 				_this2.setState({
 					chosenSavedStrategies: [],
 					chosenRegularStrategies: [],
@@ -15579,7 +15576,7 @@ var StrategyModal = function (_Component) {
 		value: function getStrategies() {
 			var _this3 = this;
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + '/api/strategies/' + this.props.subject + "/" + this.props.step).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + 'strategies/' + this.props.subject + "/" + this.props.step).then(function (response) {
 
 				var strategies = [];
 				var i = void 0;
@@ -15595,7 +15592,7 @@ var StrategyModal = function (_Component) {
 				});
 			});
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + '/api/strategies/saved/' + this.props.subject).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + 'strategies/saved/' + this.props.subject).then(function (response) {
 				var strategies = [];
 				var i = void 0;
 				var temp = void 0;
@@ -15609,7 +15606,7 @@ var StrategyModal = function (_Component) {
 					savedStrategies: strategies
 				});
 			});
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + '/api/strategies/historical/' + this.props.subject).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + 'strategies/historical/' + this.props.subject).then(function (response) {
 				var strategies = [];
 				var i = void 0;
 				var temp = void 0;
@@ -15642,6 +15639,26 @@ var StrategyModal = function (_Component) {
 
 			this.setState({
 				chosenSavedStrategies: temp
+			});
+		}
+	}, {
+		key: 'addHistStrategy',
+		value: function addHistStrategy(strategy) {
+
+			var temp = this.state.chosenHistStrategies;
+			if (temp.includes(strategy)) {
+				var i = void 0;
+				for (i = 0; i < temp.length; i++) {
+					if (temp[i] == strategy) {
+						temp.splice(i, 1);
+					}
+				}
+			} else {
+				temp.push(strategy);
+			}
+
+			this.setState({
+				chosenHistStrategies: temp
 			});
 		}
 	}, {
@@ -15694,7 +15711,8 @@ var StrategyModal = function (_Component) {
 							'a',
 							{
 								href: "/prototype/strategies/description/" + regularStrategies[index].title },
-							regularStrategies[index].title
+							regularStrategies[index].title,
+							index == 0 ? '⭐' : null
 						)
 					),
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -15708,7 +15726,7 @@ var StrategyModal = function (_Component) {
 						'div',
 						{ 'class': 'horizontalItem top' },
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'checkbox', onChange: function onChange() {
-								_this4.addSavedStrategy(savedStrategies[index].id);
+								_this4.addSavedStrategy(savedStrategies[index].title);
 							} }),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'a',
@@ -15728,7 +15746,7 @@ var StrategyModal = function (_Component) {
 						'div',
 						{ 'class': 'horizontalItem top' },
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'checkbox', onChange: function onChange() {
-								_this4.addSavedStrategy(histStrategies[index].id);
+								_this4.addHistStrategy(histStrategies[index].title);
 							} }),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'a',
@@ -15747,7 +15765,7 @@ var StrategyModal = function (_Component) {
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'darken' }),
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'div',
-					{ style: { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400 } },
+					{ style: { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400, height: "80%" } },
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 						'div',
 						{ 'class': 'modal-page', 'aria-disabled': 'false' },
@@ -15759,7 +15777,7 @@ var StrategyModal = function (_Component) {
 								{ 'class': 'sv-html-portlet sv-portlet sv-skip-spacer' },
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'button',
-									{ style: { position: "fixed", top: 10, right: 50 }, onClick: this.closeButton },
+									{ style: { position: "fixed", top: 10, right: 70 }, onClick: this.closeButton },
 									'X'
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -60997,7 +61015,6 @@ var LogBook = function (_Component) {
 		_this.showModal = _this.showModal.bind(_this);
 		_this.closeModal = _this.closeModal.bind(_this);
 		_this.closeEval = _this.closeEval.bind(_this);
-		_this.pathWriter = _this.pathWriter.bind(_this);
 
 		return _this;
 	}
@@ -61005,7 +61022,6 @@ var LogBook = function (_Component) {
 	_createClass(LogBook, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			this.pathWriter();
 			this.getCurrentStrategies();
 		}
 	}, {
@@ -61013,18 +61029,21 @@ var LogBook = function (_Component) {
 		value: function getCurrentStrategies() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/engelska/19').then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api';
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/strategies/current/engelska/19').then(function (response) {
 
 				_this2.setState({
 					strategiesEng: response.data['strategies']
 				});
 			});
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/matematik/19').then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/strategies/current/matematik/19').then(function (response) {
 
 				_this2.setState({
 					strategiesMath: response.data['strategies']
 				});
+				_this2.forceUpdate();
 			});
 		}
 	}, {
@@ -61058,21 +61077,6 @@ var LogBook = function (_Component) {
 			this.setState({
 				showEval: false
 			});
-		}
-	}, {
-		key: 'pathWriter',
-		value: function pathWriter() {
-
-			//for some fkin reason, this makes the path work, do not change
-			if (window.location.pathname.includes("description")) {
-				this.setState({
-					path: "/prototype/strategies/description/"
-				});
-			} else {
-				this.setState({
-					path: "/prototype/strategies/description/"
-				});
-			}
 		}
 	}, {
 		key: 'hasErrorFor',
@@ -62388,7 +62392,6 @@ var EvaluationModal = function (_Component) {
 			for (i = 0; i < this.state.strategiesEng.length; i++) {
 				strategies.push(this.state.strategiesEng[i]);
 			}
-			console.log(strategies);
 
 			for (i = 0; i < strategies.length; i++) {
 
@@ -62425,7 +62428,6 @@ var EvaluationModal = function (_Component) {
 					ratedStrategies[index]['rating'] = rating;
 				}
 
-				console.log(ratedStrategies);
 				this.setState({
 					strategiesEng: ratedStrategies
 				});
@@ -62440,7 +62442,6 @@ var EvaluationModal = function (_Component) {
 					_ratedStrategies[index]['rating'] = rating;
 				}
 
-				console.log(_ratedStrategies);
 				this.setState({
 					strategiesMath: _ratedStrategies
 				});
