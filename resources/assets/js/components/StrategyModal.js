@@ -14,13 +14,16 @@ class StrategyModal extends Component {
 			chosenRegularStrategies:[],
 			chosenHistStrategies: [],
 			path:"",
-			showHist: false
+			showHist: false,
+			showSaved: false
+
 
 		}
 
 		this.saveStrategies = this.saveStrategies.bind(this)
 		this.closeButton = this.closeButton.bind(this)
 		this.toggleHist = this.toggleHist.bind(this)
+		this.toggleSaved= this.toggleSaved.bind(this)
 
 
 	}
@@ -49,8 +52,13 @@ class StrategyModal extends Component {
 		this.setState({
 			showHist: hist
 		})
-
-
+	}
+	toggleSaved() {
+		let saved = this.state.showSaved;
+		saved = !saved;
+		this.setState({
+			showSaved: saved
+		})
 
 	}
 
@@ -113,10 +121,10 @@ class StrategyModal extends Component {
 				temp['checked'] = false;
 				strategies.push(temp)
 			}
-
 			this.setState({
 				savedStrategies: strategies
-			})
+			});
+			console.log(this.state.savedStrategies)
 		});
 		axios.get(this.state.path + 'strategies/historical/' + this.props.subject).then(response =>{
 			let strategies =[];
@@ -206,7 +214,7 @@ class StrategyModal extends Component {
 
 	render () {
 
-		const {regularStrategies, savedStrategies, histStrategies,showHist} = this.state;
+		const {regularStrategies, savedStrategies, histStrategies} = this.state;
 
 		const regularStratItems = Object.keys(regularStrategies).map((index, i) =>
 			<div>
@@ -246,7 +254,7 @@ class StrategyModal extends Component {
 					<div class="modal-page" aria-disabled="false">
 						<div>
 							<div class="sv-html-portlet sv-portlet sv-skip-spacer">
-								<button style ={{position:"fixed",top:10,right:70}} onClick={this.closeButton}>X</button>
+								<button style ={{position:"fixed",top:10,right:70, borderRadius:5}} onClick={this.closeButton}>X</button>
 
 								<h2>Välj Strategier</h2>
 								<hr/>
@@ -254,18 +262,18 @@ class StrategyModal extends Component {
 									<div class="align-horizontal">
 										{regularStratItems}
 									</div>
-									<label class="kclabel">Bokmärkta Strategier</label>
+									<label class="kclabel">Bokmärkta Strategier<button onClick={this.toggleSaved} style={{borderRadius: 5, margin: 5}}>{this.state.showSaved ? '-':'+'}</button></label>
 									<div class="align-horizontal">
-										{savedStratItems}
+										{this.state.showSaved ? savedStratItems:null }
 									</div>
-								<label class="kclabel">Historik <button onClick={this.toggleHist}>{this.state.showHist ? '-':'+'}</button></label>
+								<label class="kclabel">Historik <button onClick={this.toggleHist} style={{borderRadius: 5, margin: 5}}>{this.state.showHist ? '-':'+'}</button></label>
 								<div class="align-horizontal">
 									{this.state.showHist ? histStratItems:null }
 								</div>
 
 
 							</div>
-							<div class="sv-html-portlet sv-portlet"><button tabindex="1" class="btn btn-large btn-default" onClick={this.saveStrategies}>Spara</button></div>
+							<div class="sv-html-portlet sv-portlet"><button tabindex="1" class="btn btn-large btn-default" onClick={this.saveStrategies} >Spara</button></div>
 						</div>
 						<div class="stopFloats"></div>
 					</div>

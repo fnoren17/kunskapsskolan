@@ -15519,13 +15519,15 @@ var StrategyModal = function (_Component) {
 			chosenRegularStrategies: [],
 			chosenHistStrategies: [],
 			path: "",
-			showHist: false
+			showHist: false,
+			showSaved: false
 
 		};
 
 		_this.saveStrategies = _this.saveStrategies.bind(_this);
 		_this.closeButton = _this.closeButton.bind(_this);
 		_this.toggleHist = _this.toggleHist.bind(_this);
+		_this.toggleSaved = _this.toggleSaved.bind(_this);
 
 		return _this;
 	}
@@ -15554,6 +15556,15 @@ var StrategyModal = function (_Component) {
 			hist = !hist;
 			this.setState({
 				showHist: hist
+			});
+		}
+	}, {
+		key: 'toggleSaved',
+		value: function toggleSaved() {
+			var saved = this.state.showSaved;
+			saved = !saved;
+			this.setState({
+				showSaved: saved
 			});
 		}
 	}, {
@@ -15612,10 +15623,10 @@ var StrategyModal = function (_Component) {
 					temp['checked'] = false;
 					strategies.push(temp);
 				}
-
 				_this3.setState({
 					savedStrategies: strategies
 				});
+				console.log(_this3.state.savedStrategies);
 			});
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + 'strategies/historical/' + this.props.subject).then(function (response) {
 				var strategies = [];
@@ -15705,8 +15716,7 @@ var StrategyModal = function (_Component) {
 			var _state = this.state,
 			    regularStrategies = _state.regularStrategies,
 			    savedStrategies = _state.savedStrategies,
-			    histStrategies = _state.histStrategies,
-			    showHist = _state.showHist;
+			    histStrategies = _state.histStrategies;
 
 
 			var regularStratItems = Object.keys(regularStrategies).map(function (index, i) {
@@ -15789,7 +15799,7 @@ var StrategyModal = function (_Component) {
 								{ 'class': 'sv-html-portlet sv-portlet sv-skip-spacer' },
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'button',
-									{ style: { position: "fixed", top: 10, right: 70 }, onClick: this.closeButton },
+									{ style: { position: "fixed", top: 10, right: 70, borderRadius: 5 }, onClick: this.closeButton },
 									'X'
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -15811,12 +15821,17 @@ var StrategyModal = function (_Component) {
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
 									{ 'class': 'kclabel' },
-									'Bokm\xE4rkta Strategier'
+									'Bokm\xE4rkta Strategier',
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'button',
+										{ onClick: this.toggleSaved, style: { borderRadius: 5, margin: 5 } },
+										this.state.showSaved ? '-' : '+'
+									)
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'div',
 									{ 'class': 'align-horizontal' },
-									savedStratItems
+									this.state.showSaved ? savedStratItems : null
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
@@ -15824,7 +15839,7 @@ var StrategyModal = function (_Component) {
 									'Historik ',
 									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 										'button',
-										{ onClick: this.toggleHist },
+										{ onClick: this.toggleHist, style: { borderRadius: 5, margin: 5 } },
 										this.state.showHist ? '-' : '+'
 									)
 								),
@@ -61026,7 +61041,6 @@ var LogBook = function (_Component) {
 			step: 19,
 			currentSubject: "",
 			path: ""
-
 		};
 
 		_this.showModal = _this.showModal.bind(_this);
@@ -62387,7 +62401,9 @@ var EvaluationModal = function (_Component) {
 
 		_this.state = {
 			strategiesEng: [],
-			strategiesMath: []
+			strategiesMath: [],
+			bookmarked: []
+
 		};
 
 		_this.saveStrategies = _this.saveStrategies.bind(_this);
@@ -62418,6 +62434,12 @@ var EvaluationModal = function (_Component) {
 			}
 
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api/';
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('strategies/save', { 'strategies': this.state.bookmarked }).then(function (response) {
+				_this2.setState({
+					bookmarked: []
+				});
+			});
 
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('evaluate', { 'strategies': strategies }).then(function (response) {
 				_this2.setState({
@@ -62463,6 +62485,21 @@ var EvaluationModal = function (_Component) {
 					strategiesMath: _ratedStrategies
 				});
 			}
+		}
+	}, {
+		key: 'bookmark',
+		value: function bookmark(strategy) {
+			var bookmarks = this.state.bookmarked;
+			if (bookmarks.includes(strategy)) {
+				bookmarks.splice(bookmarks.indexOf(strategy), 1);
+			} else {
+
+				bookmarks.push(strategy);
+			}
+
+			this.setState({
+				bookmarked: bookmarks
+			});
 		}
 	}, {
 		key: 'getStrategies',
@@ -62526,26 +62563,33 @@ var EvaluationModal = function (_Component) {
 								href: "/prototype/strategies/description/" + strategiesEng[index].title },
 							strategiesEng[index].title
 						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: function onClick() {
+									return _this4.bookmark(strategiesEng[index].title);
+								}, style: _this4.state.bookmarked.includes(strategiesEng[index].title) ? { backgroundColor: "#00e600", borderRadius: 5, margin: 5 } : { borderRadius: 5, margin: 5 } },
+							'Bokm\xE4rk'
+						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '-1', 'eng');
-								}, style: strategiesEng[index]['rating'] == '-1' ? { backgroundColor: 'green' } : {} },
+								}, style: strategiesEng[index]['rating'] == '-1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4E'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '1', 'eng');
-								}, style: strategiesEng[index]['rating'] == '1' ? { backgroundColor: 'green' } : {} },
+								}, style: strategiesEng[index]['rating'] == '1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4D'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '0', 'eng');
-								}, style: strategiesEng[index]['rating'] == '0' ? { backgroundColor: 'green' } : {} },
+								}, style: strategiesEng[index]['rating'] == '0' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'Har inte anv\xE4nt'
 						)
 					),
@@ -62565,26 +62609,33 @@ var EvaluationModal = function (_Component) {
 								href: "/prototype/strategies/description/" + strategiesMath[index].title },
 							strategiesMath[index].title
 						),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'button',
+							{ onClick: function onClick() {
+									return _this4.bookmark(strategiesMath[index].title);
+								}, style: _this4.state.bookmarked.includes(strategiesMath[index].title) ? { backgroundColor: "#00e600", borderRadius: 5, margin: 5 } : { borderRadius: 5, margin: 5 } },
+							'Bokm\xE4rk'
+						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '-1', 'math');
-								}, style: strategiesMath[index]['rating'] == '-1' ? { backgroundColor: 'green' } : {} },
+								}, style: strategiesMath[index]['rating'] == '-1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4E'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '1', 'math');
-								}, style: strategiesMath[index]['rating'] == '1' ? { backgroundColor: 'green' } : {} },
+								}, style: strategiesMath[index]['rating'] == '1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4D'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '0', 'math');
-								}, style: strategiesMath[index]['rating'] == '0' ? { backgroundColor: 'green' } : {} },
+								}, style: strategiesMath[index]['rating'] == '0' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'Har inte anv\xE4nt'
 						)
 					),
@@ -62610,7 +62661,7 @@ var EvaluationModal = function (_Component) {
 								{ 'class': 'sv-html-portlet sv-portlet sv-skip-spacer' },
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'button',
-									{ style: { position: "fixed", top: 10, right: 50 }, onClick: this.closeButton },
+									{ style: { position: "fixed", top: 10, right: 50, borderRadius: 5 }, onClick: this.closeButton },
 									'X'
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(

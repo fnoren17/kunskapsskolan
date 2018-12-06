@@ -159,11 +159,16 @@ class StrategyController extends Controller{
 		return json_encode(array('text'=>$result));
 	}
 
-	function storeBookmarkedStrategy(Request $request, $title, $user_id){
+	function storeBookmarkedStrategy(Request $request){
 		$user =1;
-		DB::insert("INSERT INTO ks_user_bookmarks (user_id, strategy_id) VALUES
-		(?, (SELECT id FROM ks_strategies WHERE title = ?));", [$user, $title]);
-		return json_encode('success');
+		$data = $request->json()->all();
+		$strategies = $data['strategies'];
+		foreach($strategies as $strategy) {
+			DB::insert("INSERT INTO ks_user_bookmarks (user_id, strategy_id) VALUES
+			(?, (SELECT id FROM ks_strategies WHERE title = ?));", [$user, $strategy]);
+		}
+
+		return;
 	}
 
 	function getUserHistoricalStrategies(Request $request, $subject){

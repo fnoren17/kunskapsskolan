@@ -15,7 +15,6 @@ class LogBook extends Component {
 			step: 19,
 			currentSubject: "",
 			path: ""
-
 		}
 
 

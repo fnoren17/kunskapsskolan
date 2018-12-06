@@ -8,7 +8,9 @@ class EvaluationModal extends Component {
 
 		this.state = {
 			strategiesEng: [],
-			strategiesMath: []
+			strategiesMath: [],
+			bookmarked:[],
+
 		}
 
 		this.saveStrategies = this.saveStrategies.bind(this);
@@ -18,9 +20,6 @@ class EvaluationModal extends Component {
 	}
 
 	saveStrategies() {
-
-
-
 		let i = 0;
 
 		let strategies = this.state.strategiesMath;
@@ -39,6 +38,11 @@ class EvaluationModal extends Component {
 
 		axios.defaults.baseURL = '/api/';
 
+		axios.post('strategies/save', {'strategies': this.state.bookmarked}).then(response=>{
+			this.setState({
+				bookmarked: []
+			});
+		});
 
 		axios.post('evaluate', {'strategies': strategies}).then(response=>{
 			this.setState({
@@ -47,6 +51,8 @@ class EvaluationModal extends Component {
 			});
 			this.props.closeEval();
 		});
+
+
 
 	}
 
@@ -84,10 +90,20 @@ class EvaluationModal extends Component {
 			});
 		}
 
-
 	}
+	bookmark(strategy){
+		let bookmarks = this.state.bookmarked;
+		if(bookmarks.includes(strategy)){
+			bookmarks.splice(bookmarks.indexOf(strategy),1)
+		} else{
 
+			bookmarks.push(strategy);
+		}
 
+		this.setState({
+			bookmarked:bookmarks
+		})
+	}
 	getStrategies(){
 		const instance = axios.create({
 			baseURL: '',
@@ -126,6 +142,7 @@ class EvaluationModal extends Component {
 
 	}
 
+
 	componentDidMount () {
 		this.getStrategies();
 
@@ -142,11 +159,12 @@ class EvaluationModal extends Component {
 						href={"/prototype/strategies/description/" + strategiesEng[index].title}>
 						{strategiesEng[index].title}
 					</a>
+					<button onClick={() => this.bookmark(strategiesEng[index].title)} style={this.state.bookmarked.includes(strategiesEng[index].title) ? {backgroundColor:"#00e600",borderRadius:5, margin: 5}: {borderRadius:5, margin: 5}}>Bokmärk</button>
 
 					<br/>
-					<button onClick={() => {this.setRating(index, '-1', 'eng')}} style={strategiesEng[index]['rating'] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
-					<button onClick={() => {this.setRating(index, '1', 'eng')}} style={strategiesEng[index]['rating'] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
-					<button onClick={() => {this.setRating(index, '0', 'eng')}} style={strategiesEng[index]['rating'] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
+					<button onClick={() => {this.setRating(index, '-1', 'eng')}} style={strategiesEng[index]['rating'] == '-1' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1', 'eng')}} style={strategiesEng[index]['rating'] == '1' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0', 'eng')}} style={strategiesEng[index]['rating'] == '0' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>Har inte använt</button>
 					</div><br/>
 			</div>
 		)
@@ -157,11 +175,11 @@ class EvaluationModal extends Component {
 						href={"/prototype/strategies/description/" + strategiesMath[index].title}>
 						{strategiesMath[index].title}
 					</a>
-
+					<button onClick={() => this.bookmark(strategiesMath[index].title)} style={this.state.bookmarked.includes(strategiesMath[index].title) ? {backgroundColor:"#00e600",borderRadius:5, margin: 5}: {borderRadius:5, margin: 5}}>Bokmärk</button>
 					<br/>
-					<button onClick={() => {this.setRating(index, '-1', 'math')}} style={strategiesMath[index]['rating'] == '-1' ? {backgroundColor:'green'} : {}} >👎</button>
-					<button onClick={() => {this.setRating(index, '1', 'math')}} style={strategiesMath[index]['rating'] == '1' ? {backgroundColor:'green'} : {}}>👍</button>
-					<button onClick={() => {this.setRating(index, '0', 'math')}} style={strategiesMath[index]['rating'] == '0' ? {backgroundColor:'green'} : {}}>Har inte använt</button>
+					<button onClick={() => {this.setRating(index, '-1', 'math')}} style={strategiesMath[index]['rating'] == '-1' ?  {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1', 'math')}} style={strategiesMath[index]['rating'] == '1' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0', 'math')}} style={strategiesMath[index]['rating'] == '0' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>Har inte använt</button>
 				</div><br/>
 			</div>
 		)
@@ -173,7 +191,7 @@ class EvaluationModal extends Component {
 					<div class="modal-page" aria-disabled="false">
 						<div>
 							<div class="sv-html-portlet sv-portlet sv-skip-spacer">
-								<button style ={{position:"fixed",top:10,right:50}} onClick={this.closeButton}>X</button>
+								<button style ={{position:"fixed",top:10,right:50, borderRadius:5}} onClick={this.closeButton}>X</button>
 
 								<h2>Utvärdera Strategier</h2>
 								<hr/>
