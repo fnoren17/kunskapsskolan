@@ -15,7 +15,7 @@ class App extends Component {
         <div>
 
 
-        <BrowserRouter style={{width:"40%"}}>
+        <BrowserRouter style={{width:"700%"}}>
 
 
         <div>

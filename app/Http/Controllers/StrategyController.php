@@ -155,6 +155,18 @@ class StrategyController extends Controller{
 	}
 
 	function strategyDescription(Request $request, $title){
+		if ($title == 'intro'){
+			$intro = array([
+					'title' =>'Välkommen till SmartLog!',
+					'description' => '<p>Do this and this</p>'
+			]);
+
+
+			return json_encode(array('text'=>$intro));
+
+		}
+
+
 		$result = DB::select("SELECT title, description FROM ks_strategies WHERE title = ?", [$title]);
 		return json_encode(array('text'=>$result));
 	}

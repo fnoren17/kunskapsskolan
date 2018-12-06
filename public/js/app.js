@@ -38154,7 +38154,7 @@ var App = function (_Component) {
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
-                    { style: { width: "40%" } },
+                    { style: { width: "700%" } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         null,
@@ -62769,7 +62769,7 @@ var DescriptionBlock = function (_Component) {
 
 			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				'div',
-				{ style: { maxWidth: "40%" } },
+				{ style: { maxWidth: "70%" } },
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'h1',
 					null,
