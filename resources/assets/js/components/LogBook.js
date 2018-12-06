@@ -399,7 +399,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="/prototype">Obestämd
+																	href="/prototype/strategies/description/intro">Obestämd
 																	artikel</a></div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -410,7 +410,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="/prototype">Att
+																	href="/prototype/strategies/description/intro">Att
 																	läsa och skriva</a></div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -441,7 +441,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="/prototype">Dåtid
+																	href="/prototype/strategies/description/intro">Dåtid
 																	- regelbundna och oregelbundna verb</a></div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>
@@ -496,7 +496,7 @@ class LogBook extends Component {
 																<div class="horizontalItem top">
 																	<div class="checkBox"></div>
 																</div>
-																<div class="horizontalItem top"><a href="/prototype"
+																<div class="horizontalItem top"><a href="/prototype/strategies/description/intro"
 																	>Tabeller</a>
 																</div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
@@ -526,7 +526,7 @@ class LogBook extends Component {
 																	<div class="checkBox"></div>
 																</div>
 																<div class="horizontalItem top"><a
-																	href="/prototype" >Koordinatsystem</a>
+																	href="/prototype/strategies/description/intro" >Koordinatsystem</a>
 																</div>
 																<div class="horizontalItem top taskEdit"><a class="editItem"></a></div>
 															</div>

@@ -62012,7 +62012,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: '/prototype' },
+																					href: '/prototype/strategies/description/intro' },
 																				'Obest\xE4md artikel'
 																			)
 																		),
@@ -62040,7 +62040,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: '/prototype' },
+																					href: '/prototype/strategies/description/intro' },
 																				'Att l\xE4sa och skriva'
 																			)
 																		),
@@ -62111,7 +62111,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: '/prototype' },
+																					href: '/prototype/strategies/description/intro' },
 																				'D\xE5tid - regelbundna och oregelbundna verb'
 																			)
 																		),
@@ -62228,7 +62228,7 @@ var LogBook = function (_Component) {
 																			{ 'class': 'horizontalItem top' },
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
-																				{ href: '/prototype'
+																				{ href: '/prototype/strategies/description/intro'
 																				},
 																				'Tabeller'
 																			)
@@ -62300,7 +62300,7 @@ var LogBook = function (_Component) {
 																			__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 																				'a',
 																				{
-																					href: '/prototype' },
+																					href: '/prototype/strategies/description/intro' },
 																				'Koordinatsystem'
 																			)
 																		),
