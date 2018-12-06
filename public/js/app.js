@@ -15518,12 +15518,14 @@ var StrategyModal = function (_Component) {
 			chosenSavedStrategies: [],
 			chosenRegularStrategies: [],
 			chosenHistStrategies: [],
-			path: ""
+			path: "",
+			showHist: false
 
 		};
 
 		_this.saveStrategies = _this.saveStrategies.bind(_this);
 		_this.closeButton = _this.closeButton.bind(_this);
+		_this.toggleHist = _this.toggleHist.bind(_this);
 
 		return _this;
 	}
@@ -15543,6 +15545,15 @@ var StrategyModal = function (_Component) {
 
 				});
 				_this2.props.closeModal();
+			});
+		}
+	}, {
+		key: 'toggleHist',
+		value: function toggleHist() {
+			var hist = this.state.showHist;
+			hist = !hist;
+			this.setState({
+				showHist: hist
 			});
 		}
 	}, {
@@ -15694,7 +15705,8 @@ var StrategyModal = function (_Component) {
 			var _state = this.state,
 			    regularStrategies = _state.regularStrategies,
 			    savedStrategies = _state.savedStrategies,
-			    histStrategies = _state.histStrategies;
+			    histStrategies = _state.histStrategies,
+			    showHist = _state.showHist;
 
 
 			var regularStratItems = Object.keys(regularStrategies).map(function (index, i) {
@@ -15809,12 +15821,17 @@ var StrategyModal = function (_Component) {
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
 									{ 'class': 'kclabel' },
-									'Historik'
+									'Historik ',
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'button',
+										{ onClick: this.toggleHist },
+										this.state.showHist ? '-' : '+'
+									)
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'div',
 									{ 'class': 'align-horizontal' },
-									histStratItems
+									this.state.showHist ? histStratItems : null
 								)
 							),
 							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(

@@ -13,12 +13,15 @@ class StrategyModal extends Component {
 			chosenSavedStrategies: [],
 			chosenRegularStrategies:[],
 			chosenHistStrategies: [],
-			path:""
+			path:"",
+			showHist: false
 
 		}
 
 		this.saveStrategies = this.saveStrategies.bind(this)
 		this.closeButton = this.closeButton.bind(this)
+		this.toggleHist = this.toggleHist.bind(this)
+
 
 	}
 
@@ -37,6 +40,17 @@ class StrategyModal extends Component {
 			});
 			this.props.closeModal();
 		});
+
+	}
+
+	toggleHist() {
+		let hist = this.state.showHist;
+		hist = !hist;
+		this.setState({
+			showHist: hist
+		})
+
+
 
 	}
 
@@ -192,7 +206,7 @@ class StrategyModal extends Component {
 
 	render () {
 
-		const {regularStrategies, savedStrategies, histStrategies} = this.state;
+		const {regularStrategies, savedStrategies, histStrategies,showHist} = this.state;
 
 		const regularStratItems = Object.keys(regularStrategies).map((index, i) =>
 			<div>
@@ -244,9 +258,9 @@ class StrategyModal extends Component {
 									<div class="align-horizontal">
 										{savedStratItems}
 									</div>
-								<label class="kclabel">Historik</label>
+								<label class="kclabel">Historik <button onClick={this.toggleHist}>{this.state.showHist ? '-':'+'}</button></label>
 								<div class="align-horizontal">
-									{histStratItems}
+									{this.state.showHist ? histStratItems:null }
 								</div>
 
 
