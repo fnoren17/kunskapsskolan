@@ -21,7 +21,7 @@
                     <a class="nav-link page-scroll" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/prototype">Prototype</a>
+                    <a class="nav-link" href="/prototype/strategies/description/intro">Prototype</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/">Decision Support Tool</a>
