@@ -4,13 +4,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class StrategyController extends Controller{
 	// Get strategies currently in logbook
-	function currentStrategies(Request $request, $subject) {
+	function currentStrategies(Request $request, $subject, $step) {
 		$user = 1;
-		//$subject = "Engelska";
+
 		$result = DB::select("SELECT id, title, block FROM (
 		SELECT title, subject_id FROM ks_user_strategies JOIN ks_strategies ON ks_user_strategies.strategy_id = ks_strategies.id WHERE user_id = ? ORDER BY title ASC
 		) AS strats JOIN ks_subjects ON strats.subject_id = ks_subjects.id
-		WHERE subject = ? ", [$user, $subject]);
+		WHERE block = ? AND subject = ? ", [$user,$step, $subject]);
 		return json_encode(array('strategies'=>$result));
 	}
 
