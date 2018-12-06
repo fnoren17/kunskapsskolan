@@ -15514,8 +15514,10 @@ var StrategyModal = function (_Component) {
 		_this.state = {
 			regularStrategies: [],
 			savedStrategies: [],
+			histStrategies: [],
 			chosenSavedStrategies: [],
 			chosenRegularStrategies: [],
+			chosenHistStrategies: [],
 			path: ""
 
 		};
@@ -15539,7 +15541,8 @@ var StrategyModal = function (_Component) {
 			instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies) }).then(function (response) {
 				_this2.setState({
 					chosenSavedStrategies: [],
-					chosenRegularStrategies: []
+					chosenRegularStrategies: [],
+					chosenHistStrategies: []
 
 				});
 				_this2.props.closeModal();
@@ -15550,7 +15553,8 @@ var StrategyModal = function (_Component) {
 		value: function closeButton() {
 			this.setState({
 				chosenSavedStrategies: [],
-				chosenRegularStrategies: []
+				chosenRegularStrategies: [],
+				chosenHistStrategies: []
 
 			});
 			this.props.closeModal();
@@ -15603,6 +15607,20 @@ var StrategyModal = function (_Component) {
 
 				_this3.setState({
 					savedStrategies: strategies
+				});
+			});
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + '/api/strategies/historical/' + this.props.subject).then(function (response) {
+				var strategies = [];
+				var i = void 0;
+				var temp = void 0;
+				for (i = 0; i < response.data['strategies'].length; i++) {
+					temp = response.data['strategies'][i];
+					temp['checked'] = false;
+					strategies.push(temp);
+				}
+
+				_this3.setState({
+					histStrategies: strategies
 				});
 			});
 		}
@@ -15658,7 +15676,8 @@ var StrategyModal = function (_Component) {
 
 			var _state = this.state,
 			    regularStrategies = _state.regularStrategies,
-			    savedStrategies = _state.savedStrategies;
+			    savedStrategies = _state.savedStrategies,
+			    histStrategies = _state.histStrategies;
 
 
 			var regularStratItems = Object.keys(regularStrategies).map(function (index, i) {
@@ -15696,6 +15715,26 @@ var StrategyModal = function (_Component) {
 							{
 								href: "/strategies/" + savedStrategies[index].title },
 							savedStrategies[index].title
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+			var histStratItems = Object.keys(histStrategies).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'checkbox', onChange: function onChange() {
+								_this4.addSavedStrategy(histStrategies[index].id);
+							} }),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: "/strategies/" + histStrategies[index].title },
+							histStrategies[index].title
 						)
 					),
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -15748,6 +15787,16 @@ var StrategyModal = function (_Component) {
 									'div',
 									{ 'class': 'align-horizontal' },
 									savedStratItems
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Historik'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'align-horizontal' },
+									histStratItems
 								)
 							),
 							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -60964,14 +61013,14 @@ var LogBook = function (_Component) {
 		value: function getCurrentStrategies() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/engelska').then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/engelska/19').then(function (response) {
 
 				_this2.setState({
 					strategiesEng: response.data['strategies']
 				});
 			});
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/matematik').then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/strategies/current/matematik/19').then(function (response) {
 
 				_this2.setState({
 					strategiesMath: response.data['strategies']
@@ -61080,6 +61129,653 @@ var LogBook = function (_Component) {
 			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				'div',
 				null,
+				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					{ 'class': 'pageHeader', style: { marginTop: "3em" } },
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'h1',
+						null,
+						'Prototyp'
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'buttonsField' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'div',
+							{ 'class': 'buttonsContainer' },
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								{ 'class': 'align-horizontal' },
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block1.4.48bfff2a135149efc4480005636.html' },
+												'Block 1'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block1/steg1/introduktion.4.1b2ac75b13ce51521ce2547.html' },
+													'1'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block1/steg2/introduktion.4.717180d813d4a421d721.html' },
+													'2'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block1/steg3/introduktion.4.96110c613f76e06392145.html' },
+													'3'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block1/steg4/introduktion.4.96110c613f76e06392179.html' },
+													'4'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block1/steg5/introduktion.4.96110c613f76e0639224c.html' },
+													'5'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block2.4.48bfff2a135149efc4480006555.html' },
+												'Block 2'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block2/steg6/introduktion.4.96110c613f76e06392195.html' },
+													'6'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block2/steg7/introduktion.4.628467c91428701550f3d18.html' },
+													'7'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block2/steg8/introduktion.4.96110c613f76e063921bb.html' },
+													'8'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block2/steg9/introduktion.4.96110c613f76e063921d2.html' },
+													'9'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block2/steg10/introduktion.4.96110c613f76e0639220d.html' },
+													'10'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block3.4.10fd312e12d506534f780006370.html' },
+												'Block 3'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block3/steg11/introduktion.4.10fd312e12d506534f780006382.html' },
+													'11'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block3/steg12/introduktion.4.10fd312e12d506534f780006390.html' },
+													'12'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block3/steg13/introduktion.4.10fd312e12d506534f780006398.html' },
+													'13'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block3/steg14/introduktion.4.10fd312e12d506534f780006406.html' },
+													'14'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block3/steg15/introduktion.4.10fd312e12d506534f780006414.html' },
+													'15'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': 'activePage' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block4.4.10fd312e12d506534f780006421.html' },
+												'Block 4'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block4/steg16/introduktion.4.10fd312e12d506534f780006428.html' },
+													'16'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block4/steg17/introduktion.4.10fd312e12d506534f780006436.html' },
+													'17'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block4/steg18/introduktion.4.10fd312e12d506534f780006444.html' },
+													'18'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button activePage',
+														href: '/steg/engelska/block4/steg19/introduktion.4.10fd312e12d506534f780006452.html' },
+													'19'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block4/steg20/introduktion.4.10fd312e12d506534f780006460.html' },
+													'20'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block5.4.10fd312e12d506534f780006467.html' },
+												'Block 5'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block5/steg21/introduktion.4.10fd312e12d506534f780006474.html' },
+													'21'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block5/steg22/introduktion.4.10fd312e12d506534f780006482.html' },
+													'22'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block5/steg23/introduktion.4.10fd312e12d506534f780006490.html' },
+													'23'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block5/steg24/introduktion.4.10fd312e12d506534f780006498.html' },
+													'24'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block5/steg25/introduktion.4.10fd312e12d506534f780006506.html' },
+													'25'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block6.4.10fd312e12d506534f780006513.html' },
+												'Block 6'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block6/steg26/introduktion.4.10fd312e12d506534f780006520.html' },
+													'26'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block6/steg27/introduktion.4.10fd312e12d506534f780006528.html' },
+													'27'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block6/steg28/introduktion.4.10fd312e12d506534f780006536.html' },
+													'28'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block6/steg29/introduktion.4.10fd312e12d506534f780006544.html' },
+													'29'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block6/steg30/introduktion.4.10fd312e12d506534f780006552.html' },
+													'30'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block7.4.10fd312e12d506534f780006559.html' },
+												'Block 7'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block7/steg31/introduktion.4.10fd312e12d506534f780006566.html' },
+													'31'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block7/steg32/introduktion.4.10fd312e12d506534f780006574.html' },
+													'32'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block7/steg33/introduktion.4.10fd312e12d506534f780006582.html' },
+													'33'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block7/steg34/introduktion.4.10fd312e12d506534f780006590.html' },
+													'34'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block7/steg35/introduktion.4.10fd312e12d506534f780006598.html' },
+													'35'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block8.4.10fd312e12d506534f780006605.html' },
+												'Block 8'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block8/steg36/introduktion.4.4b945c3c13d7548c3452355.html' },
+													'36'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block8/steg37/introduktion.4.4ec538b21401583196c3858.html' },
+													'37'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block8/steg38/introduktion.4.10fd312e12d506534f780006620.html' },
+													'38'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block8/steg39/introduktion.4.10fd312e12d506534f780006628.html' },
+													'39'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block8/steg40/introduktion.4.10fd312e12d506534f780006644.html' },
+													'40'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'horizontalItem top' },
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'div',
+										{ 'class': 'align-vertical' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											{ 'class': '' },
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'a',
+												{ href: '/steg/engelska/block9.4.10fd312e12d506534f780006657.html' },
+												'Block 9'
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'div',
+											null,
+											__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+												'div',
+												{ 'class': 'btn-group' },
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{ 'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block9/steg41/introduktion.4.10fd312e12d506534f780006664.html' },
+													'41'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block9/steg42/introduktion.4.10fd312e12d506534f780006672.html' },
+													'42'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block9/steg43/introduktion.4.10fd312e12d506534f780006680.html' },
+													'43'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small step-button',
+														href: '/steg/engelska/block9/steg44/introduktion.4.10fd312e12d506534f780006688.html' },
+													'44'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+													'a',
+													{
+														'class': 'btn btn-small projectstep-button',
+														href: '/steg/engelska/block9/steg45/introduktion.4.10fd312e12d506534f780006696.html' },
+													'45'
+												),
+												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null)
+											)
+										)
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+							__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+								'div',
+								{ 'class': 'horizontalMenu' },
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'ul',
+									null,
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'li',
+										{ 'class': '' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', null),
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'a',
+											{
+												href: '/steg/engelska/block4/steg19/introduktion.4.10fd312e12d506534f780006452.html' },
+											'Introduktion'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'li',
+										{ 'class': '' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'a',
+											{ href: '/steg/engelska/block4/steg19/ordbank.4.6d285f9512e4dc415c7800036572.html' },
+											'Ordbank'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'li',
+										{ 'class': '' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'a',
+											{ href: '/steg/engelska/block4/steg19/arbetsgang.4.1ffcc11915c778fda0a92075.html' },
+											'Arbetsg\xE5ng'
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+										'li',
+										{ 'class': '' },
+										__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+											'a',
+											{
+												href: '/steg/engelska/block4/steg19/bedomningsmatrisforsteget.4.1ffcc11915c778fda0a920ab.html' },
+											'Bed\xF6mningsmatris f\xF6r steget'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
 				this.state.showModal ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__StrategyModal__["a" /* default */], { closeModal: this.closeModal, subject: this.state.currentSubject, step: this.state.step }) : null,
 				this.state.showEval ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__EvaluationModal__["a" /* default */], { closeEval: this.closeEval, step: this.state.step }) : null,
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(

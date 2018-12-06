@@ -15,3 +15,4 @@ yarn-error.log
 *base.sql
 composer.phar
 package-lock.json
+public/.DS_Store

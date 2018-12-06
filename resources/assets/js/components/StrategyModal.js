@@ -9,8 +9,10 @@ class StrategyModal extends Component {
 		this.state = {
 			regularStrategies: [],
 			savedStrategies: [],
+			histStrategies: [],
 			chosenSavedStrategies: [],
 			chosenRegularStrategies:[],
+			chosenHistStrategies: [],
 			path:""
 
 		}
@@ -31,7 +33,8 @@ class StrategyModal extends Component {
 		instance.post('/api/strategies/' + this.props.subject + "/" + this.props.step, {'strategies':this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies)}).then(response=>{
 			this.setState({
 				chosenSavedStrategies:[],
-				chosenRegularStrategies:[]
+				chosenRegularStrategies:[],
+				chosenHistStrategies: [],
 
 			});
 			this.props.closeModal();
@@ -42,7 +45,8 @@ class StrategyModal extends Component {
 	closeButton() {
 		this.setState({
 			chosenSavedStrategies:[],
-			chosenRegularStrategies:[]
+			chosenRegularStrategies:[],
+			chosenHistStrategies: [],
 
 		});
 		this.props.closeModal();
@@ -100,6 +104,20 @@ class StrategyModal extends Component {
 				savedStrategies: strategies
 			})
 		});
+		axios.get(this.state.path + '/api/strategies/historical/' + this.props.subject).then(response =>{
+			let strategies =[];
+			let i;
+			let temp;
+			for(i = 0; i<response.data['strategies'].length; i++){
+				temp = response.data['strategies'][i];
+				temp['checked'] = false;
+				strategies.push(temp)
+			}
+
+			this.setState({
+				histStrategies: strategies
+			})
+		});
 	}
 
 	addSavedStrategy(strategy) {
@@ -152,7 +170,7 @@ class StrategyModal extends Component {
 
 	render () {
 
-		const {regularStrategies, savedStrategies} = this.state;
+		const {regularStrategies, savedStrategies, histStrategies} = this.state;
 
 		const regularStratItems = Object.keys(regularStrategies).map((index, i) =>
 			<div>
@@ -160,7 +178,7 @@ class StrategyModal extends Component {
 					<input type="checkbox" onChange={() => {this.addRegularStrategy(regularStrategies[index].title)}}/>
 					<a
 					href={"/prototype/strategies/description/" + regularStrategies[index].title}>
-					{regularStrategies[index].title}
+						{regularStrategies[index].title}
 				</a></div><br/>
 			</div>
 		)
@@ -172,6 +190,16 @@ class StrategyModal extends Component {
 					href={"/strategies/" + savedStrategies[index].title}>
 					{savedStrategies[index].title}
 				</a></div><br/>
+			</div>
+		)
+		const histStratItems = Object.keys(histStrategies).map((index, i) =>
+			<div>
+				<div class="horizontalItem top">
+					<input type="checkbox" onChange={() => {this.addSavedStrategy(histStrategies[index].id)}}/>
+					<a
+						href={"/strategies/" + histStrategies[index].title}>
+						{histStrategies[index].title}
+					</a></div><br/>
 			</div>
 		)
 
@@ -194,6 +222,12 @@ class StrategyModal extends Component {
 									<div class="align-horizontal">
 										{savedStratItems}
 									</div>
+								<label class="kclabel">Historik</label>
+								<div class="align-horizontal">
+									{histStratItems}
+								</div>
+
+
 							</div>
 							<div class="sv-html-portlet sv-portlet"><button tabindex="1" class="btn btn-large btn-default" onClick={this.saveStrategies}>Spara</button></div>
 						</div>

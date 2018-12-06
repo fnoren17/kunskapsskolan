@@ -15,8 +15,9 @@
 Route::get('strategies/all', 'StrategyController@allStrategies');
 Route::post('evaluate', 'StrategyController@evaluateStrategies');
 Route::post('prototype/strategies/description/evaluate', 'StrategyController@evaluateStrategies');
-Route::get('strategies/current/{subject}', 'StrategyController@currentStrategies');
+Route::get('strategies/current/{subject}/{step}', 'StrategyController@currentStrategies');
 Route::get('strategies/saved/{subject}', 'StrategyController@getBookmarkedStrategies');
+Route::get('strategies/historical/{subject}', 'StrategyController@getUserHistoricalStrategies');
 Route::get('strategies/{subject}/{step}', 'StrategyController@regularStrategies');
 Route::get('description/{id}', 'StrategyController@strategyDescription');
 

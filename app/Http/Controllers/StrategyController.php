@@ -24,85 +24,95 @@ class StrategyController extends Controller{
 
 	// The algorithm for suggesting new strategies
 	function regularStrategies(Request $request, $subject, $step){
+
 		$strats = DB::select("
-			SELECT
-			    strategy_id, title, rating_score
+						SELECT 
+				strategy_id, title, rating_score
 			FROM
-			    (SELECT
-			        strategy_id,
-			            (10 * block_score + 1 * subject_score) AS rating_score
-			    FROM
-			        (SELECT
-			        distinct_ids.strategy_id,
-			            score AS block_score,
-			            0 AS subject_score
-			    FROM
-			        (SELECT
-			        strategy_id
-			    FROM
-			        ks_strategies_tags
-			    WHERE
-			        tag IN (SELECT
-			                tag
-			            FROM
-			                ks_subjects_tags
-			            WHERE
-			                subject_id = (SELECT
-			                        id
-			                    FROM
-			                        ks_subjects
-			                    WHERE
-			                        block = ? AND subject = ?))
-			    GROUP BY strategy_id) AS distinct_ids
-			    JOIN (SELECT
-			        SUM(rating) AS score, strategy_id
-			    FROM
-			        ks_ratings
-			    WHERE
-			        subject_id = (SELECT
-			                id
-			            FROM
-			                ks_subjects
-			            WHERE
-			                block = ? AND subject = ?)
-			    GROUP BY strategy_id) AS elegible_ratings ON distinct_ids.strategy_id = elegible_ratings.strategy_id UNION ALL SELECT
-			        distinct_ids2.strategy_id,
-			            0 AS block_score,
-			            score AS subject_score
-			    FROM
-			        (SELECT
-			        strategy_id
-			    FROM
-			        ks_strategies_tags
-			    WHERE
-			        tag IN (SELECT
-			                tag
-			            FROM
-			                ks_subjects_tags
-			            WHERE
-			                subject_id IN (SELECT
-			                        id
-			                    FROM
-			                        ks_subjects
-			                    WHERE
-			                        subject = ?))
-			    GROUP BY strategy_id) AS distinct_ids2
-			    JOIN (SELECT
-			        SUM(rating) AS score, strategy_id
-			    FROM
-			        ks_ratings
-			    WHERE
-			        subject_id IN (SELECT
-			                id
-			            FROM
-			                ks_subjects
-			            WHERE
-			                subject = ?)
-			    GROUP BY strategy_id) AS elegible_ratings2 ON distinct_ids2.strategy_id = elegible_ratings2.strategy_id) AS overall
-			    ORDER BY rating_score DESC
-			    LIMIT 0 , 5) AS strategy_scores
-			        JOIN
-			    ks_strategies ON strategy_scores.strategy_id = ks_strategies.id
+				(SELECT 
+					strategy_id,
+						(10 * block_score + 1 * subject_score) AS rating_score
+				FROM
+					(SELECT 
+					distinct_ids.strategy_id,
+						score AS block_score,
+						0 AS subject_score
+				FROM
+					(SELECT 
+					strategy_id
+				FROM
+					ks_strategies_tags
+				WHERE
+					tag IN (SELECT 
+							tag
+						FROM
+							ks_subjects_tags
+						WHERE
+							subject_id = (SELECT 
+									id
+								FROM
+									ks_subjects
+								WHERE
+									block = ? AND subject = ?))
+				GROUP BY strategy_id) AS distinct_ids
+				JOIN (SELECT 
+					SUM(rating) AS score, strategy_id
+				FROM
+					ks_ratings
+				WHERE
+					subject_id = (SELECT 
+							id
+						FROM
+							ks_subjects
+						WHERE
+							block = ? AND subject = ?)
+				GROUP BY strategy_id) AS elegible_ratings ON distinct_ids.strategy_id = elegible_ratings.strategy_id UNION ALL SELECT 
+					distinct_ids2.strategy_id,
+						0 AS block_score,
+						score AS subject_score
+				FROM
+					(SELECT 
+					strategy_id
+				FROM
+					ks_strategies_tags
+				WHERE
+					tag IN (SELECT 
+							tag
+						FROM
+							ks_subjects_tags
+						WHERE
+							subject_id IN (SELECT 
+									id
+								FROM
+									ks_subjects
+								WHERE
+									subject = ?))
+				GROUP BY strategy_id) AS distinct_ids2
+				JOIN (SELECT 
+					SUM(rating) AS score, strategy_id
+				FROM
+					ks_ratings
+				WHERE
+					subject_id IN (SELECT 
+							id
+						FROM
+							ks_subjects
+						WHERE
+							subject = ?)
+				GROUP BY strategy_id) AS elegible_ratings2 ON distinct_ids2.strategy_id = elegible_ratings2.strategy_id) AS overall
+				GROUP BY strategy_id
+				ORDER BY rating_score DESC) AS strategy_scores
+					JOIN
+				ks_strategies ON strategy_scores.strategy_id = ks_strategies.id
+			WHERE
+				strategy_id NOT IN (SELECT 
+						strategy_id
+					FROM
+						ks_user_strategies
+					WHERE
+						user_id = 1)
+			LIMIT 0 , 5;
+
 		", [$step,$subject,$step,$subject,$subject,$subject]);
 		return json_encode(array('strategies'=>$strats));
 	}
@@ -156,8 +166,10 @@ class StrategyController extends Controller{
 		return json_encode('success');
 	}
 
-	function getUserHistoricalStrategies(Request $request, $user_id){
-		$result = DB::select("SELECT DISTINCT(title) FROM ks_ratings JOIN ks_strategies ON ks_ratings.strategy_id = ks_strategies.id WHERE user_id = ?", [$user_id]);
+	function getUserHistoricalStrategies(Request $request, $subject){
+
+		$result = DB::select("SELECT DISTINCT(title) FROM ks_ratings JOIN ks_strategies ON ks_ratings.strategy_id = ks_strategies.id WHERE user_id = ?", [1]);
+
 		return json_encode(array('strategies'=>$result));
 	}
 }
