@@ -157,8 +157,8 @@ class StrategyController extends Controller{
 	function strategyDescription(Request $request, $title){
 		if ($title == 'intro'){
 			$intro = array([
-					'title' =>'Välkommen till SmartLog!',
-					'description' => '<p>Do this and this</p>'
+					'title' =>'Smartlog Prototype!',
+					'description' => '<p><b>This is a prototype of how we imagine the project to work when it has been implemented.</b></p><p>&#9679; The buttons that work in this prototype are <i>Lägg till strategi</i> that are placed within each subject and the button <i>Utvärdera strategier</i> that is placed on the far bottom of Loggboken. </p><p>&#9679; The rest you see right now is either dead links or links to real Kunskapsskolan pages. They are here to get the surroundings of how everything will look when it is being implemented</p><p>&#9679; Every interaction that has to be done after clicking the buttons also works</p>'
 			]);
 
 
