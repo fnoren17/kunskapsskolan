@@ -40,7 +40,7 @@
                         <p>We set out to help Kunskapskolan with increasing usage of study strategies and improve user experience while using Loggboken.</p>
                         <div class="header-button">
                             <a href="#" class="btn btn-border-filled">Read our report</a>
-                            <a href="#download" class="btn btn-border page-scroll">Try the prototype</a>
+                            <a href="/prototype" class="btn btn-border page-scroll">Try the prototype</a>
                         </div>
                     </div>
                 </div>
