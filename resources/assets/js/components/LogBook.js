@@ -124,7 +124,7 @@ class LogBook extends Component {
 			<div>
 
 				<div class="pageHeader" style={{marginTop:"3em"}}>
-					<h1>Prototyp</h1>
+					<h1>Prototype</h1>
 
 					<div class="buttonsField">
 
