@@ -21,6 +21,7 @@
                 shape-rendering: crispEdges;
             }
         </style>
+        <title>Decisions Support Tool</title>
     </head>
 
 @endsection

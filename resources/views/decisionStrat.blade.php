@@ -87,13 +87,6 @@
 	var yAxis = d3.axisLeft()
 		.scale(y)
 
-	svg.append("text")
-		.attr("x", (width / 2))
-		.attr("y", 0 - (margin.top / 2))
-		.attr("text-anchor", "middle")
-		.style("font-size", "16px")
-		.style("text-decoration", "underline")
-		.text("Statistics For Chosen Strategy");
 
 	svg.append("g")
 		.attr("class", "x axis")
