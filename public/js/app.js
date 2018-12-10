@@ -15770,9 +15770,9 @@ var StrategyModal = function (_Component) {
 							'a',
 							{
 								href: "/prototype/strategies/description/" + regularStrategies[index].title },
-							regularStrategies[index].title,
-							index == 0 ? '⭐' : null
-						)
+							regularStrategies[index].title
+						),
+						index == 0 ? '⭐' : null
 					),
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
 				);
@@ -62840,7 +62840,7 @@ var DescriptionBlock = function (_Component) {
 
 			return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 				'div',
-				{ style: { maxWidth: "70%" } },
+				{ style: { maxWidth: "50%" } },
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'h1',
 					null,

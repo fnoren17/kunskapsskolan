@@ -260,8 +260,8 @@ class StrategyModal extends Component {
 					<input type="checkbox" onChange={() => {this.addRegularStrategy(regularStrategies[index].title)}}/>
 					<a
 					href={"/prototype/strategies/description/" + regularStrategies[index].title}>
-						{regularStrategies[index].title}{index == 0 ? '⭐':null}
-				</a></div><br/>
+						{regularStrategies[index].title}
+				</a>{index == 0 ? '⭐':null}</div><br/>
 			</div>
 		)
 		const weeklyStratItems = Object.keys(weeklyStrategies).map((index, i) =>
