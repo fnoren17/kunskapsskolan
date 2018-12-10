@@ -14,4 +14,8 @@
 Route::view('/', 'home');
 Route::view('/prototype', 'app');
 Route::view('/prototype/strategies/description/{id}', 'app');
+Route::view('/decisiontool/school', 'decisionSchool');
+Route::view('/decisiontool/strategy', 'decisionStrat');
+
+
 
