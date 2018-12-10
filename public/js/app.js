@@ -62706,7 +62706,7 @@ var EvaluationModal = function (_Component) {
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { 'class': 'darken' }),
 				__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 					'div',
-					{ style: { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400 } },
+					{ style: { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400, height: "80%" } },
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 						'div',
 						{ 'class': 'modal-page', 'aria-disabled': 'false' },

@@ -191,7 +191,7 @@ class EvaluationModal extends Component {
 		return (
 			<div>
 				<div class="darken"></div>
-				<div style={{position:"fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400}}>
+				<div style={{position:"fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: 400, height: "80%"}}>
 					<div class="modal-page" aria-disabled="false">
 						<div>
 							<div class="sv-html-portlet sv-portlet sv-skip-spacer">
