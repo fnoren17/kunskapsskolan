@@ -15515,9 +15515,11 @@ var StrategyModal = function (_Component) {
 			regularStrategies: [],
 			savedStrategies: [],
 			histStrategies: [],
+			weeklyStrategies: [],
 			chosenSavedStrategies: [],
 			chosenRegularStrategies: [],
 			chosenHistStrategies: [],
+			chosenWeekly: [],
 			path: "",
 			showHist: false,
 			showSaved: false
@@ -15539,7 +15541,7 @@ var StrategyModal = function (_Component) {
 
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api/';
 
-			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies.concat(this.state.chosenHistStrategies)) }).then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('strategies/' + this.props.subject + "/" + this.props.step, { 'strategies': this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies.concat(this.state.chosenHistStrategies.concat(this.state.chosenWeekly))) }).then(function (response) {
 				_this2.setState({
 					chosenSavedStrategies: [],
 					chosenRegularStrategies: [],
@@ -15642,6 +15644,21 @@ var StrategyModal = function (_Component) {
 					histStrategies: strategies
 				});
 			});
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.state.path + 'strategies/weekly/' + this.props.subject + "/" + this.props.step).then(function (response) {
+				var strategies = [];
+				var i = void 0;
+				var temp = void 0;
+				for (i = 0; i < response.data['strategies'].length; i++) {
+					temp = response.data['strategies'][i];
+					temp['checked'] = false;
+					strategies.push(temp);
+				}
+
+				_this3.setState({
+					weeklyStrategies: strategies
+				});
+			});
 		}
 	}, {
 		key: 'addSavedStrategy',
@@ -15704,6 +15721,25 @@ var StrategyModal = function (_Component) {
 			});
 		}
 	}, {
+		key: 'addWeeklyStrategy',
+		value: function addWeeklyStrategy(strategy) {
+			var temp = this.state.chosenWeekly;
+			if (temp.includes(strategy)) {
+				var i = void 0;
+				for (i = 0; i < temp.length; i++) {
+					if (temp[i] == strategy) {
+						temp.splice(i, 1);
+					}
+				}
+			} else {
+				temp.push(strategy);
+			}
+
+			this.setState({
+				chosenWeekly: temp
+			});
+		}
+	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			this.getStrategies();
@@ -15716,7 +15752,8 @@ var StrategyModal = function (_Component) {
 			var _state = this.state,
 			    regularStrategies = _state.regularStrategies,
 			    savedStrategies = _state.savedStrategies,
-			    histStrategies = _state.histStrategies;
+			    histStrategies = _state.histStrategies,
+			    weeklyStrategies = _state.weeklyStrategies;
 
 
 			var regularStratItems = Object.keys(regularStrategies).map(function (index, i) {
@@ -15735,6 +15772,26 @@ var StrategyModal = function (_Component) {
 								href: "/prototype/strategies/description/" + regularStrategies[index].title },
 							regularStrategies[index].title,
 							index == 0 ? '⭐' : null
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
+				);
+			});
+			var weeklyStratItems = Object.keys(weeklyStrategies).map(function (index, i) {
+				return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+					'div',
+					null,
+					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+						'div',
+						{ 'class': 'horizontalItem top' },
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'checkbox', onChange: function onChange() {
+								_this4.addWeeklyStrategy(weeklyStrategies[index].title);
+							} }),
+						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+							'a',
+							{
+								href: "/prototype/strategies/description/" + weeklyStrategies[index].title },
+							weeklyStrategies[index].title
 						)
 					),
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null)
@@ -15817,6 +15874,16 @@ var StrategyModal = function (_Component) {
 									'div',
 									{ 'class': 'align-horizontal' },
 									regularStratItems
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'label',
+									{ 'class': 'kclabel' },
+									'Veckans Strategi'
+								),
+								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+									'div',
+									{ 'class': 'align-horizontal' },
+									weeklyStratItems
 								),
 								__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 									'label',
@@ -61183,7 +61250,7 @@ var LogBook = function (_Component) {
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 						'h1',
 						null,
-						'Prototyp'
+						'Prototype'
 					),
 					__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 						'div',
@@ -62558,7 +62625,7 @@ var EvaluationModal = function (_Component) {
 							'button',
 							{ onClick: function onClick() {
 									return _this4.bookmark(strategiesEng[index].title);
-								}, style: _this4.state.bookmarked.includes(strategiesEng[index].title) ? { backgroundColor: "#00e600", borderRadius: 5, margin: 5 } : { borderRadius: 5, margin: 5 } },
+								}, style: _this4.state.bookmarked.includes(strategiesEng[index].title) ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 5 } : { borderRadius: 5, margin: 5 } },
 							'Bokm\xE4rk'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
@@ -62566,21 +62633,21 @@ var EvaluationModal = function (_Component) {
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '-1', 'eng');
-								}, style: strategiesEng[index]['rating'] == '-1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
+								}, style: strategiesEng[index]['rating'] == '-1' ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4E'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '1', 'eng');
-								}, style: strategiesEng[index]['rating'] == '1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
+								}, style: strategiesEng[index]['rating'] == '1' ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4D'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '0', 'eng');
-								}, style: strategiesEng[index]['rating'] == '0' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
+								}, style: strategiesEng[index]['rating'] == '0' ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'Har inte anv\xE4nt'
 						)
 					),
@@ -62604,7 +62671,7 @@ var EvaluationModal = function (_Component) {
 							'button',
 							{ onClick: function onClick() {
 									return _this4.bookmark(strategiesMath[index].title);
-								}, style: _this4.state.bookmarked.includes(strategiesMath[index].title) ? { backgroundColor: "#00e600", borderRadius: 5, margin: 5 } : { borderRadius: 5, margin: 5 } },
+								}, style: _this4.state.bookmarked.includes(strategiesMath[index].title) ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 5 } : { borderRadius: 5, margin: 5 } },
 							'Bokm\xE4rk'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
@@ -62612,21 +62679,21 @@ var EvaluationModal = function (_Component) {
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '-1', 'math');
-								}, style: strategiesMath[index]['rating'] == '-1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
+								}, style: strategiesMath[index]['rating'] == '-1' ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4E'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '1', 'math');
-								}, style: strategiesMath[index]['rating'] == '1' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
+								}, style: strategiesMath[index]['rating'] == '1' ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'\uD83D\uDC4D'
 						),
 						__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 							'button',
 							{ onClick: function onClick() {
 									_this4.setRating(index, '0', 'math');
-								}, style: strategiesMath[index]['rating'] == '0' ? { backgroundColor: "#00e600", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
+								}, style: strategiesMath[index]['rating'] == '0' ? { backgroundColor: "#3dbca2", borderRadius: 5, margin: 3 } : { borderRadius: 5, margin: 3 } },
 							'Har inte anv\xE4nt'
 						)
 					),

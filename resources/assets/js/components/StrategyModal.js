@@ -10,9 +10,11 @@ class StrategyModal extends Component {
 			regularStrategies: [],
 			savedStrategies: [],
 			histStrategies: [],
+			weeklyStrategies:[],
 			chosenSavedStrategies: [],
 			chosenRegularStrategies:[],
 			chosenHistStrategies: [],
+			chosenWeekly: [],
 			path:"",
 			showHist: false,
 			showSaved: false
@@ -34,7 +36,7 @@ class StrategyModal extends Component {
 
 
 
-		axios.post('strategies/' + this.props.subject + "/" + this.props.step, {'strategies':this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies.concat(this.state.chosenHistStrategies))}).then(response=>{
+		axios.post('strategies/' + this.props.subject + "/" + this.props.step, {'strategies':this.state.chosenSavedStrategies.concat(this.state.chosenRegularStrategies.concat(this.state.chosenHistStrategies.concat(this.state.chosenWeekly)))}).then(response=>{
 			this.setState({
 				chosenSavedStrategies:[],
 				chosenRegularStrategies:[],
@@ -141,6 +143,22 @@ class StrategyModal extends Component {
 			})
 
 		});
+
+		axios.get(this.state.path + 'strategies/weekly/' + this.props.subject + "/" + this.props.step).then(response =>{
+			let strategies =[];
+			let i;
+			let temp;
+			for(i = 0; i<response.data['strategies'].length; i++){
+				temp = response.data['strategies'][i];
+				temp['checked'] = false;
+				strategies.push(temp)
+			}
+
+			this.setState({
+				weeklyStrategies: strategies
+			})
+
+		});
 	}
 
 	addSavedStrategy(strategy) {
@@ -206,6 +224,26 @@ class StrategyModal extends Component {
 
 
 	}
+	addWeeklyStrategy(strategy) {
+		let temp = this.state.chosenWeekly;
+		if (temp.includes(strategy)){
+			let i;
+			for(i = 0; i<temp.length; i++){
+				if(temp[i] == strategy){
+					temp.splice(i,1)
+				}
+			}
+		}
+		else{
+			temp.push(strategy)
+		}
+
+		this.setState({
+			chosenWeekly: temp
+		})
+
+
+	}
 
 
 	componentDidMount () {
@@ -214,7 +252,7 @@ class StrategyModal extends Component {
 
 	render () {
 
-		const {regularStrategies, savedStrategies, histStrategies} = this.state;
+		const {regularStrategies, savedStrategies, histStrategies, weeklyStrategies} = this.state;
 
 		const regularStratItems = Object.keys(regularStrategies).map((index, i) =>
 			<div>
@@ -224,6 +262,16 @@ class StrategyModal extends Component {
 					href={"/prototype/strategies/description/" + regularStrategies[index].title}>
 						{regularStrategies[index].title}{index == 0 ? '⭐':null}
 				</a></div><br/>
+			</div>
+		)
+		const weeklyStratItems = Object.keys(weeklyStrategies).map((index, i) =>
+			<div>
+				<div class="horizontalItem top">
+					<input type="checkbox" onChange={() => {this.addWeeklyStrategy(weeklyStrategies[index].title)}}/>
+					<a
+						href={"/prototype/strategies/description/" + weeklyStrategies[index].title}>
+						{weeklyStrategies[index].title}
+					</a></div><br/>
 			</div>
 		)
 		const savedStratItems = Object.keys(savedStrategies).map((index, i) =>
@@ -261,6 +309,10 @@ class StrategyModal extends Component {
 									<label class="kclabel" >Strategier</label>
 									<div class="align-horizontal">
 										{regularStratItems}
+									</div>
+									<label class="kclabel" >Veckans Strategi</label>
+									<div class="align-horizontal">
+										{weeklyStratItems}
 									</div>
 									<label class="kclabel">Bokmärkta Strategier<button onClick={this.toggleSaved} style={{borderRadius: 5, margin: 5}}>{this.state.showSaved ? '-':'+'}</button></label>
 									<div class="align-horizontal">

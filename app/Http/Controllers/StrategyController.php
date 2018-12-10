@@ -199,7 +199,7 @@ LIMIT 0 , 5;
 			$result =	DB::insert("INSERT INTO ks_user_strategies (user_id, strategy_id, subject_id) VALUES
 				(?, (SELECT id FROM ks_strategies WHERE title = ?),(SELECT id FROM ks_subjects WHERE subject = ? AND block = ?));", [$user, $strategy, $subject, $step]);
 		}
-		return json_encode($result);
+		return;
 	}
 
 	function strategyDescription(Request $request, $title){
@@ -231,6 +231,66 @@ LIMIT 0 , 5;
 		return;
 	}
 
+	function getWeeklyStrategies(Request $request, $subject, $step) {
+
+		$strats = DB::select("
+						SELECT 
+				title, strategy_id, subject_score, nr_ratings
+			FROM
+				(
+				SELECT 
+						distinct_ids2.strategy_id, ifnull(score,0) AS subject_score, ifnull(nr_ratings,0) as nr_ratings
+					FROM
+						(
+						# Get the strategies that have correct tags for current block and subject
+						SELECT 
+							strategy_id
+						FROM
+							ks_strategies_tags
+						WHERE
+							tag IN (
+							SELECT 
+								tag
+							FROM
+								ks_subjects_tags
+							WHERE
+								subject_id IN (
+								SELECT 
+									id
+								FROM
+									ks_subjects
+								WHERE
+									subject = ? AND block = ?
+								)
+							)
+						GROUP BY strategy_id) AS distinct_ids2
+					LEFT JOIN (
+						SELECT 
+							SUM(rating) AS score, count(rating) as nr_ratings, strategy_id
+						FROM
+							ks_ratings
+						WHERE
+							subject_id IN (
+							SELECT 
+								id
+							FROM
+								ks_subjects
+							WHERE
+								subject = ?
+							)
+						GROUP BY strategy_id
+					) AS elegible_ratings2 ON distinct_ids2.strategy_id = elegible_ratings2.strategy_id
+			) AS total
+			JOIN
+				ks_strategies ON total.strategy_id = ks_strategies.id
+			ORDER BY nr_ratings ASC
+			LIMIT 0,2
+		", [$subject, $step, $subject]);
+
+		return json_encode(array('strategies'=>$strats));
+
+
+	}
 	function getUserHistoricalStrategies(Request $request, $subject){
 
 		$result = DB::select("SELECT DISTINCT(title), ks_strategies.id AS strategy_id FROM ks_ratings JOIN ks_strategies ON ks_ratings.strategy_id = ks_strategies.id WHERE user_id = ?", [1]);

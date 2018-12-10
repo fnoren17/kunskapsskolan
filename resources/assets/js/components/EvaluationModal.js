@@ -163,12 +163,12 @@ class EvaluationModal extends Component {
 						href={"/prototype/strategies/description/" + strategiesEng[index].title}>
 						{strategiesEng[index].title}
 					</a>
-					<button onClick={() => this.bookmark(strategiesEng[index].title)} style={this.state.bookmarked.includes(strategiesEng[index].title) ? {backgroundColor:"#00e600",borderRadius:5, margin: 5}: {borderRadius:5, margin: 5}}>Bokmärk</button>
+					<button onClick={() => this.bookmark(strategiesEng[index].title)} style={this.state.bookmarked.includes(strategiesEng[index].title) ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 5}: {borderRadius:5, margin: 5}}>Bokmärk</button>
 
 					<br/>
-					<button onClick={() => {this.setRating(index, '-1', 'eng')}} style={strategiesEng[index]['rating'] == '-1' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}} >👎</button>
-					<button onClick={() => {this.setRating(index, '1', 'eng')}} style={strategiesEng[index]['rating'] == '1' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>👍</button>
-					<button onClick={() => {this.setRating(index, '0', 'eng')}} style={strategiesEng[index]['rating'] == '0' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>Har inte använt</button>
+					<button onClick={() => {this.setRating(index, '-1', 'eng')}} style={strategiesEng[index]['rating'] == '-1' ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1', 'eng')}} style={strategiesEng[index]['rating'] == '1' ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0', 'eng')}} style={strategiesEng[index]['rating'] == '0' ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>Har inte använt</button>
 					</div><br/>
 			</div>
 		)
@@ -179,11 +179,11 @@ class EvaluationModal extends Component {
 						href={"/prototype/strategies/description/" + strategiesMath[index].title}>
 						{strategiesMath[index].title}
 					</a>
-					<button onClick={() => this.bookmark(strategiesMath[index].title)} style={this.state.bookmarked.includes(strategiesMath[index].title) ? {backgroundColor:"#00e600",borderRadius:5, margin: 5}: {borderRadius:5, margin: 5}}>Bokmärk</button>
+					<button onClick={() => this.bookmark(strategiesMath[index].title)} style={this.state.bookmarked.includes(strategiesMath[index].title) ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 5}: {borderRadius:5, margin: 5}}>Bokmärk</button>
 					<br/>
-					<button onClick={() => {this.setRating(index, '-1', 'math')}} style={strategiesMath[index]['rating'] == '-1' ?  {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}} >👎</button>
-					<button onClick={() => {this.setRating(index, '1', 'math')}} style={strategiesMath[index]['rating'] == '1' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>👍</button>
-					<button onClick={() => {this.setRating(index, '0', 'math')}} style={strategiesMath[index]['rating'] == '0' ? {backgroundColor:"#00e600",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>Har inte använt</button>
+					<button onClick={() => {this.setRating(index, '-1', 'math')}} style={strategiesMath[index]['rating'] == '-1' ?  {backgroundColor:"#3dbca2",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}} >👎</button>
+					<button onClick={() => {this.setRating(index, '1', 'math')}} style={strategiesMath[index]['rating'] == '1' ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>👍</button>
+					<button onClick={() => {this.setRating(index, '0', 'math')}} style={strategiesMath[index]['rating'] == '0' ? {backgroundColor:"#3dbca2",borderRadius:5, margin: 3}: {borderRadius:5, margin: 3}}>Har inte använt</button>
 				</div><br/>
 			</div>
 		)
