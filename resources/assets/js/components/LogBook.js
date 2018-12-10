@@ -341,7 +341,7 @@ class LogBook extends Component {
 								<div class="ked_boxed weekPlanner currentWeek">
 									<div class="weekSelect">
 										<div class="horizontalItem">
-											<p>Steg {this.state.step}</p>
+											<p>Vecka 50</p>
 										</div>
 										<div class="horizontalItem">
 											<div class="btn-group">

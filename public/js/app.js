@@ -61966,8 +61966,7 @@ var LogBook = function (_Component) {
 													__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
 														'p',
 														null,
-														'Steg ',
-														this.state.step
+														'Vecka 50'
 													)
 												),
 												__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
