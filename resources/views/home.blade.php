@@ -39,7 +39,7 @@
                         <h2 class="head-title">Smartlog</h2>
                         <p>We set out to help Kunskapskolan with increasing usage of study strategies and improve user experience while using Loggboken.</p>
                         <div class="header-button">
-                            <a href="#" class="btn btn-border-filled">Read our report</a>
+                            <a class="btn btn-border-filled" href={{asset('files/report.pdf')}}>Read our report</a>
                             <a href="/prototype/strategies/description/intro" class="btn btn-border page-scroll">Try the prototype</a>
                         </div>
                     </div>
