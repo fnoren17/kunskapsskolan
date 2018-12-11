@@ -199,7 +199,7 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="text-wrapper wow fadeInRight" data-wow-delay="0.9s">
                             <div>
-                                <h3>Intuituve</h3>
+                                <h3>Intuitive</h3>
                                 <p>A simple design solution was a key point taken away from the focus group interviews. It was clear that objects and functionalities would need to be rearranged and simplified for more clarity.</p>
                             </div>
                         </div>

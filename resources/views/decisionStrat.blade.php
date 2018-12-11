@@ -5,8 +5,6 @@
 <h4>Strategy</h4>
 <select style="float: left">
     <option>Att ge kamratrespons</option>
-    <option>Baklängesplanering</option>
-    <option>Belöningar</option>
 </select>
 </div>
 <div style="display: inline-block; margin: 10px">

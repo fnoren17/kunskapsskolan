@@ -9,8 +9,6 @@
     <h4>School</h4>
     <select style="float: left; border: 1px; border-color: #0b0b0b">
         <option>Borlänge</option>
-        <option>Enköping</option>
-        <option>Nacka</option>
     </select>
     </div>
     <div style="display: inline-block; margin: 10px">
