@@ -24,7 +24,7 @@
                     <a class="nav-link" href="/prototype/strategies/description/intro">Prototype</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/decisiontool/strategy">Decision Support Tool</a>
+                    <a class="nav-link" href="felixnoren.se/exjobb">Decision Support Tool</a>
                 </li>
             </ul>
         </div>
